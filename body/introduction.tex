@@ -1,7 +1,68 @@
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui sem, aliquam id ultricies sit amet, fermentum at magna. Aenean vitae rhoncus leo. Fusce gravida consequat lacus, a porta risus bibendum semper. Morbi eget auctor velit. Pellentesque eu lacinia nisi. Maecenas sed orci eu erat porta imperdiet ac non dui. Pellentesque a odio ac quam euismod tempor. Nulla in dapibus mauris, a sodales ex. In imperdiet enim sed ornare sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vehicula metus eu nisi ornare euismod. Proin at ex non ex iaculis porta.
+\chapter{Introduction}
+The importance of accelerators occupies a key role nowadays, not only to progress in the understanding of particle physics, but also inquiring every phenomenon at the nano-scale requires the use of accelerators. In this perspective accelerators for physical research represent the cutting-edge technology available, and the development of new projects guarantee the technology for all the other applications in few years. 
 
+On the particle physics side the observation of the Higgs Boson represents one of the milestones in the achievement of a fully predictive theory of the behaviour of the fundamental constituents of the matter, and was made possible by the construction of the \textit{Large Hadron Collider} at CERN\cite{CMS:higgs,LHC:design}. However the full understanding of the physics at the particle scale still needs to be achieved. Partially this will be realised with the increase of the collision energy of the LHC, but also the International Committee for Future Accelerators (ICFA) consider that the results of LHC needs to be complemented by the results of a lepton collider in the TeV-range\cite{ICFA:linStat}.
+
+
+The probability of observe a particular interaction process is given by
+\[
+P = \mathscr{L} \sigma
+\]
+where $\sigma$ is the process cross-section, which depends by the physics, and $\mathscr{L}$ is the luminosity, which depends entirely by the machine.
+Therefore the figure of merit when it comes to talk about accelerators is the luminosity, which is given by
+\[
+\mathscr{L} = H_d \frac{N^2}{\sigma_x \sigma_y} n_b f_r
+\]
+where $H_d$ is a correction factor, $N$ is the number of particles per bunch, $\sigma_x$ and $\sigma_y$ are the beam dimensions in the horizontal and vertical plane, $n_b$ is the number of particle per bunch and $f_r$ is the collision frequency of the bunches.
+
+Then becomes obvious try to reach the highest luminosity possible since the events that are going to be studied are rare. This is realised using two kinds of machines:
+\begin{itemize}
+\item linear accelerators (LINACs): present a low repetition frequency, typically lower than hundred of Hz and the beam is passing just once to be accelerated through the machine.
+\item circular accelerators (typically synchrotrons): have a higher repetition frequency, up to tenth of KHz, and are keeping the particle beam in orbit for many turns, so can accelerate it over a long period of time
+\end{itemize}
+The key issue in the realisation of a lepton circular collider is the emission of synchrotron radiation, and is known that the power irradiated by a single particle in a circular machine scales according to the law
+\[
+P \propto \frac{1}{\rho^2} \frac{E^4}{m_0^4}
+\]
+where $\rho$ is the bending radius of the machine, $E$ is the particle energy and $m_0$ is its rest mass. As can be noted in the table 1.1, the energy loss per turn is a relevant fraction of the beam energy, e.g for the LEP machine over than 3 GeV were lost per turn, while the record energy per beam was 104.5 GeV.
+
+To solve the issue the development of new lepton colliders is so focusing on two different solutions:
+\begin{enumerate}
+\item Use muons instead of electrons: this approach has to deal with the short life of muons, which is roughly $2 \mu s$ in the laboratory frame
+\item Limit the losses caused by synchrotron radiation, or increasing the bending radius or abandon the circular topology for the linear one
+\end{enumerate}
+Also has to be noted that the former technology is rather new and needs to still be fully developed, while the latter profits of the progresses achieved in the last half century mainly in SLAC and KEK on the LINAC technology.
+
+In this perspective a number of project are under study at the moment, of wich the most ambitious are FCC-ee,\textit{Future Circular Collider}, ILC, \textit{International Linear Collider}, and CLIC, \textit{Compact Linear Collider}. The first one consist in a circular collider which is supposed to be placed in a 80-100 km long tunnel before of the installation of the FCC-hh, the other are LINACs even if based on completely different technologies and solutions.  A comparison of the features of these projects in the final stage is presented in the underlying table, and also precedent machines, LEP and SLAC, are presented for comparison
+
+\begin{table}
+  \centering
+    \begin{tabular}{ l c c | c c c }
+    \hline
+    Parameter								& LEP2	&	FCC-ee	& CLIC	& CLIC	&	ILC	\\
+    \hline
+    Centre of mass energy $[GeV]$				& 209	& 350  		&  	500	&  3000	& 500	\\
+    Peak luminosity $[10^{34} \, cm^{-2} \, s^{-1}]$	&0.012	& 1.3			&  	2.3	& 	5.9	&1.8		\\
+    Total lenght $[km]$						&26.7	& 100		& 13		&  48.4	& 31		\\
+    Loaded acc. gradient $[MV/m]$				&		& 			& 80		& 100 	& 31.5	\\
+    Bunch population $[10^9]$					& 105	& 170  		&  6.8	& 	3.72	& 500	\\
+    Bunch spacing $[ns]$						& 		& 4000	  	&  	0.5	& 	0.5	& 554	\\
+    Number of bunches						& 4		&  			&  		& 		& 1312	\\
+    Collision rate $[Hz]$						&  		&  			&  	50	& 	50	& 5		\\
+    $\epsilon^*_x \, / \, \epsilon^*_y \, [\mu m]/[nm]$	& 		&  		        &  2.4/25	& 0.66/20	& 10/35	\\  
+    $\sigma^*_x\, / \, \sigma^*_y\, [nm]$			& 		&  	3600/70	&  202/2.3	& 40/1	&474/5.9	\\    
+    Energy loss per turn $[GeV]$					&  3.34	& 	7.55		& - 		& -		& -		\\
+    Power consumption $[MW]$					&  3.34	& 	7.55		& 		& 		& 163	\\
+    \hline
+    \end{tabular}
+  \caption{Comparison of two circular machines, LEP\cite{FCC-ee:leptonCollParam} and FCC-ee\cite{FCC-ee:leptonCollParam,Zimmermann:2057706} and the two projects for linear machines, the fist and last stage of the CLIC implementation \cite{CLIC:cdr} and the final stage of ILC\cite{ILC:tdr} }
+\end{table}
+
+
+
+Furthermore a recent interest arose on more compact technologies, e.g. plasma acceleration techniques, but the reliability of such designs still need to be proven in the perspective of creating a fully functional machine that goes beyond the prototype.
+
+\newpage
 \section{The CLIC poject and the CTF3 facility}
 
 In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
