@@ -7,7 +7,7 @@ A number of examples could be named among the spin-offs of accelerators' science
 
 At the moment the most successful model to explain the behaviour of the elementary particles is the \textit{Standard Model}, but it's not conclusive and not able to answer to all the questions still open in particle physics. A milestone in favour of the Standard Model was the observation of the Higgs Boson in 2012, and was made possible by the construction of the \textit{Large Hadron Collider} at CERN\cite{CMS:higgs,ATLAS:higgs,LHC:design}. However the full understanding of the physics at the particle scale still needs to be achieved. Partially this will be realised with the increase of the collision energy of the LHC, but also the International Committee for Future Accelerators (ICFA) consider that the results of LHC needs to be complemented by the results of a lepton collider in the TeV-range\cite{ICFA:linStat}.
 
-The reason of this decision is that according to the standard model the hadrons are particles composed by quarks, that are continously interacting exchanging gluons. This peculiarity cause the collision at high energy not to be between the hadrons themselves, but within the quarks that are composing them. In addition, there energy of the quarks are distributed statistically, so it's not possible to know in advance which will be the energy of the collision. On the other hand, the leptons are punctual particles, so the interaction is directly involving the two bullets themselves, and the number of possible processes that can take place is definitely smaller. 
+The reason of this decision is that according to the standard model the hadrons are particles composed by quarks, that are continously interacting exchanging gluons. This peculiarity cause the collision at high energy not to be between the hadrons themselves, but between partons composing them. In addition, there is no way to know in advance the energy of the partons involved, so it's not possible to know in advance which will be the energy of the collision. For example it is improbable for a parton in the 14 TeV centre-of-mass energy LHC to have much more than 1-2 TeV of energy at the interaction point\cite{LHC:partonDistrib}. On the other hand, the leptons are punctual particles, so the interaction is directly involving the two bullets themselves, and the number of possible processes that can take place is definitely smaller. 
 This behaviour of particles of different kinds makes hadron colliders \textit{machines for discovery}, because involve all the possible processes that can take place, and the lepton machines \textit{machines for precision}, because the reduced number of possible processes guarantees the observation of the events of interest much easier.
 
 \section{Generalities on colliders}
@@ -32,7 +32,7 @@ The key issue in the realisation of a lepton circular collider is the emission o
 \[
 P \propto \frac{1}{\rho^2} \frac{E^4}{m_0^4}
 \]
-where $\rho$ is the bending radius of the machine, $E$ is the particle energy and $m_0$ is its rest mass. As can be noted in the table 1.1, the energy loss per turn is a relevant fraction of the beam energy, e.g for the LEP machine over than 3 GeV were lost per turn, while the record energy per beam was 104.5 GeV. To raise the beam energy and combat the energy loss, the radius of circular machines escalates quickly. Simply scaling LEP, it is possible to show that in order to reach the centre-of-mass energy of 3 TeV, the circumference should be increased to thousands of kilometers \cite{nature:CLIC}.
+where $\rho$ is the bending radius of the machine, $E$ is the particle energy and $m_0$ is its rest mass. As can be noted in the table \ref{table_CLIC_ILC_FCC}, the energy loss per turn is a relevant fraction of the beam energy, e.g for the LEP machine over than 3 GeV were lost per turn, while the record energy per beam was 104.5 GeV. To raise the beam energy and combat the energy loss, the radius of circular machines escalates quickly. Simply scaling LEP, it is possible to show that in order to reach the centre-of-mass energy of 3 TeV, the circumference should be increased to thousands of kilometers \cite{nature:CLIC}.
 To solve the issue the development of new lepton colliders is so focusing on two different solutions:
 \begin{enumerate}
 \item Use muons instead of electrons: this approach has to deal with the short life of muons, which is roughly $2 \, \mu s$ in the laboratory frame
@@ -79,14 +79,37 @@ Furthermore a recent interest arose on more compact technologies, e.g. plasma ac
 
 
 \newpage
-\section{The CLIC poject and the CTF3 facility}
+\section{The CLIC project and the CTF3 facility}
 
-\begin{center}
-\textit{still to do}
-\end{center}
-%goal 3 TeV, staging
+The \textit{Compact Linear Collider} is the project for a linear electron-positron collider capable of reaching a centre-of-mass collision energy of 3 TeV and a luminosity of $2\text{x}10^{34} \, cm^{-2} \, s^{-1}$ in the final stage.
 
-%bunch structure (pag 2 of CDR update 2016 on staging),  and less than one interacting. So detector challenging
+The realisation of such machine implies many technological challenges in order to keep the power consumption and the dimension limited. These have been faced developing the novel \textit{two-beam acceleration scheme}, in which the idea is to use a high-current and low-energy beam, the \textit{drive beam}, in order to generate the RF power to accelerate a low-current and high-energy beam used for the experiments, named \textit{main beam}. \\
+The main beam is produced using a 3 GHz linac, and then the current is multiplicated using a delay loop and two recombination rings. This topology provokes a raise of the frequency of the bunches from 3 to 12 GHz, and is the motivation because of the RF for the main beam is using the latter frequency, as described later. More information about how the recombination process works can be found in \cite{CLIC:cdr} and on how the working principle have been demonstrated in the CTF3 in \cite{CTF:drive_beam}.\\
+The main beam is produced %%ADD DETAILS 
+\cite{boh}
+
+Once both beams have been produced, both are sent to the Two-beams modules, where the main beam passes through the PETS, \textit{Power Extraction and Transfer Structures}, and the RF power extracted is transferred to power the accelerating structures for the main beam. The structure of a Two-beams module is exploited in figure \ref{TBM}
+
+
+
+\begin{figure}
+\centering
+
+\includegraphics[scale=0.39]{pictures/CLIC_layout_3Tev}
+\caption{Layout of the final stage of CLIC}
+\label{CLIC_layout}
+
+\hspace{8mm}
+
+\includegraphics[scale=0.39]{pictures/TBM}
+\caption{Design of a Two-beam module. }
+\label{TBM}
+
+\end{figure}
+
+
+
+
 
 \subsection{Physics and staging}
 
@@ -102,26 +125,20 @@ The second stage is proposed at 1.5 TeV and allows to access new physics phenome
 
 The third stage is proposed at 3 TeV and will give direct access to pair-produced particles with mass up to 1.5 TeV or single particles with mass up to 3 TeV. This stage is particularly interesting as test for the BSM theories, since such high energy in a lepton machine makes the observation of new particles much easier than in the LHC.
 
+A further remodulation of these steps is possible after the publication of the results of the run 2 of the LHC, but anyway the advantage of a linear machine in this sense is that the top energy can be reshaped modifying the total length of the machine. In figure \ref{CLIC_map} is shown the track of a possible CLIC build in the Geneva area.
+
 \begin{figure}
 \centering
 
-\includegraphics[scale=0.35]{pictures/higgs_cs}
-\caption{Cross section dependence by the centre-of-mass energy of the most common processes involving the Higgs boson in a $e^+ e^-$ collider}
-\label{higgs_cs}
+\includegraphics[scale=0.3]{pictures/CLIC_map}
+\caption{Map of the CLIC facility, if implemented in the Geneva area}
+\label{CLIC_map}
+
 \end{figure}
 
-%% ADD HIGGS BOSON MOST COMMON PROCESSES 
-% e+e- -> ZH
-% e+e- -> Hvv
-% e+e- -> He+e-
-%%%%%%%%%% + TABLE OF CROSS SECTIONS AND FEYNMAN DIAGRAMS
+ 
 
-
-%% BUT TOP PHYSICS ????
-
-
-
-\subsection{The two beam acceleration concept}
+\subsection{Main parameters and main issues}
 
 In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
 
@@ -129,3 +146,8 @@ In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non d
 
 
 
+\subsection[CTF3]{The CLIC Test Facility 3}
+
+In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
+
+In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
