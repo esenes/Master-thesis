@@ -1,14 +1,15 @@
 \chapter{Introduction}
 Particle accelerators occupy a key role both in fundamental research and in all the applications and industrial processes that uses technology and processes developed initially for the physical research.\\
-A number of examples could be named among the spin-offs of accelerators' science, but the most notable nowadays is the relevant progress of nanosciences in the last decade, that was made possible by the availability of high-brilliance light sources provided by synchrotrons. In the same way to inquire a much smaller scale are necessaries machines involving higher energies, and the development of the latter will lead the one of the former and so forth.
+A number of examples could be named among the spin-offs of accelerators' science, the most notable nowadays is the relevant progress of nanosciences in the last decade, that was made possible by the availability of high-brilliance light sources provided by synchrotrons. In the same way to inquire a much smaller scale are necessaries machines involving higher energies, and the development of the latter will lead the one of the former and so forth.
  Hence in this perspective keep developing the accelerators for the physical research is a fundamental requirement to assure that the cutting-edge technology of today turns into the labware of tomorrow for all the other sciences and the industry, in addition of the contribution that pursuing the fundamental research can give to our understanding of the world of the elementary particles.
 
 %% missing connection
 
 At the moment the most successful model to explain the behaviour of the elementary particles is the \textit{Standard Model}, but it's not conclusive and not able to answer to all the questions still open in particle physics. A milestone in favour of the Standard Model was the observation of the Higgs Boson in 2012, and was made possible by the construction of the \textit{Large Hadron Collider} at CERN\cite{CMS:higgs,ATLAS:higgs,LHC:design}. However the full understanding of the physics at the particle scale still needs to be achieved. Partially this will be realised with the increase of the collision energy of the LHC, but also the International Committee for Future Accelerators (ICFA) consider that the results of LHC needs to be complemented by the results of a lepton collider in the TeV-range\cite{ICFA:linStat}.
 
-The reason of this decision is that according to the standard model the hadrons are particles composed by quarks, that are continously interacting exchanging gluons. This peculiarity cause the collision at high energy not to be between the hadrons themselves, but between partons composing them. In addition, there is no way to know in advance the energy of the partons involved, so it's not possible to know in advance which will be the energy of the collision. For example it is improbable for a parton in the 14 TeV centre-of-mass energy LHC to have much more than 1-2 TeV of energy at the interaction point\cite{LHC:partonDistrib}. On the other hand, the leptons are punctual particles, so the interaction is directly involving the two bullets themselves, and the number of possible processes that can take place is definitely smaller. 
-This behaviour of particles of different kinds makes hadron colliders \textit{machines for discovery}, because involve all the possible processes that can take place, and the lepton machines \textit{machines for precision}, because the reduced number of possible processes guarantees the observation of the events of interest much easier.
+The reason of this decision is that according to the standard model the hadrons are particles composed by quarks, that are continously interacting exchanging gluons. This peculiarity cause the collision at high energy not to be between the hadrons themselves, but between partons composing them. In addition, there is no way to know in advance the energy of the partons involved, so it's not possible to know in advance which will be the energy of the collision. For example it is improbable for a parton in the 14 TeV centre-of-mass energy LHC to have much more than 1-2 TeV of energy at the interaction point\cite{LHC:partonDistrib}. On the other hand, the leptons are punctual particles, so the interaction is directly involving the two bullets themselves at a given energy, and the number of possible processes that can take place is definitely smaller. 
+
+This key difference in the behaviour of leptons and hadrons makes hadron colliders \textit{machines for discovery}, because involve all the possible processes that can take place in a wide range of energies, and the lepton machines \textit{machines for precision}, because the reduced number of possible processes guarantees the observation of the events of interest much easier.
 
 \section{Generalities on colliders}
 
@@ -23,12 +24,18 @@ Therefore the figure of merit when it comes to talk about accelerators is the lu
 \]
 where $N$ is the number of particles per bunch, $\sigma_x$ and $\sigma_y$ are the beam dimensions in the horizontal and vertical plane, $n_b$ is the number of particle per bunch, $f_r$ is the collision frequency of the bunches and $H_d$ is a correction factor that takes in account the non ideality of the collision, such as crossing angle, collision offset, hour glass effect, non gaussian beam profile and so on.
 
-Then becomes obvious try to reach the highest luminosity possible since the events that are going to be studied are rare. This is realised using two kinds of machines:
+Then becomes obvious try to reach the highest luminosity possible since the events that are going to be studied are rare. This is realised differently according to the design of the accelerating machine in use:
 \begin{itemize}
 \item linear accelerators (LINACs): present a low repetition frequency, typically lower than hundred of Hz and the beam is passing just once to be accelerated through the machine.
 \item circular accelerators (typically synchrotrons): have a higher repetition frequency, up to tenth of KHz, and are keeping the particle beam in orbit for many turns, so can accelerate it over a long period of time
 \end{itemize}
-The key issue in the realisation of a lepton circular collider is the emission of synchrotron radiation, and is known that the power irradiated by a single particle in a circular machine scales according to the law
+After this distinction one could be led to think that the circular machine is the best choice in any case in order to reach high luminosity, but raising the energy of the beam a big issue comes out: the power loss in circular machines due to the emission of synchrotron radiation
+
+
+%%%%%%FINIRE
+
+
+, and is known that the power irradiated by a single particle in a circular machine scales according to the law
 \[
 P \propto \frac{1}{\rho^2} \frac{E^4}{m_0^4}
 \]
@@ -117,7 +124,7 @@ The machine is designed to be built in 3 stages, with a final energy of 3 TeV. T
 
 Since the CDR\cite{CLIC:cdr} was released just before the discovery of the Higgs boson, the centre of mass energy stages have been reshaped in order to be able to access to interesting measurements, anyway for a given centre-of-mass energy, the energy can be modified by a third with limited loss of performance\cite{CLIC:cdrVol3}, allowing an eventual retuning of the energy of the stages following the results of the last LHC physics campaign.
 
-The energy staging have been chosen as follows, further informations can be found in\cite{CLIC:staging2016,Bozovic-Jelisavcic:2160172}. As reference is useful to keep in mind the behaviour of the cross sections of the processes involving the Higgs boson, that are presented in figure \ref{higgs_cs} as function of the centre-of-mass energy.
+The energy staging have been chosen as follows, further informations can be found in\cite{CLIC:staging2016,Bozovic-Jelisavcic:2160172}, but the leading idea is to make accessible the Higgs and top physics from the first stage.
 
 The first stage is proposed to be 380 GeV, and it gives access to the Standard model Higgs physics and top-quark physics. The measurements on the former can be conducted through Higgsstrahlung and WW-fusion processes, thereby providing accurate model-indipendent measurements of Higgs couplings to bosons and fermions\cite{Roloff:2210491}; the latter measurements will be focused on the $t\bar{t}$ pair production threshold in the vicinity of $\sqrt{s} = $ 350 GeV.
 
@@ -125,7 +132,7 @@ The second stage is proposed at 1.5 TeV and allows to access new physics phenome
 
 The third stage is proposed at 3 TeV and will give direct access to pair-produced particles with mass up to 1.5 TeV or single particles with mass up to 3 TeV. This stage is particularly interesting as test for the BSM theories, since such high energy in a lepton machine makes the observation of new particles much easier than in the LHC.
 
-A further remodulation of these steps is possible after the publication of the results of the run 2 of the LHC, but anyway the advantage of a linear machine in this sense is that the top energy can be reshaped modifying the total length of the machine. In figure \ref{CLIC_map} is shown the track of a possible CLIC build in the Geneva area, in order to give an idea about the order of magnitude of that kind of facility.
+A further remodulation of these steps is possible after the publication of the results of the run 2 of the LHC, but anyway the advantage of a linear machine in this sense is that the final energy can be reshaped modifying the total length of the machine. In figure \ref{CLIC_map} is shown the track of a possible CLIC build in the Geneva area, in order to give an idea about the order of magnitude of that kind of facility compared to LHC and SPS.
 
 \begin{figure}[h]
 \centering
