@@ -79,16 +79,18 @@ Furthermore a recent interest arose on more compact technologies, e.g. plasma ac
 
 The \textit{Compact Linear Collider} is the project for a linear electron-positron collider capable of reaching a centre-of-mass collision energy of 3 TeV and a luminosity of $2\text{x}10^{34} \, cm^{-2} \, s^{-1}$ in the final stage.
 
-The realisation of such machine implies many technological challenges in order to keep the power consumption and the dimension limited. These have been faced developing the novel \textit{two-beam acceleration scheme}, in which the idea is to use a high-current and low-energy beam, the \textit{drive beam}, in order to generate the RF power to accelerate a low-current and high-energy beam used for the experiments, named \textit{main beam}. \\
-The main beam is produced using a 3 GHz linac, and then the current is multiplicated using a delay loop and two recombination rings. This topology provokes a raise of the frequency of the bunches from 3 to 12 GHz, and is the motivation because of the RF for the main beam is using the latter frequency, as described later. More information about how the recombination process works can be found in \cite{CLIC:cdr} and on how the working principle have been demonstrated in the CTF3 in \cite{CTF:drive_beam}.\\
-The main beam is produced %%ADD DETAILS 
-\cite{boh}
+The realisation of such machine implies many technological challenges in order to keep the power consumption and the dimension limited while matching the design goal parameters. These challenges have been faced developing the novel \textit{two-beam acceleration scheme}, in which the idea is to use a high-current and low-energy beam, the \textit{drive beam}, in order to generate the RF power to accelerate a low-current and high-energy beam used for the experiments, named \textit{main beam}. \\
+The Drive Beam is produced using a dedicated linac, and then the current is multiplied using a delay loop and two recombination rings, reaching a combination factor of $2\text{x}3\text{x}4=24$. This topology generates the beam with a final frequency of the bunches of 12 GHz, and the reason for this kind of implementation is to reach the highest possible efficiency in the Drive Beam production, in order to shrink the power consumption to the smallest possible. While the biggest challenge for the main beam is reaching the necessary high current, for the Main Beam the hardest challenge is generating a beam with the smallest emittance possible, in order to increase the luminosity of the machine as much as possible.\\
+The Main Beam is produced in a separate facility, where a DC-photo gun system provides the initial polarised electron beam, and afterwards part of the beam is used to generate the positron beam. Once both the beams are created, they are sent to the next accelerating stages, which are composed of LINACs to raise the beams' energy and of damping rings to reduce the emittances. 
 
-%%%%%%%% DETAILS ON DRIVE BEAM GENERATION
+\vspace{5mm}
+(need more details ? maybe a section about the main beam generation ?)
+\vspace{5mm}
 
 
+More information about the Main Beam production and the Drive Beam recombination process can be found in \cite{CLIC:cdr} and about how the working principle have been demonstrated in the CTF3 in \cite{CTF:drive_beam}. 
 
-Once both beams have been produced, both are sent to the Two-beams modules, where the main beam passes through the PETS, \textit{Power Extraction and Transfer Structures}, and the RF power extracted is transferred to power the accelerating structures for the main beam. The structure of a Two-beams module is exploited in figure \ref{TBM}
+Once both beams have been produced, both are sent to the Two-beams modules, where the energy of the Main Beam is increased up to the magnitude requested for the experiments. The main beam passes through the PETS, \textit{Power Extraction and Transfer Structures}, and the RF power extracted is transferred to power the accelerating structures for the main beam. The structure of a Two-beams module is exploited in figure \ref{TBM}.
 
 
 
@@ -156,7 +158,7 @@ There are many issues that can affect the performance of a machine like CLIC, an
 
 %%%%% CONSIDER THE REFERENCES [LIST OF CLIC MAIN ISSUES]
 
-Therefore the parameters in the table \ref{table_CLIC_params} have been selected in order to match the design parameters reported in the table \ref{table_CLIC_ILC_FCC}
+Therefore the parameters in the table \ref{table_CLIC_params} have been selected in order to match the design parameters reported in the table \ref{table_CLIC_ILC_FCC} for the top design energy.
 
 
 \begin{table}[h]
