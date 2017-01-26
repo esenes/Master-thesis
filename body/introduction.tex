@@ -1,7 +1,7 @@
 \chapter{Introduction}
 Particle accelerators occupy a key role both in fundamental research and in all the applications and industrial processes that uses technology and processes developed initially for the elementary research.\\
 A number of examples could be named among the spin-offs of accelerators' science, the most notable nowadays is the enormous progress of nanosciences in the last decade, that was made possible by the availability of high-brilliance light sources provided by synchrotrons, that was achievable thanks to the experience developed in the production of high quality electron beams. In the same way to inquire a much smaller scale are necessaries machines involving greater energies, and the development of the latter will lead the one of the former and so forth.
- Hence in this perspective keep developing the accelerators for the physical research is a fundamental requirement to assure that the cutting-edge technology of today turns into the labware of tomorrow for all the other sciences and the industry, in addition of the contribution that pursuing the fundamental research can give to our understanding of the world of the elementary particles.
+ Hence in this perspective keep developing the accelerators for the physical research is a fundamental requirement to assure that the cutting-edge technology of today turns into the "labware" of tomorrow for all the other sciences and the industry, in addition of the contribution that pursuing the fundamental research can give to our understanding of the world of the elementary particles.
 
 Going back to the particle scale, at the moment the most successful model to explain the behaviour of the elementary particles is the \textit{Standard Model}, but it's not conclusive and not able to answer to all the questions still open in particle Physics. A milestone in favour of the Standard Model was the observation of the Higgs Boson in 2012 \cite{CMS:higgs,ATLAS:higgs}, and was made possible by the construction of the \textit{Large Hadron Collider} at CERN\cite{LHC:design}. However the full understanding of the physics at the particle scale still needs to be achieved. Partially this will be realised with the increase of the collision energy of the LHC, but also the International Committee for Future Accelerators (ICFA) consider that the results of LHC needs to be complemented by the results of a lepton collider in the TeV-range\cite{ICFA:linStat}.
 
@@ -84,20 +84,15 @@ Furthermore a recent interest arose on more compact technologies, e.g. plasma ac
 
 The \textit{Compact Linear Collider} is the project for a linear electron-positron collider capable of reaching a centre-of-mass collision energy of 3 TeV and a luminosity of $2\text{x}10^{34} \, cm^{-2} \, s^{-1}$ in the final stage.
 
-The realisation of such machine implies many technological challenges in order to keep the power consumption and the dimension limited while matching the design goal parameters. These challenges have been faced developing the novel \textit{two-beam acceleration scheme}, in which the idea is to use a high-current and low-energy beam, the \textit{drive beam}, in order to generate the RF power to accelerate a low-current and high-energy beam used for the experiments, named \textit{main beam}. \\
-The Drive Beam is produced using a dedicated LINAC, and then the current is multiplied using a delay loop and two recombination rings, reaching a combination factor of $2\text{x}3\text{x}4=24$. This topology generates the beam with a final frequency of the bunches of 12 GHz, and the reason for this kind of implementation is to reach the highest possible efficiency in the Drive Beam production, in order to shrink the power consumption to the smallest possible. While the biggest challenge for the main beam is reaching the necessary high current, for the Main Beam the hardest challenge is generating a beam with the smallest emittance possible, in order to increase the luminosity of the machine as much as possible.\\
-The Main Beam is produced in a separate facility, where a DC-photo gun system provides the initial polarised electron beam, and afterwards part of the beam is used to generate the positron beam. Once both the beams are created, they are sent to the next accelerating stages, which are composed of LINACs to raise the beams' energy and of damping rings to reduce the emittances. 
+The realisation of such machine implies many technological challenges in order to keep the power consumption and the dimension limited while matching the design goal parameters. These challenges have been faced developing the novel \textit{two-beam acceleration scheme}, in which the idea is to use a high-current and low-energy beam, the \textit{Drive Beam}, in order to generate the RF power to accelerate a low-current and high-energy beam used for the experiments, named \textit{Main Beam}. \\
+The Drive Beam is produced using a dedicated LINAC, and then the current is multiplied using a delay loop and two recombination rings, reaching a combination factor of $2\text{x}3\text{x}4=24$. This topology generates the beam with a final frequency of the bunches of 12 GHz, and the reason for this kind of implementation is to reach the highest possible efficiency in the Drive Beam production, in order to shrink the power consumption to the smallest possible. To reach this goal the acceleration in the LINAC is performed using the accelerating cavities in fully-loaded mode. 
 
-\vspace{5mm}
-(need more details ? maybe a dedicated section about the main beam generation ?)
-\vspace{5mm}
+While the biggest challenge for the main beam is reaching the necessary high current, for the Main Beam the hardest challenge is generating a beam with the smallest dimension possible, in order to increase the luminosity of the machine as much as possible.\\
+The Main Beam is produced in a separate facility, where a DC-photo gun system provides the initial polarised electron beam, and afterwards part of the beam is sent to a target in order to generate the positron beam. Once both the beams have been produced, they are sent to the next accelerating stages, which are composed of LINACs to raise the beam's energy and of damping rings to reduce the emittances. 
 
+The detailed description of the Main Beam production and the Drive Beam recombination process can be found in \cite{CLIC:cdr} and about how the working principle have been demonstrated in the CTF3 in \cite{CTF:drive_beam}. 
 
-More information about the Main Beam production and the Drive Beam recombination process can be found in \cite{CLIC:cdr} and about how the working principle have been demonstrated in the CTF3 in \cite{CTF:drive_beam}. 
-
-Once both beams have been produced, both are sent to the Two-beams modules, where the energy of the Main Beam is increased up to the magnitude requested for the experiments. The main beam passes through the PETS, \textit{Power Extraction and Transfer Structures}, and the RF power extracted is transferred to power the accelerating structures for the main beam. The structure of a Two-beams module is exploited in figure \ref{TBM}.
-
-
+Once both beams have been produced, are sent to the common tunnel where the Two-beams modules are installed. The Two-beam module is composed by two principal sections, which are the PETS, \textit{Power Extraction and Transfer Structures}, and the accelerating structures for the Main Beam, as exploited in figure \ref{TBM}. The Main Beam passes through the PETS and gets decelerated. As product of the deceleration a pulse of RF power is produced, which is transferred by a waveguide network and used to accelerate the Main Beam.\\ In this way it is possible to reach an efficient acceleration of the Main Beam up to the desired energy for the experiments
 
 \begin{figure}
 \centering
@@ -193,8 +188,6 @@ Therefore the parameters in the table \ref{table_CLIC_params} have been selected
 \end{table}
 
 
-%%%%% TELL ABOUT THE KLYSTRON OPTION, non credibile, ma forse per energie basse ....
-
 %%%%% COMMENTO SUI PARAMETRI
 
 
@@ -203,29 +196,15 @@ Therefore the parameters in the table \ref{table_CLIC_params} have been selected
 
 \subsection[CTF3]{The CLIC Test Facility 3}
 
-To be able to assert that the CLIC scheme is a feasible and reliable technology to build a collider, a number of tests have to be conduced since no accelerators using the Two-beam acceleration concept have been reached the production phase. To satisfy this requirement at CERN have been realised the CLIC Test Facility, that is in charge of demonstrate experimentally:
+To be able to assert that the CLIC scheme is a feasible and reliable technology to build a functional collider, a number of tests have to be conduced since no accelerators using the Two-beam acceleration concept have been reached the production phase yet. To satisfy this requirement at CERN have been realised the CLIC Test Facility, that is in charge of demonstrate experimentally:
 
 \begin{itemize}
-\item The feasibility of the Drive Beam generation 
-\item The two-beam acceleration, carried out with prototypes of the Two-beam modules
+\item The feasibility of the Drive Beam generation with a frequency of 12 GHz, performing the beam recobination using a delay loop and a combiner ring for a total multiplication factor of $2\times4 =8$
+\item The RF power production using the PETS and investigate the possible issues of the Two-beam scheme
 \end{itemize}
-
-%%%%%%%%%%%%%%%%CHECK THE CDR FOR THAT
-
-In addition high-gradient tests on the accelerating cavity for the Main Beam have been conducted with beam presence.
+In addition a branch of the LINAC was used to perform high-gradient tests with the beam presence inside the accelerating cavity, which is the topic of the following work.
 
 
-\begin{landscape}
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{pictures/CTF3_layout_edit}
-\caption{Layout of the CTF3 facility}
-\label{CLIC_map}
-
-\end{figure}
-\end{landscape}
-
-%%%%%%%%%%%FIND A BETTER ONE OF THE 12GHz ERA
 
 
 
