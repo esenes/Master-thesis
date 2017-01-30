@@ -1,46 +1,58 @@
-\chapter[Data analysis tools]{Data analysis tools}
+\chapter[Experimental setup]{Experimental setup}
 
-\section[Offline selection of the events]{Offline selection of the events}
+\section[Main beam accelerating structure]{The TD26 accelerating structure}
 
-A tabular example
-\begin{center}
+\section[Linac and dogleg]{The LINAC and the Dogleg}
 
-\begin{tabular}{cc}
-\hline
-\hline
-Tit1	&	Tit2	\\
-\hline
-el1	&	el2	\\
-el1	&	el2	\\
-el1	&	el2	\\
-\hline
-\end{tabular}
+Bullet list example
+\begin{itemize}
+\item first point
+\item second point
+\item third point \\
+\end{itemize}
 
-\end{center}
+\section[RF power generation]{RF power generation}
 
-but tabulars cannot be captioned ! (are in text elements)
+\noindent
+Enumeration example
+\begin{enumerate}
+\item first point
+\item second point
+\item third point\\
+\end{enumerate}
+
+\noindent
+Description example
+\begin{description}
+\item[first descr] first point
+\item[second descr]  second point
+\item[third descr]  third point\\
+\end{description}
+
+\section[DAQ system]{DAQ system}
+
+\subsection[Hardware]{Hardware}
+
+\subsection[Online triggers]{Online triggers}
+
+describe the online, but then the offline is in the next chapter
+
+\noindent
+\dots but you can also build nested lists
+\begin{itemize}
+\item first point
+	\begin{itemize} %tab is only for the readability, but not necessary
+	\item first point
+	\item second point
+	\end{itemize}
+\item second point
+\item third point \\
+\end{itemize}
 
 
-\begin{table}
-  \centering
-    \begin{tabular}{| l c r |}
-    \hline
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9 \\
-    \hline
-    \end{tabular}
-  \caption{A simple table}
-\end{table}
 
-Using the table environment, the caption works ! BUT BECOMES FLOATING OBJECTS (in fact is on the bottom of the page due to no more text inserted afterwards).
 
-Same thing for the figure environment
+\section[Other systems]{Other systems}
 
-\section[Time and space positioning of the breakdowns]{Time and space positioning of the breakdowns}
+mention here thermal systems for the structure and something else ???
 
-\section[Migration of the breakdowns]{Migration of the breakdowns}
-
-\section[Beam induced RF]{Beam induced RF}
-
-\section[Neural network based events selection]{Neural network based events selection}
