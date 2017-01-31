@@ -146,7 +146,7 @@ where $f$ is the frequency in $MHz$ and $E$ is the electric field in $MV/m$.
 \begin{figure}[h]
 \centering
 
-\includegraphics[scale=0.3]{pictures/kilpatrickCrit}
+\includegraphics[scale=0.5]{pictures/kilpatrickCrit}
 \caption{Kilpatrick's original plot. Note that $MC = MHz$ (\textit{Mega Cycles}) and that $W$ for RF is function of frequency, voltage and gap amplitude.\\ See paper for details  \cite{KilpLimit}}
 \label{kilpPlot}
 
@@ -165,7 +165,38 @@ At the end of the 1980's J.D.Wang finally proposed a model based on microprotrus
 
 \subsection{The modified Poynting vector $S_c$}
 
-gru gru gru
+Different other scalings have been proposed so far involving power flow, such as P/C scaling (related to the maximum surface electrical field) or a more advanced one  \cite{Wuensch:1004189}, but even the last one showed some deviations from expectations in part of the structures tested and is applicable just to travelling wave structures (TWS) since in standing wave structures (SWS) the power flow is close to zero.
+
+During the work on high gradient normal conducting accelerating structures for the CLIC project, was however developed a new field quantity, the \textit{Modified Poynting Vector} $S_c$, that is suitable both for TWS and SWS. \cite{Grudiev:newLoc}
+
+The founding of this %%%TERRIBLE
+
+are that: the breakdown process is a determined by the accumulation of the pulses rather than the single pulse and the possible triggers of the breakdown can be induced by many processes that will be discussed later and are not relevant for the scaling law derivation.
+
+A number of effects have to be taken into account (a simple geometry is considered, a cilindrical protrusion surmounted by a emispherical cap) : 
+
+\subsubsection{Pulsed heating by field emission current}
+
+it's known that the field emission gets enhanced by the presence of the protrusion as described before, and in this case the field enhancement factor can be expressed as $\beta \simeq h/r$, where $h$ is the tip height and $r$ is the cap radius. It is possible deduce the power necessary to heat up the tip up to the melting point within a certain time ($100\, ns$ in the model presented here) due to ohmic heating. These calculations leads to a value of current density generated due to field emission of approximately $36\, A/\mu m^2$, consistent with the findings of \cite{soviet:1983}. Assuming that the typical value of field in the breakdown process is between 200 and 300 MV/m, the value of $\beta$ can be also derived, and results between 40 and 60, in accordance with the experimental results of the DC tests.\cite{}  %% %% %% CONTINUA >>>>
+
+
+\begin{figure}[h]
+\centering
+
+\includegraphics[scale=0.3]{pictures/field_S_c}
+\caption{Electric field distribution around the protrusion considered. Arrows indicate the direction of the field and the color code the absolute value of the field, mapped logarithmically \cite{Grudiev:newLoc} }
+\label{kilpPlot}
+
+\end{figure}
+
+
+
+\subsubsection{Power flow near an emission site}
+
+sss
+
+
+
 
 
 
