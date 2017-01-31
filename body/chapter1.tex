@@ -173,11 +173,11 @@ The founding of this %%%TERRIBLE
 
 are that: the breakdown process is a determined by the accumulation of the pulses rather than the single pulse and the possible triggers of the breakdown can be induced by many processes that will be discussed later and are not relevant for the scaling law derivation.
 
-A number of effects have to be taken into account (a simple geometry is considered, a cilindrical protrusion surmounted by a emispherical cap) : 
+A number of effects have to be taken into account (a simple geometry is considered, a cilindrical protrusion surmounted by a emispherical cap): 
 
 \subsubsection{Pulsed heating by field emission current}
 
-it's known that the field emission gets enhanced by the presence of the protrusion as described before, and in this case the field enhancement factor can be expressed as $\beta \simeq h/r$, where $h$ is the tip height and $r$ is the cap radius. It is possible deduce the power necessary to heat up the tip up to the melting point within a certain time ($100\, ns$ in the model presented here) due to ohmic heating. These calculations leads to a value of current density generated due to field emission of approximately $36\, A/\mu m^2$, consistent with the findings of \cite{soviet:1983}. Assuming that the typical value of field in the breakdown process is between 200 and 300 MV/m, the value of $\beta$ can be also derived, and results between 40 and 60, in accordance with the experimental results of the DC tests.\cite{}  %% %% %% CONTINUA >>>>
+it's known that the field emission gets enhanced by the presence of the protrusion as described before, and in this case the field enhancement factor can be expressed as $\beta \simeq h/r$, where $h$ is the tip height and $r$ is the cap radius. So the tip will emit a current according to the Fowler-Nordheim law, causing in first approximation the heating of the tip due to the ohmic heating. Assuming that the edge of the tip will be the most heated part, and using the heat conduction equation, it is possible to derive the emitted current to bring the tip to the melted state, which is found to be approximately $36\, A/\mu m^2$ for a tip of $1 \, \mu m$ height and a pulse of $100\, ns$. This is consistent with the findings in \cite{soviet:1983}. The $\beta$ factor can be then derived, which is approximately between 40 and 60 considering a surface electric field in case of breakdown between 200 and 300 $MV/m$.
 
 
 \begin{figure}[h]
@@ -193,10 +193,27 @@ it's known that the field emission gets enhanced by the presence of the protrusi
 
 \subsubsection{Power flow near an emission site}
 
-sss
+The heating of the tip mentioned before requires a huge amount of energy, which can be supplied only by the RF power present into the cavity. This is described by the Poynting vector $S_{RF} = E\times H_{RF}$. As discussed before a current is established in the tip, and flows through, subtracting energy to the EM field in the surroundings of the tip; the current flows through the tip and leave it at the edge, getting sprayed in the cavity according to the Fowler-Nordheim theory. Since any current flowing creates an associated magnetic field, the power flow due to the emission is given by $S_{FN}=E\times H_{FN}$. 
 
+The key point is that since the copper is a very good conductor, so to provoke a notable ohmic heating of the tip, a significant power flow through the tip is necessary. This can be calculated evaluating the $S_{FN}$ at a distance $d=h$ from the edge of the tip, where the electric field is not perturbed anymore by the shape of the tip itself. This can be formulated as the condition 
+\begin{equation}
+P_{RF} \ge P_{FN} \gg P_{loss}
+\end{equation}
+where $P_{loss}$ is the power lost for ohmic heating and $P_{FN}$ the power flow through the tip.
 
+Considering now the relative phase of the $P_{RF}$ and of the $P_{FN}$ it is possible to derive an expression for the power emitted in a copper cavity
+\begin{equation}
+P_{FN} (t) = A \, E^3_0 \, sin^3 \omega t \,  \, exp \left ( \frac{-62}{\beta E_0 \, sin \, \omega t} \right )
+\end{equation}
+where the work function for the copper have been used is $\phi = 4.5 \, eV$, $A$ is the area of the conductor and $\omega = 2 \pi f$ is the angular velocity.
 
+The RF power can be divided in real and imaginary part, with a phase shift of $90^\circ$. The real part is the energy propagating into the structure only and the imaginary part is the energy stored in the cavity both magnetically or electrically as happens in every resonant cavity. Since the active power flow is more efficient than the reactive one in providing power for the field emission, a weighting factor $g_c$ is introduced. Also for practice reasons since all the simulation codes work using the complex Poynting vector $\bar{S}$, the precedent reasoning can be adapted to meet the custom, using the \textit{Modified Poynting Vector}
+\begin{equation}
+S_c = Re\{ \bar{S} \} + g_c \, Im \{ \bar{S} \} \qquad [W/\mu m^2]
+\end{equation} 
 
+Since this quantity can be calculated in any point of a structure, this allows to identify in advance the regions which are more sensible to the breakdown process. The rule of thumb given by the current experience says that this quantity should not exceed the value of $5 W/\mu m^2$ to have a breakdown rate smaller than $1\times 10^{-6} \, bpp \, m^{-1}$ with a pulse length of 200 ns.
+
+This quantity have been used successfully to design all the last generations of CLIC structures, including the one tested in this work.
 
 
