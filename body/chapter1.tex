@@ -3,7 +3,11 @@
 
 \chapter[Accelerating structures]{Accelerating structures}
 
-\section[Accelerating structures]{Accelerating structures}
+The accelerating structures are one of the key part of a particle accelerator. Even if in the first accelerators the particle acceleration was achieved simply with fixed fields, this technique showed its limitations quite soon due to the impossibility to create arbitrary high DC voltages without incur in electrostatic discharges. Nowadays the conventional technology for particle acceleration is based on the RF cavities, so is natural to push the state-of-the-art technology the further possible in order to reach the highest acceleration possible in the shortest length. In the case of the CLIC project a key issue is to be able to produce cavities with an accelerating field of 100 MV/m, which is the cutting-edge at the moment.
+
+In this chapter some topics about accelerating cavities will be presented, with particular attention to the travelling-wave accelerating structures and the limitations of such parts.
+
+\section[Travelling wave accelerating structures]{Travelling wave accelerating structures}
 
 \subsection[Elements of electromagnetism]{Elements of electromagnetism}
 
@@ -17,16 +21,19 @@ $\nabla . \vec{D} = \rho_{free}$			\hspace{10mm}				&	$\nabla . \vec{B} = 0	$	& 
 $\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}$		&	$\nabla \times \vec{H} = \vec{J}_{cond} + \frac{\partial \vec{D}}{\partial t}	$ &\\
 \end{tabular}
 \end{center}
-where $\vec{D} = \epsilon \vec{E}$, $\vec{B} = \mu \vec{H}$ and $\vec{E} = \sigma \vec{J}$ (the full derivation and further details on the notation are available in any book on classical electromagnetism, such as \cite{Botta:EM, Jackson:ClassEM}). The propagation in vacuum is described by the same equations and can be easily derived from the (2.1) with the choice of the appropriate constants.
+where $\vec{D} = \epsilon \vec{E}$, $\vec{B} = \mu \vec{H}$ and $\vec{E} = \sigma \vec{J}$. The propagation in vacuum is described by the same equations and can be easily derived chosing of the appropriate constants.
 
 \subsubsection{Confined propagation of EM waves}
 
-In some particular cases the confined propagation of electromagnetic waves is possible, and realised using a metal waveguide to lead all the energy in a single direction. In this section some useful results on the propagation in a waveguide will be stressed. 
+In some particular cases the confined propagation of electromagnetic waves is possible, and is commonly realised using a metal waveguide to direct all the energy in a single direction. In this section some useful results on the propagation in a waveguide will be stressed, the full derivation can be found in \cite{Botta:EM, Jackson:ClassEM}. 
 
-%%%%%bello ma non bellissimo
+The request of propagation in the direction of the axis of the waveguide can be traduced to the condition $\vec{E} \times \vec{n} = 0$, that means asking that no power is dissipated in the walls of the cavity since the electric field is normal to the surface anywhere and anytime.
 
-Using the set of equation (2.1) and asking that the electric field is normal to the surface to avoid power dissipation due to the Joule effect (so $\vec{E} \times \vec{n} = 0$), it can be derived the set of admitted solutions for the propagation of the EM waves. Among the solutions, the most important are the \textit{Transverse Magnetic} solutions (T.M.), where the axial component of the magnetic field is null, and the \textit{Transverse Electric} solutions (T.E.), which is the same for the electric field.
+%% EXPLAIN PROPAGATION MODES ???
 
+%Using the set of equation (2.1) and asking that the electric field is normal to the surface in any time and anywhere to avoid power dissipation due to the Joule effect (so $\vec{E} \times \vec{n} = 0$), it can be derived the set of admitted solutions for the propagation of the EM waves. Among the solutions, the most important are the \textit{Transverse Magnetic} solutions (T.M.), where the axial component of the magnetic field is null, and the \textit{Transverse Electric} solutions (T.E.), which is the same for the electric field.
+
+The phase velocity can be expressed as 
 
 
 
@@ -64,10 +71,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui sem, aliquam id
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui sem, aliquam id ultricies sit amet, fermentum at magna. Aenean vitae rhoncus leo. Fusce gravida consequat lacus, a porta risus bibendum semper. Morbi eget auctor velit. Pellentesque eu lacinia nisi. Maecenas sed orci eu erat porta imperdiet ac non dui. Pellentesque a odio ac quam euismod tempor. Nulla in dapibus mauris, a sodales ex. In imperdiet enim sed ornare sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vehicula metus eu nisi ornare euismod. Proin at ex non ex iaculis porta.
 
 
+\subsection[Figure of merit for accelerating structures]{Figure of merit for accelerating structures}
 
-\subsection[TD26 structures for the Main Beam of CLIC]{TD26 structures for the Main Beam of CLIC}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui sem, aliquam id ultricies sit amet, fermentum at magna. Aenean vitae rhoncus leo. Fusce gravida consequat lacus, a porta risus bibendum semper. Morbi eget auctor velit. Pellentesque eu lacinia nisi. Maecenas sed orci eu erat porta imperdiet ac non dui. Pellentesque a odio ac quam euismod tempor. Nulla in dapibus mauris, a sodales ex. In imperdiet enim sed ornare sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vehicula metus eu nisi ornare euismod. Proin at ex non ex iaculis porta.
+R/Q and stuff like that
 
+something about the fact that simulation and not analitical laws are used
 
 
 \section[High power limits and scaling laws]{High power limits and scaling laws}
@@ -215,5 +223,22 @@ S_c = Re\{ \bar{S} \} + g_c \, Im \{ \bar{S} \} \qquad [W/\mu m^2]
 Since this quantity can be calculated in any point of a structure, this allows to identify in advance the regions which are more sensible to the breakdown process. The rule of thumb given by the current experience says that this quantity should not exceed the value of $5 W/\mu m^2$ to have a breakdown rate smaller than $1\times 10^{-6} \, bpp \, m^{-1}$ with a pulse length of 200 ns.
 
 This quantity have been used successfully to design all the last generations of CLIC structures, including the one tested in this work.
+
+
+
+
+
+
+\section[The TD26CC structure for the Main Beam of CLIC]{The TD26CC structure for the Main Beam of CLIC}
+
+After the precedent part about the general laws that regulate the operation of the TWS, now will be presented the structure under test in this work, the CLIC\_G \textit{TD26CC}, which stays for Tapered, Damped, 26-cells active cells structure with Compact Couplers.
+
+It's necessary to keep present in mind that in the design of the real cavities, it's almost never possible to use the general laws described in precedence because of the high complexity of the geometries. A great work of design and simulation is necessary then, and is carried out with complex numerical simulations. In this section will be presented a summa of the parameters of the cavity, the details can be found in \cite{CLIC:cdr,Grudiev:td26cc,Lunin:1333709}.
+
+
+
+
+
+
 
 
