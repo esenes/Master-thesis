@@ -3,17 +3,17 @@
 
 \chapter[Accelerating structures]{Accelerating structures}
 
-The accelerating structures are one of the key part of a particle accelerator. Even if in the first accelerators the particle acceleration was achieved simply with fixed fields, this technique showed its limitations quite soon due to the impossibility to create arbitrary high DC voltages without incur in electrostatic discharges. Nowadays the conventional technology for particle acceleration is based on the RF cavities, so is natural to push the state-of-the-art technology the further possible in order to reach the highest acceleration possible in the shortest length. In the case of the CLIC project a key issue is to be able to produce cavities with an accelerating field of 100 MV/m, which is the cutting-edge at the moment.
+The accelerating structures are one of the key part of a particle accelerator. Even though in the first accelerators the particle acceleration was achieved simply with fixed fields, this technique showed its limitations quite soon due to the impossibility to create arbitrary high DC voltages without incur in electrostatic discharges. Nowadays the conventional technology for particle acceleration is based on the RF cavities, so it is natural to push the state-of-the-art technology the further possible in order to reach the highest acceleration possible in the shortest length. In the case of the CLIC project a key issue is to be able to produce cavities with an accelerating field of 100 MV/m, which is the cutting-edge value at the moment when keeping the breakdown rate limited.
 
-In this chapter some topics about accelerating cavities will be presented, with particular attention to the travelling-wave accelerating structures and the limitations of such parts.
+In this chapter some topics about accelerating cavities will be presented, with particular attention to the travelling-wave accelerating structures and the limitations of such parts. Further details on different cavities types and their design and working principle are available in \cite{Wangler:RF_LINAC} and \cite{Humphries:107756}.
 
 \section[Travelling wave accelerating structures]{Travelling wave accelerating structures}
 
-\subsection[Elements of electromagnetism]{Elements of electromagnetism}
+\subsection[Reminder of electromagnetism]{Reminder of electromagnetism}
 
-\subsubsection{Maxwell's equations in a medium}
+\subsubsection{Maxwell's equations}
 
-It's well known since the basic courses of physics that the electromagnetic waves follow the Maxwell's equations, that in a medium are
+It's well known since the basic courses of physics that the propagation of the electromagnetic fields follow the Maxwell's equations, that in a medium are
 
 \begin{center}
 \begin{tabular}{ l l r }
@@ -21,29 +21,28 @@ $\nabla . \vec{D} = \rho_{free}$			\hspace{10mm}				&	$\nabla . \vec{B} = 0	$	& 
 $\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}$		&	$\nabla \times \vec{H} = \vec{J}_{cond} + \frac{\partial \vec{D}}{\partial t}	$ &\\
 \end{tabular}
 \end{center}
-where $\vec{D} = \epsilon \vec{E}$, $\vec{B} = \mu \vec{H}$ and $\vec{E} = \sigma \vec{J}$. The propagation in vacuum is described by the same equations and can be easily derived chosing of the appropriate constants.
+where $\vec{E}$ and $\vec{B}$ are the electric and magnetic field in the vacuum, $\vec{D} = \epsilon \vec{E}$, $\vec{B} = \mu \vec{H}$ and $\vec{E} = \sigma \vec{J}$. The propagation in vacuum is described by the same equations and can be easily derived with an appropriate choice of the constants.
 
-\subsubsection{Confined propagation of EM waves}
+\subsubsection[Waveguides and cavities]{Waveguides and cavities}
 
 In some particular cases the confined propagation of electromagnetic waves is possible, and is commonly realised using a metal waveguide to direct all the energy in a single direction. In this section some useful results on the propagation in a waveguide will be stressed, the full derivation can be found in \cite{Botta:EM, Jackson:ClassEM}. 
 
 The request of propagation in the direction of the axis of the waveguide can be traduced to the condition $\vec{E} \times \vec{n} = 0$, that means asking that no power is dissipated in the walls of the cavity since the electric field is normal to the surface anywhere and anytime.
 
-%% EXPLAIN PROPAGATION MODES ???
+Many solutions can be found to the problem, integrating the Maxwell's equations with the given boundary condition, but without entering in the calculations, the most interesting solutions belong to two classes:
+\begin{itemize}
+\item \textbf{TM modes:} Transverse Magnetic modes, where the axial component of the magnetic field is null
+\item \textbf{TE modes:} Transverse Electric modes, where the axial component of the electric field is null
+\end{itemize}
+where every mode has a particular cutoff frequency, and will propagate a wave only in case that the condition $\omega > \omega_c$ is met (where $\omega_c = 2\pi f_c$ and $f_c$ is the cutoff frequency of the mode). The cutoff frequency depends mainly by the geometry of the guide utilised, and waves with a frequency lower than the cutoff frequency will be exponentially damped.
 
-%Using the set of equation (2.1) and asking that the electric field is normal to the surface in any time and anywhere to avoid power dissipation due to the Joule effect (so $\vec{E} \times \vec{n} = 0$), it can be derived the set of admitted solutions for the propagation of the EM waves. Among the solutions, the most important are the \textit{Transverse Magnetic} solutions (T.M.), where the axial component of the magnetic field is null, and the \textit{Transverse Electric} solutions (T.E.), which is the same for the electric field.
-
-The phase velocity can be expressed as 
-
-
-
-\subsubsection[Particle acceleration]{Particle acceleration}
-
-\cite{Kilpatrick:slides}
+A particular case is represented by the \textit{Resonant Cavities}, which are closed waveguides (e.g. a cylindrical cavity, or \textit{pillbox cavity}, is composed of a circular waveguide closed by two planes at the extremities). In the resonant cavities the EM field can resonate according to the eigenfrequencies of the
 
 
 
-\subsection[Periodic structures and synchronous acceleration]{Periodic structures and synchronous acceleration}
+
+
+\subsection[Periodic structures and synchronous particle acceleration]{Periodic structures and synchronous particle \\acceleration}
 
 In order to deliver a  constant energy gain to a charged particle two conditions have to be met:
 
