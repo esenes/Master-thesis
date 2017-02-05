@@ -3,13 +3,13 @@
 
 \chapter[Accelerating structures]{Accelerating structures}
 
-The accelerating structures are one of the key part of a particle accelerator. Even though in the first accelerators the particle acceleration was achieved simply with fixed fields, this technique showed its limitations quite soon due to the impossibility to create arbitrary high DC voltages without incur in electrostatic discharges. Nowadays the conventional technology for particle acceleration is based on the RF cavities, so it is natural to push the state-of-the-art technology the further possible in order to reach the highest acceleration possible in the shortest length. In the case of the CLIC project a key issue is to be able to produce cavities with an accelerating field of 100 MV/m, which is the cutting-edge value at the moment when keeping the breakdown rate limited.
+The accelerating structures are one of the key part of a particle accelerator. Even though in the first accelerators the particle acceleration was achieved simply with fixed fields, this technique showed its limitations quite soon due to the impossibility to create arbitrary high DC voltages without incur in electrostatic discharges. The present conventional technology for particle acceleration is based on the RF cavities, so it is natural try to push the state-of-the-art technology the further possible in order to reach the highest acceleration possible in the shortest length. In the case of the CLIC project a key issue is to be able to produce cavities with an accelerating field of 100 MV/m, which is the cutting-edge value at the moment when keeping the breakdown rate limited.
 
-In this chapter some topics about accelerating cavities will be presented, with particular attention to the travelling-wave accelerating structures and the limitations of such parts. Further details on different cavities types and their design and working principle are available in \cite{Wangler:RF_LINAC} and \cite{Humphries:107756}.
+In this chapter some topics about the theory of accelerating cavities will be presented, the aim is to give to the reader a theoretical introduction to be able to understand the description of the cavity under test at the end of the chapter.
 
 \section[Travelling wave accelerating structures]{Travelling wave accelerating structures}
 
-In this section some useful concepts and result of the electromagnetic theory will be recalled. Because of conciseness, the examples and the geometries presented will refer mostly to the travelling wave accelerating structures, since is the only type of structure relevant for the successive development of this work. The curious reader can find details on the untreated topics in \cite{Weiss:261732,Wangler:RF_LINAC} and in plenty of specialised books.
+In this section some useful concepts and result of the electromagnetic theory will be recalled. Because of conciseness, the examples and the geometries presented will refer mostly to the travelling wave accelerating structures, since is the only type of structure relevant for the successive development of this work. The curious reader can find details on the untreated topics in \cite{Weiss:261732,Wangler:RF_LINAC,Humphries:107756} and in plenty of specialised books.
 
 \subsection[Synchronous particle acceleration]{Synchronous particle acceleration}
 
@@ -25,50 +25,54 @@ In order to deliver a  constant energy gain to a charged particle it is necessar
 \item The electromagnetic wave has to have a non-zero component in the direction of the motion of the particle
 \item The phase velocity of a wave has to be the same of the particle velocity, in order to keep the relative phase constant, and so the acceleration
 \end{enumerate}
-using some results of the theory of EM waves it is possible to show that the two condition cannot be met in the free space, but is necessary to build up some particular structures in order to coerce the electromagnetic field to propagate in the form needed. This is realised building particular structures that are similar to traditional waveguides, but presenting a lower phase velocity in order to make the synchronous acceleration possible.
+using some results of the theory of EM waves it is possible to show that the two condition cannot be met in the free space, but is necessary to build up some particular structures in order to coerce the electromagnetic field to propagate in the desired form. This is realised building particular structures that are similar to traditional waveguides, but presenting a lower phase velocity in order to make the synchronous acceleration possible.
 
 
-\subsection[Reminder of electromagnetism]{Reminder of electromagnetism}
+\subsection[Reminder of Electromagnetism]{Reminder of Electromagnetism}
 
 \subsubsection{Maxwell's equations}
 
 It's well known since the basic courses of physics that the propagation of the electromagnetic fields follow the Maxwell's equations, that in a medium are
 
-\begin{center}
-\begin{tabular}{ l l r }
-$\nabla . \vec{D} = \rho_{free}$			\hspace{10mm}				&	$\nabla . \vec{B} = 0	$	& \hspace{10mm} \multirow{2}{*}{(2.1)}\\
-$\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}$		&	$\nabla \times \vec{H} = \vec{J}_{cond} + \frac{\partial \vec{D}}{\partial t}	$ &\\
-\end{tabular}
-\end{center}
+\begin{equation}
+\begin{aligned}
+\nabla . \vec{D} = \rho_{free}\\
+\nabla . \vec{B} = 0\\
+\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}\\
+\nabla \times \vec{H} = \vec{J}_{cond} + \frac{\partial \vec{D}}{\partial t}
+\end{aligned}
+\end{equation}
+%%%%%%%%%%%%%%%STILL TO FIND A WAY TO ALIGN IT TO THE RIGHT
 where $\vec{E}$ and $\vec{B}$ are the electric and magnetic field in the vacuum, $\vec{D} = \epsilon \vec{E}$, $\vec{B} = \mu \vec{H}$ and $\vec{E} = \sigma \vec{J}$. The propagation in vacuum is described by the same equations and can be easily derived with an appropriate choice of the constants.
 
 \subsubsection[Waveguides and resonant cavities]{Waveguides and resonant cavities}
 
 In some particular cases the confined propagation of electromagnetic waves is possible, and is commonly realised using a metal waveguide to direct all the energy in a single direction. In this section some useful results on the propagation in a waveguide will be stressed, the full derivation can be found in literature \cite{Botta:EM, Jackson:ClassEM,Weiss:261732}. 
 
-The request of propagation in the direction of the axis of the waveguide can be traduced to the condition $\vec{E} \times \vec{n} = 0$, that means asking that no power is dissipated in the walls of the cavity since the electric field is normal to the surface anywhere and anytime.
+The request of propagation in the direction of the axis of the waveguide can be traduced to the condition $\vec{E} \times \vec{n} = 0$, that means asking that no power is dissipated in the walls of the cavity by Joule effect since the electric field is normal to the surface anywhere and anytime.
 
 Many solutions can be found to the problem, integrating the Maxwell's equations with the given boundary condition, but without entering in the calculations, the most interesting solutions belong to two classes:
 \begin{itemize}
 \item \textbf{TM modes:} Transverse Magnetic modes, where the axial component of the magnetic field is null
 \item \textbf{TE modes:} Transverse Electric modes, where the axial component of the electric field is null
 \end{itemize}
-where every mode has a particular cutoff frequency, and will propagate a wave only in case that the condition $\omega > \omega_c$ is met (where $\omega_c = 2\pi f_c$ and $f_c$ is the cutoff frequency of the mode). The cutoff frequency depends mainly by the geometry of the guide utilised, and waves with a frequency lower than the cutoff frequency will be exponentially damped.
+where every mode has a particular cutoff frequency, and will propagate a wave only in case that the condition $\omega > \omega_c$ is met (where $\omega_c = 2\pi f_c$ and $f_c$ is the cutoff frequency of the mode). The cutoff frequency of each mode depends mainly by the geometry of the guide utilised, and waves with a frequency lower than the cutoff frequency will be exponentially damped.
 
-For particle acceleration purposes, the fundamental feature of a waveguide is that the \textit{phase velocity} is $v_p = \frac{\omega}{k} > c$. That's not surprising and can be understood with simple geometrical considerations\cite{Weiss:261732}, furthermore in principle there is no reason to put an upper limit to the phase velocity, since the phase is a geometrical physical quantity. The dispersion relation for a uniform waveguide can be expressed as 
+For particle acceleration purposes, the fundamental feature of a waveguide is that the \textit{phase velocity} is $v_p = \frac{\omega}{k} > c$, so it's not suitable for particle synchronous acceleration. That's not surprising and can be understood with simple geometrical considerations\cite{Weiss:261732}, furthermore in principle there is no reason to put an upper limit to the phase velocity, since the phase is a geometrical physical quantity. The dispersion relation for a uniform waveguide can be expressed as 
 \begin{equation}
 \omega^2 = \omega^2_c + (k_0 \, c)^2
 \end{equation}
 where $\omega_c = K \, c$ and $K$ is the cutoff wavenumber.
 
-The \textit{group velocity} instead is $v_g = \frac{\partial w}{\partial k} < c$ as expected for the physical quantity representing the speed of propagation of the EM wave. In any case, waveguides are widely used in particle accelerators to deliver the RF power form the production equipment to the accelerating cavities.
+The \textit{group velocity} instead is $v_g = \frac{\partial w}{\partial k} < c$ as expected for the physical quantity representing the speed of propagation of the EM wave according to Relativity. 
+In any case, waveguides are a key building block of particle accelerators to deliver the RF power form the production equipment to the accelerating cavities.
 
-A particular case is represented by the \textit{Resonant Cavities}, which are closed waveguides (e.g. a cylindrical cavity, or \textit{pillbox cavity}, is composed of a circular waveguide closed by two planes at the extremities). In the resonant cavities the EM field can resonate according to the peculiar eigenfrequencies of the system, which are mainly dictated by the geometry. This process allows propagation of just a set of frequencies, just like in the WGs, but when a cavity is operating at one of the eigenfrequency starts to accumulate energy because of the resonance.
+A particular case is represented by the \textit{Resonant Cavities}, which are closed waveguides at the terminations (e.g. a cylindrical cavity, or \textit{pillbox cavity}, is composed of a circular waveguide closed by two planes at the extremities). In the resonant cavities the EM field can resonate according to the peculiar eigenfrequencies of the system, which are mainly dictated by the geometry. This process allows propagation of just a set of frequencies, just like in the WGs, but when a cavity is operating at one of the eigenfrequency starts to accumulate energy because of the resonance. This mechanism is utilised in accelerating structures.
 
 
 \subsection[Periodic accelerating structures]{Periodic accelerating structures}
 
-In the last section have been mentioned that the waveguides themselves are not useful to accelerate particles because of the excessive phase velocity. However it's possible to reduce it loading the structure with additional metallic structures, which consists some metallic walls placed orthogonally to the axis of the cavity. A schematic example is presented in figure \ref{ACS_scheme}
+In the last section have been mentioned that the waveguides themselves are not useful to accelerate particles because of the excessive phase velocity. However it's possible to reduce it loading the structure with additional metallic structures, which consists some metallic walls placed orthogonally to the axis of the cavity.  Such structures are named \textit{Disk (or Iris) Loaded Accelerating Structures}. A schematic example is presented in figure \ref{ACS_scheme}
 
 \begin{figure}[h]
 \centering
@@ -85,11 +89,11 @@ From the field perspective, the fact that the accelerating structure is loaded w
 
 The geometry of the accelerating structure can be seen as a cylindrical cavity loaded regularly with the disks. If as first approximation we consider an infinite structure, it is possible to use the \textit{Floquet's Theorem}, that can be summarised as follows: \textit{"In a given mode of an infinite periodic structure, the fields at two different cross sections that are separated by one period differ only by a constant factor, which in general is a complex number"}. This has two main implications: there are some regions of the spectrum of $\omega$ that don't allow the waves to propagate, called \textit{stopbands}, and others, called \textit{passbands}, where the propagation is allowed with a \textit{phase shift} $\Delta \phi = k_0 d$, where d is the length of the cell. The phase advance per cell is a peculiar parameter of every structure, and is defined in the design phase.
 
-The waves that are allowed to propagate in such conditions are called \textit{Space Armonics}, and are an infinite number of waves propagating at the same frequency but with different wavenumbers. The dispersion relation becomes
+The waves that are allowed to propagate in such conditions are called \textit{Space Armonics}, and can be seen as an infinite number of waves propagating at the same frequency but with different wavenumbers. The dispersion relation becomes
 \begin{equation}
 \omega ^2 = \omega^2_c + c^2 \left( k_0 + \frac{2\pi n}{d} \right)^2
 \end{equation}
-where the principal wave has $n=0$ and the others have $n$ according to the direction of propagation.
+where the principal wave of the mode has $n=0$ and the others have $n$ according to the direction of propagation.
 
 The phase velocity of the n-th harmonic becomes
 \begin{equation}
@@ -105,7 +109,7 @@ The comparison of the phase velocity of a waveguide and accelerating structure i
 \centering
 
 \includegraphics[scale=0.4]{pictures/vp}
-\caption{Brillouin diagram of a uniform waveguide (red) compared to a disk-loaded accelerating structure (green)  \cite{Kovermann:1330346}}
+\caption{Brillouin diagram of a uniform waveguide (red) compared to a disk-loaded accelerating structure (green) \cite{Kovermann:1330346}}
 \label{vp_fig}
 
 \end{figure}
