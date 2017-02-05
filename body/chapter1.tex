@@ -322,25 +322,67 @@ This quantity have been used successfully to design all the last generations of 
 
 \section[The TD26CC structure for the Main Beam of CLIC]{The TD26CC structure for the Main Beam of CLIC}
 
-After the precedent part about the general laws that regulate the operation of the TWS, now will be presented the structure under test in this work, the CLIC\_G \textit{TD26CC}, which stays for Tapered, Damped, 26-cells active cells structure with Compact Couplers.
+After the precedent part about the general laws that regulate the operation of the TWS, now will be presented the structure under test in this work, the TD26CC, which stays for Tapered, Damped, 26-cells active cells structure with Compact Couplers.
 
 It's necessary to keep present in mind that in the design of the real cavities, it's almost never possible to use the general laws described in precedence because of the high complexity of the geometries. A great work of design and simulation is necessary then, and is carried out with complex numerical simulations. In this section will be presented a summa of the parameters of the cavity, the details can be found in \cite{CLIC:cdr,Grudiev:td26cc,Lunin:1333709}.
 
+As pointed out in \cite{CLIC:cdr}, the main constraints in the structures for the main beam LINAC are 
+\begin{enumerate}
+\item Maximum surface electric field: $E_{surf}^{max} < 260 \, MV/m$
+\item Pulsed surface heating: $\Delta T^{max} < 56 \,K$
+\item Power density: $P_{in}/C\tau_p^{1/3} < 18 MW/mm \, ns^{1/3}$
+\end{enumerate}
+where $P_{in}$ is the input power, $C$ is the input iris circumference and $\tau_p$ is the pulse length.
 
-STUFF STUFF STUFF
+These limitations, together with the parameters listed in the section 1.2.2, brought to the current design after a long simulation and tradeoff of the parameters. The main parameters are reported in Table \ref{TD26_param_1}
 
-CDR LIMITS
+\begin{table}[h]
+  \centering
+    \begin{tabular}{ l l  }
+    \hline
+    \hline
+    Average loaded accelerating gradient			& $100\, MV/m$	\\
+    Frequency								& $12 \, GHz$	\\        
+    RF phase advance per cell					& $2/3 \, \pi \, rad$	\\       
+    Average iris radius to wavelength ratio			& $0.11$	\\ 
+    Input, output iris radii      					& $3.15, \, 2.35 \, mm$	\\
+    Input, output iris thickness      				& $1.67, \, 1.00 \, mm$	\\
+    Input, output group velocity					& $1.65, \, 0.83 \, \% \text{ of }c $	\\
+    First, last cell Q-factor						& $5536,\,5738$\\
+    First, last cell shunt impedance				& $81,\,103\, M\Omega / m$\\
+    Number of regular cells						& $26$	\\   
+    Structure length including couplers			& $230 \,mm$	\\   
+    Filling time								& $67 \, ns$	\\               
+    Total pulse length							& $242 \, ns$	\\      
+    Peak input power 							& $61.3 \, MW$	\\        
+    RF-to-beam efficiency						& $27.7 \%$	\\   
+    Maximum surface electric field				& $230 \, MV/m$	\\           
+    Maximum pulsed surface heating				& $47 \, K$	\\       
+    \hline
+    \hline
+    %%%%%%%%%%%TABLE STILL TO FIX
+    \end{tabular}
+  \caption{Parameters of the structure}
+\label{TD26_param_1}
+\end{table}
 
-PARAMS
+The structure is realised stacking machined copper disks that are then brazed together with a particular procedure that have been elaborated in order to achieve the highest mechanical precision possible in the alignment of the parts. In figure \ref{CLICdisk} are shown a disk a model of the accelerating structure. Please note that the only difference between the model in the figure and the prototype under test is the absence of the wakefield monitor in the prototype. 
 
+ \begin{figure}
+ \centering
+ \subfigure[A disk composing the structure]
+   {\includegraphics[scale=0.16]{pictures/photo_disk}}
+ \hspace{5mm}
+ \subfigure[CAD model of the structure, open to show the damping material]
+   {\includegraphics[scale=0.25]{pictures/TD26_layout}}
+ \caption{A disk composing the structure (left) and the scheme of an accelerating structure (right), including couplers for the RF, cooling elements and connection flanges}
+ \label{CLICdisk}
+ 
+ \end{figure}
 
+Because of the high number of bunches per train and of the short spacing between them, the structure is realised in order to extract the transverse wakefields that can develop in the structure. This is realised using 4 symmetrical waveguides of dimensions carefully selected in order to extract just the higher order electromagnetic modes (HOMs) but not the fundamental one that is used to accelerate the bunches and is provided from the input couplers. Once extracted, the transverse wakefields are dumped on tips of Silicon Carbide (SiC) that are placed at 50 mm of distance from the axis of the cavity.
 
-
-
-
-
-
-
+The iris radius and thickness are linearly tapered in order to optimise the various high power parameters and avoid the presence of 'hot spots' along the structure.The tapering also provide detuning of the high order modes, which are an issue even for highly damped structures.
 
 
 
