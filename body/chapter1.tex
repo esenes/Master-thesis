@@ -83,7 +83,8 @@ In the last section have been mentioned that the waveguides themselves are not u
 
 \end{figure}
 
-The accelerating structure is composed by \textit{cells}, which are connected by the \textit{iris} to the adjacent. The role of the irises is creating a free path for the passage of the beam and allowing the propagation of the EM field from the input coupler to the output one. In the case of room temperature cavities the material normally used is Copper, while for superconducting cavities the material can vary and also metallic cavities coated internally with a superconductive layer are a possibility.
+The accelerating structure is composed by \textit{cells}, which are connected by the \textit{iris} to the other adjacent cells. At the beginning and the end of the structure are present two special cells that are connected to the input and output coupler for the RF. Apart for the cells with the couplers, the structures present a full rotational symmetry on the beam axis.
+The role of the irises is creating a free path for the passage of the beam and allowing the propagation of the EM field from the input coupler to the output one. In the case of room temperature cavities the material normally used is Copper, while for superconducting cavities the material can vary and also metallic cavities coated internally with a superconductive layer are a possibility.
 
 From the field perspective, the fact that the accelerating structure is loaded with the disks changes the way that the EM waves propagate in the structure. I won't go through the full mathematical description, which is very detailed in \cite{ Jackson:ClassEM,Weiss:261732}, but simply give a general idea of the process and of the relevant results.
 
@@ -115,18 +116,57 @@ The comparison of the phase velocity of a waveguide and accelerating structure i
 \end{figure}
 
 
-\subsection[Constant gradient vs constant impedance structures]{Constant gradient vs constant impedance structures}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui sem, aliquam id ultricies sit amet, fermentum at magna. Aenean vitae rhoncus leo. Fusce gravida consequat lacus, a porta risus bibendum semper. Morbi eget auctor velit. Pellentesque eu lacinia nisi. Maecenas sed orci eu erat porta imperdiet ac non dui. Pellentesque a odio ac quam euismod tempor. Nulla in dapibus mauris, a sodales ex. In imperdiet enim sed ornare sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vehicula metus eu nisi ornare euismod. Proin at ex non ex iaculis porta.
+\subsection[Beam effect on the structure]{Beam effects on the structure}
 
-\subsection[Beam effect on the accelerating structure]{Beam effect on the accelerating structure}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui sem, aliquam id ultricies sit amet, fermentum at magna. Aenean vitae rhoncus leo. Fusce gravida consequat lacus, a porta risus bibendum semper. Morbi eget auctor velit. Pellentesque eu lacinia nisi. Maecenas sed orci eu erat porta imperdiet ac non dui. Pellentesque a odio ac quam euismod tempor. Nulla in dapibus mauris, a sodales ex. In imperdiet enim sed ornare sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vehicula metus eu nisi ornare euismod. Proin at ex non ex iaculis porta.
+So far the interaction of the RF with the accelerating structure have been described 
+
+
+
 
 
 \subsection[Figure of merit for accelerating structures]{Figure of merit for accelerating structures}
 
-R/Q and stuff like that
+To characterize the different accelerating structures, is necessary to rely on some significant quantities that can be derived by the geometry of the cavities. The most important figures of merit (FOMs) are the following (many different definitions are commonly used, here are reported in accordance with \cite{TECKER:RFCAS}):
+\begin{itemize}
 
-something about the fact that simulation and not analitical laws are used
+\item \textbf{Quality factor} 
+\begin{equation}
+Q_0 = \frac{\omega_0 U}{P_{loss}} 
+\end{equation}
+is a standard FOM for the resonant cavities, representing the stored energy over the power dissipated
+
+\item \textbf{Shunt impedance} 
+\begin{equation}
+R = \frac{V_{acc}^2}{2P_{loss}}  \quad [M\Omega]
+\end{equation}
+represent the effectiveness of producing an axial voltage $V_0$ for a given power dissipated. For long cavities, where is preferable to have a quantity that is independent by the length of the structure, is commonly used the Shunt impedance per unit length
+
+\begin{equation}
+Z = \frac{R}{L}  \quad [M\Omega / m]
+\end{equation}
+
+where L is the length of the cavity.
+
+\item \textbf{R over Q} 
+\begin{equation}
+\frac{R}{Q} = \frac{(V_{acc})^2}{2\omega_0 U} 
+\end{equation}
+represents the relation between the accelerating field and the stored energy
+
+
+\item \textbf{Filling time}
+\begin{equation}
+t_F = \int_0^L \frac{dz}{v_g (z)}
+\end{equation}
+time needed by the EM field to fill the structure
+
+\item \textbf{Power delivered to the beam}
+\begin{equation}
+P_B = \frac{I \Delta W}{q}
+\end{equation}
+where $I$ is the beam current and $\Delta W$ is the energy gain
+
+\end{itemize}
 
 
 \section[High power limits and scaling laws]{High power limits and scaling laws}
@@ -285,6 +325,18 @@ This quantity have been used successfully to design all the last generations of 
 After the precedent part about the general laws that regulate the operation of the TWS, now will be presented the structure under test in this work, the CLIC\_G \textit{TD26CC}, which stays for Tapered, Damped, 26-cells active cells structure with Compact Couplers.
 
 It's necessary to keep present in mind that in the design of the real cavities, it's almost never possible to use the general laws described in precedence because of the high complexity of the geometries. A great work of design and simulation is necessary then, and is carried out with complex numerical simulations. In this section will be presented a summa of the parameters of the cavity, the details can be found in \cite{CLIC:cdr,Grudiev:td26cc,Lunin:1333709}.
+
+
+STUFF STUFF STUFF
+
+CDR LIMITS
+
+PARAMS
+
+
+
+
+
 
 
 
