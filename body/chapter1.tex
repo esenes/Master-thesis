@@ -9,7 +9,7 @@ In this chapter some topics about the theory of accelerating cavities will be pr
 
 \section[Travelling wave accelerating structures]{Travelling wave accelerating structures}
 
-In this section some useful concepts and result of the electromagnetic theory will be recalled. Because of conciseness, the examples and the geometries presented will refer mostly to the travelling wave accelerating structures, since is the only type of structure relevant for the successive development of this work. The curious reader can find details on the untreated topics in \cite{Weiss:261732,Wangler:RF_LINAC,Humphries:107756} and in plenty of specialised books.
+In this section some useful concepts and result of the electromagnetic theory will be recalled. Because of conciseness, the examples and the geometries presented will refer to the travelling wave accelerating structures, since is the only type of structure relevant for the successive development of this work. The curious reader can find details on the untreated topics in \cite{Weiss:261732,Wangler:RF_LINAC,Humphries:107756} and in plenty of specialised books.
 
 \subsection[Synchronous particle acceleration]{Synchronous particle acceleration}
 
@@ -51,7 +51,7 @@ In some particular cases the confined propagation of electromagnetic waves is po
 
 The request of propagation in the direction of the axis of the waveguide can be traduced to the condition $\vec{E} \times \vec{n} = 0$, that means asking that no power is dissipated in the walls of the cavity by Joule effect since the electric field is normal to the surface anywhere and anytime.
 
-Many solutions can be found to the problem, integrating the Maxwell's equations with the given boundary condition, but without entering in the calculations, the most interesting solutions belong to two classes:
+Many solutions can be found to the problem, integrating the Maxwell's equations with the given boundary condition, but without entering in the calculations, the interesting solutions belong to two classes:
 \begin{itemize}
 \item \textbf{TM modes:} Transverse Magnetic modes, where the axial component of the magnetic field is null
 \item \textbf{TE modes:} Transverse Electric modes, where the axial component of the electric field is null
@@ -72,7 +72,7 @@ A particular case is represented by the \textit{Resonant Cavities}, which are cl
 
 \subsection[Periodic accelerating structures]{Periodic accelerating structures}
 
-In the last section have been mentioned that the waveguides themselves are not useful to accelerate particles because of the excessive phase velocity. However it's possible to reduce it loading the structure with additional metallic structures, which consists some metallic walls placed orthogonally to the axis of the cavity.  Such structures are named \textit{Disk (or Iris) Loaded Accelerating Structures}. A schematic example is presented in figure \ref{ACS_scheme}
+Above have been mentioned that the waveguides themselves are not useful to accelerate particles because of the excessive phase velocity. However it's possible to reduce it loading the structure with additional metallic structures, which consists some metallic walls placed orthogonally to the axis of the cavity.  Such structures are named \textit{Disk (or Iris) Loaded Accelerating Structures}. A schematic example is presented in figure \ref{ACS_scheme}
 
 \begin{figure}[h]
 \centering
@@ -116,14 +116,6 @@ The comparison of the phase velocity of a waveguide and accelerating structure i
 \end{figure}
 
 
-\subsection[Beam effect on the structure]{Beam effects on the structure}
-
-So far the interaction of the RF with the accelerating structure have been described 
-
-
-
-
-
 \subsection[Figure of merit for accelerating structures]{Figure of merit for accelerating structures}
 
 To characterize the different accelerating structures, is necessary to rely on some significant quantities that can be derived by the geometry of the cavities. The most important figures of merit (FOMs) are the following (many different definitions are commonly used, here are reported in accordance with \cite{TECKER:RFCAS}):
@@ -149,7 +141,7 @@ where L is the length of the cavity.
 
 \item \textbf{R over Q} 
 \begin{equation}
-\frac{R}{Q} = \frac{(V_{acc})^2}{2\omega_0 U} 
+\frac{R}{Q} = \frac{(V_{acc})^2}{2\omega_0 U}  \quad [M\Omega]
 \end{equation}
 represents the relation between the accelerating field and the stored energy
 
@@ -165,6 +157,12 @@ time needed by the EM field to fill the structure
 P_B = \frac{I \Delta W}{q}
 \end{equation}
 where $I$ is the beam current and $\Delta W$ is the energy gain
+
+\item \textbf{Beam loading ratio}
+\begin{equation}
+\epsilon_s = \frac{P_B}{P_{tot}}
+\end{equation}
+represents the fraction of power that is delivered to the beam
 
 \end{itemize}
 
@@ -182,7 +180,7 @@ The understanding of these phenomena is particularly challenging and requires a 
 
 The field emission law was theorised by Fowler and Nordheim in 1928 and rule the current emission from a metal with applied an intense electric field. The derivation was carried on calculating the tunnel probability of electrons of the conduction band through the perfectly flat and clean surface of a metal. \\The applied electric field modify the potential barrier, and the current density of emitted electrons can be derived as the following, giving the  \textit{Fowler-Nordheim equation} \cite{Fowler173}
 \begin{equation}
-J_F = \frac{ 1.54\times10^{-6} \times 10^{4.52\phi^{-0.5}} E^2}{  \phi } \, \text{exp} \left ( -\frac{6.53\times 10^9 \phi^{1.5}}{E} \right ) \quad [A.m^{-2}]  \label{FNlaw}
+J_F = \frac{ 1.54\times10^{-6} \times 10^{4.52\phi^{-0.5}} E^2}{  \phi } \, \text{exp} \left ( -\frac{6.53\times 10^9 \phi^{1.5}}{E} \right ) \quad [A\,m^{-2}]  \label{FNlaw}
 \end{equation}
 where $\phi$ is the work function of the material and $E$ is the applied electric field.
 
@@ -206,7 +204,7 @@ I_F = \frac{ 1.54\times10^{-6} \times 10^{4.52\phi^{-0.5}} A \beta^2 E^2}{  \phi
 \end{equation}
 where $\beta E$ is the local field, $\phi$ is the work function of the material and $A$ the area of the considered emitter.
 
- In the RF case the average current emitted is given by similar calculations, averaging the electric field on an RF period. The full calculation is stressed in \cite{Wang:1997ip}. 
+ In the RF case the average current emitted is given by similar calculations, averaging the electric field on an RF period  \cite{Wang:1997ip}. 
 
 Experimental evidence of the dark current emission have been detected by setups equipped with Faraday Cups, as in \cite{Wuensch:advaces}.
 
@@ -229,7 +227,7 @@ The emission of dark current seems to be a precursor of the breakdown  process, 
 
 \subsection[Kilpatrick's critereon]{Kilpatrick's critereon}
 
-The Kilpatrick's Critereon was the first attempt to create a high power limit valid both in DC and RF applications \cite{KilpLimit}. The model was based on the acknowledgement of the Field Emission, and suggesting that the vacuum arc was created by the cascade of secondary electrons ejected from the surface by ion bombardment.
+The Kilpatrick's Critereon was the first attempt to create a high power limit for the vacuum breakdown valid both in DC and RF applications \cite{KilpLimit}. The model was based on the acknowledgement of the Field Emission, and suggesting that the vacuum arc was created by the cascade of secondary electrons ejected from the surface by ion bombardment.
 
 Using data collected in the 1950's, the following empirical law was formulated
 \begin{equation}
@@ -258,15 +256,21 @@ The critereon was reviewed many times up to now, because the experiments conduct
 At the end of the 1980's J.D.Wang finally proposed a model based on microprotrusion effect on the field and field emission, that involves the formation of a micro-plasma during the breakdown process. Also the Kilpatrick's limit was revised again in order to match the experimental results. \cite{Wang:1986, kilp:story}
 
 
-\subsection{Power flow based criterion}
+\subsection[Power flow based criteria]{Power flow based criteria}
 
+Other scalings have been proposed, like the phenomenological $P/C$-criterion, where $P$ is the power flowing in the cavity and $C$ the minimum iris circumference. It's straightforward to see that this is strongly related to the maximum surface electrical field, which is stronger for smaller irises. Also have to be underlined that this is suitable just to travelling wave structures (TWS), since the power flow in standing wave structures (SWS) is close to zero. 
 
+In recent years a more advanced version of the scaling have been presented, which is quantified by
+\begin{equation}
+\frac{P \tau^{1/3}}{C}
+\end{equation}
+where $P$ is the power flow through the structure, $\tau$ the pulse length and $C$ the minimum iris circumference. This has also been formulated as $(f \times P/C )^{0.5}$, which is a quantity linear with the field \cite{Wuensch:1004189}.
+
+Anyway, although these criteria are still in use today for the accelerating structure design, finding a more general criterion valid for any type of cavity is necessary.
 
 \subsection{The modified Poynting vector $S_c$}
 
-Different other scalings have been proposed so far involving power flow, such as P/C scaling (related to the maximum surface electrical field) or a more advanced one  \cite{Wuensch:1004189}, but even the last one showed some deviations from expectations in part of the structures tested and is applicable just to travelling wave structures (TWS) since in standing wave structures (SWS) the power flow is close to zero.
-
-During the work on high gradient normal conducting accelerating structures for the CLIC project, was however developed a new field quantity, the \textit{Modified Poynting Vector} $S_c$, that is suitable both for TWS and SWS. \cite{Grudiev:newLoc}
+During the development of high gradient normal conducting accelerating structures for the CLIC project, was developed a new field quantity, the \textit{Modified Poynting Vector} $S_c$, that is suitable both for TWS and SWS. \cite{Grudiev:newLoc}
 
 The founding of this %%%TERRIBLE
 
