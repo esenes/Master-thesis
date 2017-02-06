@@ -260,7 +260,7 @@ At the end of the 1980's J.D.Wang finally proposed a model based on microprotrus
 
 Other scalings have been proposed, like the phenomenological $P/C$-criterion, where $P$ is the power flowing in the cavity and $C$ the minimum iris circumference. It's straightforward to see that this is strongly related to the maximum surface electrical field, which is stronger for smaller irises. Also have to be underlined that this is suitable just to travelling wave structures (TWS), since the power flow in standing wave structures (SWS) is close to zero. 
 
-In recent years a more advanced version of the scaling have been presented, which is quantified by
+In recent years a more advanced version of the scaling have been presented \cite{Wuensch:932674}, which is quantified by
 \begin{equation}
 \frac{P \tau^{1/3}}{C}
 \end{equation}
@@ -272,50 +272,50 @@ Anyway, although these criteria are still in use today for the accelerating stru
 
 During the development of high gradient normal conducting accelerating structures for the CLIC project, was developed a new field quantity, the \textit{Modified Poynting Vector} $S_c$, that is suitable both for TWS and SWS. \cite{Grudiev:newLoc}
 
-The founding of this %%%TERRIBLE
-
-are that: the breakdown process is a determined by the accumulation of the pulses rather than the single pulse and the possible triggers of the breakdown can be induced by many processes that will be discussed later and are not relevant for the scaling law derivation.
+The formulation is based on two assumptions: the breakdown process is a determined by the accumulation of the pulses rather than the single pulse and the possible triggers of the breakdown can be induced by many processes that will be discussed later and are not relevant for the scaling law derivation.
 
 A number of effects have to be taken into account (a simple geometry is considered, a cilindrical protrusion surmounted by a emispherical cap): 
 
 \subsubsection{Pulsed heating by field emission current}
 
-it's known that the field emission gets enhanced by the presence of the protrusion as described before, and in this case the field enhancement factor can be expressed as $\beta \simeq h/r$, where $h$ is the tip height and $r$ is the cap radius. So the tip will emit a current according to the Fowler-Nordheim law, causing in first approximation the heating of the tip due to the ohmic heating. Assuming that the edge of the tip will be the most heated part, and using the heat conduction equation, it is possible to derive the emitted current to bring the tip to the melted state, which is found to be approximately $36\, A/\mu m^2$ for a tip of $1 \, \mu m$ height and a pulse of $100\, ns$. This is consistent with the findings in \cite{soviet:1983}. The $\beta$ factor can be then derived, which is approximately between 40 and 60 considering a surface electric field in case of breakdown between 200 and 300 $MV/m$.
+it's known that the field emission gets enhanced by the presence of the protrusion as described before, and in this case the field enhancement factor can be expressed as $\beta \simeq h/r$, where $h$ is the tip height and $r$ is the cap radius. So the tip will emit a current according to the Fowler-Nordheim law \ref{If}, causing in first approximation the heating of the tip due to the ohmic heating as shown in figure \ref{figure_S_c}. Assuming that the edge of the tip will be the most heated part, and using the heat conduction equation, it is possible to derive the emitted current to bring the tip to the melted state, which is found to be approximately $36\, A/\mu m^2$ for a tip of $1 \, \mu m$ height and a pulse of $100\, ns$. This is consistent with the findings in \cite{soviet:1983}. The $\beta$ factor can be then derived, which is approximately between 40 and 60 considering a surface electric field in case of breakdown between 200 and 300 $MV/m$, in according with the experimental results.
 
-
-\begin{figure}[h]
-\centering
-
-\includegraphics[scale=0.3]{pictures/field_S_c}
-\caption{Electric field distribution around the protrusion considered. Arrows indicate the direction of the field and the color code the absolute value of the field, mapped logarithmically \cite{Grudiev:newLoc} }
-\label{kilpPlot}
-
-\end{figure}
+ \begin{figure}
+ \centering
+ \subfigure[Electric field distribution]
+   {\includegraphics[width=6cm,height=5cm]{pictures/field_S_c}}
+ \hspace{5mm}
+ \subfigure[Field emitted power flow]
+   {\includegraphics[width=6cm,height=5cm]{pictures/S_c_FEM}}
+ \caption{(a) Electric field distribution around the protrusion considered. (b) Field emitted current and power flow. In both the plots arrows indicate the direction of the field and the color code the absolute value of the field, mapped logarithmically.\cite{Grudiev:newLoc} }
+ \label{figure_S_c}
+ 
+ \end{figure}
 
 
 
 \subsubsection{Power flow near an emission site}
 
-The heating of the tip mentioned before requires a huge amount of energy, which can be supplied only by the RF power present into the cavity. This is described by the Poynting vector $S_{RF} = E\times H_{RF}$. As discussed before a current is established in the tip, and flows through, subtracting energy to the EM field in the surroundings of the tip; the current flows through the tip and leave it at the edge, getting sprayed in the cavity according to the Fowler-Nordheim theory. Since any current flowing creates an associated magnetic field, the power flow due to the emission is given by $S_{FN}=E\times H_{FN}$. 
+The heating of the tip mentioned before requires a huge amount of energy, which can be supplied only by the RF power present into the cavity. This is described by the Poynting vector $S_{RF} = E\times H_{RF}$. As discussed before a current is established in the tip, and flows through, subtracting energy to the EM field in the surroundings of the tip. The current flows through the tip and leave it at the edge, getting sprayed in the cavity according to the Fowler-Nordheim theory. Since any current flowing creates an associated magnetic field, the power flow due to the emission is given by $S_{FN}=E\times H_{FN}$. 
 
-The key point is that since the copper is a very good conductor, so to provoke a notable ohmic heating of the tip, a significant power flow through the tip is necessary. This can be calculated evaluating the $S_{FN}$ at a distance $d=h$ from the edge of the tip, where the electric field is not perturbed anymore by the shape of the tip itself. This can be formulated as the condition 
+The key point is that since the copper is a very good conductor, to provoke a notable ohmic heating of the tip, a significant power flow through the tip is necessary. This can be calculated evaluating the $S_{FN}$ at a distance $d=h$ from the edge of the tip, where the electric field is not perturbed anymore by the shape of the tip itself. This can be formulated as the condition 
 \begin{equation}
 P_{RF} \ge P_{FN} \gg P_{loss}
 \end{equation}
 where $P_{loss}$ is the power lost for ohmic heating and $P_{FN}$ the power flow through the tip.
 
-Considering now the relative phase of the $P_{RF}$ and of the $P_{FN}$ it is possible to derive an expression for the power emitted in a copper cavity
+Considering now the relative phase of the $P_{RF}$ and of the $P_{FN}$ it is possible to derive an expression for the power emitted from the tip in a copper cavity
 \begin{equation}
 P_{FN} (t) = A \, E^3_0 \, sin^3 \omega t \,  \, exp \left ( \frac{-62}{\beta E_0 \, sin \, \omega t} \right )
 \end{equation}
-where the work function for the copper have been used is $\phi = 4.5 \, eV$, $A$ is the area of the conductor and $\omega = 2 \pi f$ is the angular velocity.
+where have been used the work function for the copper $\phi = 4.5 \, eV$, $A$ is the area of the conductor and $\omega = 2 \pi f$ is the angular velocity.
 
 The RF power can be divided in real and imaginary part, with a phase shift of $90^\circ$. The real part is the energy propagating into the structure only and the imaginary part is the energy stored in the cavity both magnetically or electrically as happens in every resonant cavity. Since the active power flow is more efficient than the reactive one in providing power for the field emission, a weighting factor $g_c$ is introduced. Also for practice reasons since all the simulation codes work using the complex Poynting vector $\bar{S}$, the precedent reasoning can be adapted to meet the custom, using the \textit{Modified Poynting Vector}
 \begin{equation}
 S_c = Re\{ \bar{S} \} + g_c \, Im \{ \bar{S} \} \qquad [W/\mu m^2]
 \end{equation} 
 
-Since this quantity can be calculated in any point of a structure, this allows to identify in advance the regions which are more sensible to the breakdown process. The rule of thumb given by the current experience says that this quantity should not exceed the value of $5 W/\mu m^2$ to have a breakdown rate smaller than $1\times 10^{-6} \, bpp \, m^{-1}$ with a pulse length of 200 ns.
+Since this quantity can be calculated in any point of a structure, this allows to identify in advance the regions which are more sensible to the breakdown process. The rule of thumb given by the experience says that this quantity should not exceed the value of $5 W/\mu m^2$ to have a breakdown rate smaller than $1\times 10^{-6} \, bpp \, m^{-1}$ with a pulse length of 200 ns.
 
 This quantity have been used successfully to design all the last generations of CLIC structures, including the one tested in this work.
 
@@ -336,7 +336,6 @@ As pointed out in \cite{CLIC:cdr}, the main constraints in the structures for th
 \item Pulsed surface heating: $\Delta T^{max} < 56 \,K$
 \item Power density: $P_{in}/C\tau_p^{1/3} < 18 MW/mm \, ns^{1/3}$
 \end{enumerate}
-where $P_{in}$ is the input power, $C$ is the input iris circumference and $\tau_p$ is the pulse length.
 
 These limitations, together with the parameters listed in the section 1.2.2, brought to the current design after a long simulation and tradeoff of the parameters. The main parameters are reported in Table \ref{TD26_param_1}
 
@@ -364,30 +363,31 @@ These limitations, together with the parameters listed in the section 1.2.2, bro
     Maximum pulsed surface heating				& $47 \, K$	\\       
     \hline
     \hline
-    %%%%%%%%%%%TABLE STILL TO FIX
     \end{tabular}
   \caption{Parameters of the structure}
 \label{TD26_param_1}
 \end{table}
 
-The structure is realised stacking machined copper disks that are then brazed together with a particular procedure that have been elaborated in order to achieve the highest mechanical precision possible in the alignment of the parts. In figure \ref{CLICdisk} are shown a disk and a model of the accelerating structure. Please note that the only difference between the model in the figure and the prototype under test is the absence of the wakefield monitor in the prototype. 
-
- \begin{figure}
+ \begin{figure}[h]
  \centering
  \subfigure[A disk composing the structure]
    {\includegraphics[scale=0.16]{pictures/photo_disk}}
  \hspace{5mm}
  \subfigure[CAD model of the structure, open to show the damping material]
-   {\includegraphics[scale=0.25]{pictures/TD26_layout}}
- \caption{A disk composing the structure (left) and the scheme of an accelerating structure (right), including couplers for the RF, cooling elements and connection flanges}
+   {\includegraphics[scale=0.22]{pictures/TD26_layout}}
+ \caption{A disk composing the structure (left) and the scheme of an accelerating structure (right), including couplers for the RF, cooling elements and connection flanges. The wakefield monitor is not present in the prototype under test}
  \label{CLICdisk}
  
  \end{figure}
+ 
+The structure is realised stacking machined copper disks that are then brazed together with a particular procedure that have been elaborated in order to achieve the highest mechanical precision possible in the alignment of the parts. In figure \ref{CLICdisk} are shown a disk and a model of the accelerating structure.
 
-Because of the high number of bunches per train and of the short spacing between them, the structure is realised in order to extract the transverse wakefields that can develop in the structure. This is realised using 4 symmetrical waveguides of dimensions carefully selected in order to extract just the higher order electromagnetic modes (HOMs) but not the fundamental one that is used to accelerate the bunches and is provided from the input couplers. Once extracted, the transverse wakefields are dumped on tips of Silicon Carbide (SiC) that are placed at 50 mm of distance from the axis of the cavity.
+The iris radius and thickness are linearly tapered in order to optimise the various high power parameters and avoid the presence of 'hot spots' along the structure. 
 
-The iris radius and thickness are linearly tapered in order to optimise the various high power parameters and avoid the presence of 'hot spots' along the structure.The tapering also provide detuning of the high order modes, which are an issue even for highly damped structures.
+Because of the high number of bunches per train and of the very short spacing between them (see table 1.1), the structure is realised in order to extract the transverse wakefields that can develop in the structure. This is realised using 4 symmetrical waveguides of dimensions carefully selected in order to allow the propagation of just the higher order electromagnetic modes (HOMs) but not the fundamental one that is used to accelerate the bunches and is provided from the input couplers. Once extracted, the transverse wakefields are dumped on tips of Silicon Carbide (SiC) that are placed at 50 mm of distance from the axis of the cavity.
+The tapering also provide detuning of the high order modes, which are an issue even for highly damped structures.
 
+In the structure are also installed the cooling water circuits and the vacuum flanges. The "CC" in the initials of the cavity name refers in fact to the particular type of vacuum flanges used for this structure.
 
 
 
