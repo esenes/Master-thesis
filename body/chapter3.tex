@@ -34,24 +34,33 @@ The parameters of the beam that is possible to produce are reported in the table
 
 \subsubsection{Injector}
 
-The production of the beam is realised by a 140-kV thermoionic gun, designed to deliver $5\,A$ of current in nominal operation conditions.
+The production of the beam is realised by a 140-kV thermoionic gun, designed to deliver up to $5\,A$ of current in nominal operation conditions.
 The gun is followed by a S-band prebuncher and a 17 cell travelling-wave buncher. These structures are followed by two 1-m long accelerating structures. The beam dimension in this initial phase is controlled using solenoids, that continue up to the second accelerating structure \cite{ctf:injector}.
 
 Downstream the injector a magnetic chicane with collimators is installed to eliminate off-energy particles and to perform the bunch compression  \cite{Braun:999488}.
 
+The layout of injector and chicane are reported in figure \ref{injlayout}.
+
 \subsubsection{Linac}
 
-In the linac are installed three modules composed of two S-band accelerating structures operating at $3\,GHz$. The accelerating structures consist of 32 regular cells, operating in the $2\pi/3$ mode. The daping of HOMs is guaranteed by the radial slots in the iris containing SiC loads.
+In the linac are installed three modules composed of two S-band accelerating structures operating at $3\,GHz$. The accelerating structures consist of 32 regular cells, operating in the $2\pi/3$ mode. The damping of HOMs is guaranteed by the radial slots in the iris containing SiC loads. The structures are designed for the fully loaded operation with a current of more than 4 A, but when simulating the Main Beam the current is significantly less, implying less loading. In this condition the energy gain is essentially bigger compared to when the Drive Beam is simulated.
 
 The focusing is realised by triplets of quadrupoles, coupled with dipole correctors. The beam energy can be measured in the spectrometers in sector 4 and 10.
 
-
+The layout of the linac is reported in figure \ref{linaclayout}
 
 \subsubsection{The dogleg}
 
- The layout of the dogleg is exploited in figure \ref{dolaut}.
+After sector 7 in the linac, another triplet of quadrupoles is located on the beamline before a bending magnet. When the bending magnet is on, the beam is directed in the dogleg, passing through an oblique section, to end up in a segment of the beamline parallel to the linac. The optics of the dogleg beamline is designed to correct the dispersion provoked by the bending magnets. At the end of the dogleg line the structure under test is placed between two Beam Position Monitors (BPMs). Just before the structure is placed a slit, in order to protect the coupling cell of the structure from being hit by a misaligned beam. The beam is dumped downstream the structure.
+
+In case the first bending magnet is off, the beam proceeds straight in the linac, passing through a triplet of quadrupoles in section 9 and another triplet in sector 10. After that is placed a spectrometer to measure beam energy and momentum. 
+
+The linac proceeds with other accelerating structures, that are not interesting for the development of this work.
+
+The layout of the dogleg and of the linac up to section 10 is reported in figure \ref{dolaut}.
 
 
+% FIX LAYOUT IN FIGURE 4.3
 
 
 \begin{landscape}
@@ -70,7 +79,7 @@ The focusing is realised by triplets of quadrupoles, coupled with dipole correct
 \centering 
 \includegraphics[width=23cm,keepaspectratio]{pictures/girder5-7}
 \caption{Layout of the linac up to module 7}
-\label{injlayout}
+\label{linaclayout}
 \end{figure}
 
 \end{center}
@@ -176,7 +185,9 @@ The PXI crate has 8 channels of 14-bits, 250 MSa/s digitisers. These digitisers 
 
 The signals of the IQ demodulators are sampled by OASIS acquisition PC containing 16 units of 1 GSa/s, 8-bits ADCs. These are read by the PXI crate and archived only during the breakdown events for the offline analysis. 
 
-%%%BPMs ???
+The signals of the BPMs are acquired and recorded as well by one of the acquisition card of the PXI crate.
+
+%diodes?
 
 %%%Modifications after moving to the dogleg ??? 
 
@@ -187,13 +198,25 @@ The signals of the IQ demodulators are sampled by OASIS acquisition PC containin
 
 \subsection[Online triggers]{Online triggers}
 
-describe the online, but then the offline is in the next chapter
+In order to protect the equipments, a number of parameters are constantly monitored and can interlock the setup. Every piece of the equipment has its internal interlocks defined by the constructor. E.g. in the modulator: pressure in the waveguides, door of the higher radiation zone open, internal arc in the klystron, cooling oil system failure, ...; or in the TWT: reflected power out of scale, ... 
+
+The effect of such interlocks is to shut down the affected part, but the rest of the equipment stays on.
+
+A different matter is the interlocking system that is implemented in the PXI crate. When it is triggered, it acts on the LLRF power, cutting the power but leaving the rest of the amplification chain ready. There are four interlocks of this kind, triggered overcoming a user-defined threshold:
+\begin{enumerate}
+\item {\makebox[7cm]{Peak reflected power:\hfill} $max(P_{REF})$}
+\item {\makebox[7cm]{Reflected energy:\hfill} $\int P_{REF}(t) \, dt $}
+\item {\makebox[7cm]{Missing transmitted energy:\hfill} $\int P_{INC}(t)\,dt - \int P_{TRA}(t)\,dt$}
+\item {\makebox[7cm]{Peak power reflected to the klystron:\hfill} $max(P_{KREF})$}
+\end{enumerate}
+%is that accurate ? Do the power is always set to zero, even for a BD in the structure?
+The last one is again to protect the klystron, and is triggered when the reflected power back from the pulse compressor is too high. This happens especially when the pulse compressor is not properly tuned, as described later in this chapter.
+The first three indeed are used to detect a breakdown event inside the structure under test. When one or more of these four interlock is triggered, the event is saved by the PXI crate. If no interlock is triggered in one minute, an event is saved as a backup to monitor the state of the current test.
 
 \section[Other systems]{Other systems}
+mention here thermostatic system of the structure and vacuum system ....
 
-mention here thermal systems for the structure and something else ???
-
-
+Anything else missing ???
 
 \section[Operation of the setup]{Operation of the setup}
 
