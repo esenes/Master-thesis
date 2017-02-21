@@ -90,7 +90,10 @@ The focusing is realised by triplets of quadrupoles, coupled with dipole correct
 
 \subsubsection{RF power source}
 
+5 S-band 40MW klystrons with pulse compression systems
 
+
+X-band technology applications: medical linacs, XFELs, high-frequency beam manipulation devices such as beam deflectors
 
 
 \subsection[Comparison of setup and CLIC design]{Comparison of setup and CLIC design}
@@ -99,11 +102,88 @@ The focusing is realised by triplets of quadrupoles, coupled with dipole correct
 
 \section[RF power generation]{RF power generation}
 
+The development of the accelerating cavities technology is strongly related to the possibility to produce and test prototypes. This test activity allows to improve the understanding of the scaling laws of the phenomena that limit the performance of the accelerating structures, but also to compare the results of different production and conditioning techniques. 
+
+At CERN the production of 12 GHz RF was carried out just in the CTF3 in the Two-beam modules. These reasons highlighted the necessity of standalone test stands to enlarge the test possibilities. This was realised the first time with the installation of the so called X-Band Test Stand 1 (XBOX1) \cite{Peauger:1287901}. Currently there are 3 X-band test stands active at CERN simultaneously.
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.8]{pictures/test_stand_scheme.pdf}
+\caption{Standalone X-band test stand layout. Adapted from \cite{Woolley:2015}}
+\label{xbox_layout}
+\end{figure}
+
+The layout of a RF test stand is shown in figure \ref{xbox_layout}. It is normally formed by signal generation, amplification and delivery systems; diagnostic and control systems, and service systems such as cooling and protection systems. 
 
 
-\section[DAQ system]{DAQ system}
+\subsection[The X-Box1 at CERN]{The X-Box1 at CERN}
+
+The proposal of an X-band test stand at CERN followed the change of the frequency of CLIC from 30 to the european X-band 12 GHz in 2008. An organic description of XBOX1 is in \cite{Woolley:2015,Kovermann:1459879}. The high-power RF production is realised using:
+\begin{itemize}
+\item SLAC built XL-5 klystron, able to produce 50 MW of 12 GHz radiation with a pulse length of $1.5\, \mu$s and a repetition rate up to 50 Hz.
+\item Scandinova modulator is used to power the klystron.
+\item SLED1 type RF pulse compressor is able to compress the klystron output pulse to a shorter one of 140 MW, 250 ns long, which is enough to test accelerating structures considering the waveguide losses.
+\end{itemize}
+
+The RF delivery from the pulse compressor to the structure is realised using WR90 waveguides, kept under high-vacuum at a pressure of the order of\\ $5\times10^{-9}$ mbar. In order to reduce the losses, some part of the line to the structure under test is realised with low loss waveguides. This structure requires mode converters because the fundamental modes of the waveguides are different. The overall transmission of the waveguide from the pulse compressor to the structure under test is around 67 \%.
+
+More details regarding the key components of the system are presented in the following sections. The system is controlled solely by the Low-Level Radio Frequency (LLRF), since the gain of the amplification chain is fixed. This feature makes necessary a unique control system of the LLRF together with the Data Acquisition system (DAQ), that will be described in section 4.3.
+
+
+\subsubsection{TWT, Klystron and modulator}
+
+The very first power amplification stage is carried out by a CPI VKX-8311A Travelling Wave Tube (TWT), which is a device with the same working principle of the klystron (described below). It is in charge to raise the power of the signal from some watts to up to 3 kW.
+
+XL-5 klystrons comes from the effort made in SLAC to develop high efficiency klystrons for the Next Linear Collider project (NLC). Them are based on the XL-4 klystrons, adapted from the american X-band frequency of 11.4 GHz. At 12 GHz are able to produce a pulse of 50 MW of power, $1.5 \, \mu$s long with an efficiency of the order of 40\%.
+ 
+Klystrons are vacuum tube amplifiers. Are composed of a thermoionic gun, that emits a pulsed beam of electrons. The beam passes through one or several cavities, where a low power RF modulates the beam. After a drift space, where the beam is kept collimated by a solenoid and accelerated by a fixed DC field, the beam passes through a passive cavity that extracts the high power RF. The beam is then dumped. 
+
+The klystron is operated in pulsed mode to enhance efficiency. This means that a power supply able to deliver short pulses of high power is necessary. In the XBOX1 is used a K-3 solid state modulator by Sacandinova, able to supply voltage pulses of 410 kV with currents of the order of 310~A.
+
+
+\subsubsection{Pulse compressor}
+
+The pulse compressor is the device used to convert the long pulse of the klystron to a shorter one at a higher power. The operation principle is that the power from the klystron is stored in high-Q resonant cavities during the pulse. Before the end of the pulse the cavities are emptied by reverting the phase of the input power. The emptying process is done in a shorter time than the filling one, determining the production of a short high power pulse. 
+
+This technique can lead to the peak power increase up to a factor 5-7. 
+
+The SLED-I type pulse compressor is using two cavities, coupled with a 3 dB hybrid coupler, in order to discharge the produced power to the desired load instead of sending it back to the klystron. The theory is fully described in \cite{Fiebig:209756}, the application in XBOX1 in \cite{SLED:ctf3}.
+
+ 
+
+
+\section[DAQ \& LLRF control systems]{DAQ \& LLRF control systems}
+
+The control system is in charge of generating a phase-modulated signal for the successive amplification stages (TWT and klystron). It also has to acquire the signals from the directional couplers, and the diagnostic signals from the structure and the vacuum systems. According to the diagnostic input, it modulates the signal and can also act on the beam permit of the gun of the linac. 
 
 \subsection[Hardware]{Hardware}
+
+To perform his task, the control system is made of different components, including PLCs (Programmable Logic Controller) interlock systems,  VME (Versa Module Europa) crate based arbitrary signal generators, OASIS PC based digitisers and PXI (PCI eXtension Instrumentation) based control systems.
+
+The core of the system is the National Instrument PXI crate \cite{NI:PXI}, that is the most advanced system in the setup. This carries out: the acquisition and elaboration of all the signals relevant for interlocking the system; trigger the interlocks; save in the internal HDD the recorded signals and retrieve the signals sampled externally in case of an interesting event; interface the rest of the instrumentation.
+
+
+Since the phase of the LLRF signal has to be modulated to be able to perform the pulse compression, after the generation, the LLRF signal is sent to an analog and a digital phase shifter in series. During the experiments with beam, the digital one is used to phase the beam with the RF feeding the accelerating cavity.
+
+The data acquisition from the -50 dB directional couplers on the waveguides is fulfilled using different kind of sensors:
+\begin{enumerate}
+\item Diodes with a bandwidth of 500MHz convert the RF signals in a DC voltage level
+\item IQ demodulators are used to measure the phase and the amplitude
+\item Logarithmic detector are used to acquire the signals with a wide dynamic range of over 46 dB
+\end{enumerate}
+
+The PXI crate has 8 channels of 14-bits, 250 MSa/s digitisers. These digitisers are connected to an FPGAs to detect if the signals overcome the critical thresholds. In case the FPGA sends a signal to the trigger unit to interlock the LLRF signal production. A 24 channel Digital Multimeter (DMM) unit is used to read the vacuum signals from the ion pump controllers. The fast digitisers acquire the signals from the logarithmic detectors. 
+
+The signals of the IQ demodulators are sampled by OASIS acquisition PC containing 16 units of 1 GSa/s, 8-bits ADCs. These are read by the PXI crate and archived only during the breakdown events for the offline analysis. 
+
+%%%BPMs ???
+
+%%%Modifications after moving to the dogleg ??? 
+
+
+
+
+
 
 \subsection[Online triggers]{Online triggers}
 
@@ -112,4 +192,22 @@ describe the online, but then the offline is in the next chapter
 \section[Other systems]{Other systems}
 
 mention here thermal systems for the structure and something else ???
+
+
+
+\section[Operation of the setup]{Operation of the setup}
+
+- linac switch operation
+
+- pulse compressor issues
+
+- relative phase beam / x-band RF
+
+
+
+
+
+
+
+
 
