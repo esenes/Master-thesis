@@ -3,16 +3,16 @@
 At CERN the high-gradient test are carried on the three X-band test stands (XBOXs), that are setups able to provide the necessary high power RF pulses to the structure under tests. Nevertheless for the tests described in this work the presence of the beam inside the accelerating cavity is necessary, and is provided by the electron linac of the CTF3. 
 
 
-\section[Linac and dogleg]{The LINAC and the Dogleg}
+\section[Linac and dogleg]{Linac and the Dogleg}
 
 \subsection[The test setup]{The test setup}
-As mentioned in the first chapter, the main goal of the CTF3 is to demonstrate the feasibility of the CLIC acceleration scheme. For this reason, the linac is realised using the conventional $3\,GHz$ technology, that after the recombination process will lead to the beam frequency of $12\,GHz$. 
+As mentioned in the first chapter, the main goal of the CTF3 is to demonstrate the feasibility of the CLIC acceleration scheme. For this reason, the linac is used to simulate the Drive Beam to send to the prototypes of Two-beam modules after the recombination process. The linac is realised using the conventional 3 GHz technology, that after the recombination process will lead to the beam frequency of 12 GHz. 
 
 Given that the tests of high-gradient cavities is not the design goal of the facility, in the following sections only the relevant part of the setup for the brakdown experiments will be described. The full description of the CTF3 accelerator complex is widely described elsewhere \cite{CLIC:cdr,CTF:drive_beam,ctf3:dr}.
 
 To realise high-gradient structure tests, a beam line parallel to the linac have been set up. The two beam lines are connected by an oblique segment, giving the characteristic shape that is the origin of the name \textit{Dogleg}.
 
-The parameters of the beam that is possible to produce are reported in the table \ref{beam_par_dogleg}
+For the high-gradient testing purpose the accelerator is operated simulating the Main Beam. The parameters of the beam that is possible to produce are reported in the table \ref{beam_par_dogleg}
 
 
 \begin{table}
@@ -43,7 +43,7 @@ The layout of injector and chicane are reported in figure \ref{injlayout}.
 
 \subsubsection{Linac}
 
-In the linac are installed three modules composed of two S-band accelerating structures operating at $3\,GHz$. The accelerating structures consist of 32 regular cells, operating in the $2\pi/3$ mode. The damping of HOMs is guaranteed by the radial slots in the iris containing SiC loads. The structures are designed for the fully loaded operation with a current of more than 4 A, but when simulating the Main Beam the current is significantly less, implying less loading. In this condition the energy gain is essentially bigger compared to when the Drive Beam is simulated.
+In the linac are installed three modules composed of two S-band accelerating structures operating at 3 GHz. The accelerating structures consist of 32 regular cells, operating in the $2\pi/3$ mode. The damping of HOMs is guaranteed by the radial slots in the iris containing SiC loads. The structures are designed for the fully loaded operation with a current of more than 4 A, but when simulating the Main Beam the current is significantly less, implying less loading. In this condition the energy gain is essentially bigger compared to when the Drive Beam is simulated.
 
 The focusing is realised by triplets of quadrupoles, coupled with dipole correctors. The beam energy can be measured in the spectrometers in sector 4 and 10.
 
@@ -66,7 +66,7 @@ The layout of the dogleg and of the linac up to section 10 is reported in figure
 \begin{landscape}
 \begin{center}
 
-\begin{figure}[h]
+\begin{figure}
 \centering 
 \includegraphics[width=23cm,keepaspectratio]{pictures/Injector}
 \caption{Layout of the injector and the magnetic chicane}
@@ -75,7 +75,7 @@ The layout of the dogleg and of the linac up to section 10 is reported in figure
 
 \vspace{20mm}
 
-\begin{figure}[h]
+\begin{figure}
 \centering 
 \includegraphics[width=23cm,keepaspectratio]{pictures/girder5-7}
 \caption{Layout of the linac up to module 7}
@@ -97,13 +97,6 @@ The layout of the dogleg and of the linac up to section 10 is reported in figure
 \end{landscape}
 
 
-\subsubsection{RF power source}
-
-5 S-band 40MW klystrons with pulse compression systems
-
-
-X-band technology applications: medical linacs, XFELs, high-frequency beam manipulation devices such as beam deflectors
-
 
 \subsection[Comparison of setup and CLIC design]{Comparison of setup and CLIC design}
 
@@ -113,7 +106,7 @@ X-band technology applications: medical linacs, XFELs, high-frequency beam manip
 
 The development of the accelerating cavities technology is strongly related to the possibility to produce and test prototypes. This test activity allows to improve the understanding of the scaling laws of the phenomena that limit the performance of the accelerating structures, but also to compare the results of different production and conditioning techniques. 
 
-At CERN the production of 12 GHz RF was carried out just in the CTF3 in the Two-beam modules. These reasons highlighted the necessity of standalone test stands to enlarge the test possibilities. This was realised the first time with the installation of the so called X-Band Test Stand 1 (XBOX1) \cite{Peauger:1287901}. Currently there are 3 X-band test stands active at CERN simultaneously.
+At CERN the production of 12 GHz RF was carried out just in the CTF3 in the Two-beam modules. These reasons highlighted the necessity of standalone test stands to enlarge the test possibilities. This was realised the first time with the installation of the so called X-Band Test Stand 1 (XBOX1) \cite{Peauger:1287901}. Currently there are three X-band test stands active at CERN simultaneously.
 
 \begin{figure}[h]
 \centering 
@@ -141,9 +134,11 @@ More details regarding the key components of the system are presented in the fol
 
 \subsubsection{TWT, Klystron and modulator}
 
-The very first power amplification stage is carried out by a CPI VKX-8311A Travelling Wave Tube (TWT), which is a device with the same working principle of the klystron (described below). It is in charge to raise the power of the signal from some watts to up to 3 kW.
+%missing name of the TWT and check the specs
 
-XL-5 klystrons comes from the effort made in SLAC to develop high efficiency klystrons for the Next Linear Collider project (NLC). Them are based on the XL-4 klystrons, adapted from the american X-band frequency of 11.4 GHz. At 12 GHz are able to produce a pulse of 50 MW of power, $1.5 \, \mu$s long with an efficiency of the order of 40\%.
+The very first power amplification stage is carried out by a NAME OF TWT Travelling Wave Tube (TWT), which is a device with the same working principle of the klystron (described below). It is in charge to raise the power of the signal from some watts to up to 3 kW.
+
+XL-5 klystrons comes from the effort made in SLAC to develop high efficiency klystrons for the Next Linear Collider project (NLC). Them are based on the XL-4 klystrons, adapted from the american X-band frequency of 11.4 GHz to the european 12 GHz. This effort lead to the CPI VKX-8311A tubes that are currently in use\cite{klystron:CPI}, which are able to produce a pulse of 50 MW of power, $1.5 \, \mu$s long with an efficiency of the order of 40\%.
  
 Klystrons are vacuum tube amplifiers. Are composed of a thermoionic gun, that emits a pulsed beam of electrons. The beam passes through one or several cavities, where a low power RF modulates the beam. After a drift space, where the beam is kept collimated by a solenoid and accelerated by a fixed DC field, the beam passes through a passive cavity that extracts the high power RF. The beam is then dumped. 
 
