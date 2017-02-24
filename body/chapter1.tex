@@ -223,36 +223,17 @@ The emission of dark current seems to be a precursor of the breakdown  process, 
 
 
 
-\subsection[Kilpatrick's critereon]{Kilpatrick's critereon}
+\subsection[High power limits]{High power limits}
 
-The Kilpatrick's Critereon was the first attempt to create a high power limit for the vacuum breakdown valid both in DC and RF applications \cite{KilpLimit}. The model was based on the acknowledgement of the Field Emission, and suggesting that the vacuum arc was created by the cascade of secondary electrons ejected from the surface by ion bombardment.
+In an historical perspective, the Kilpatrick's Critereon was the first attempt to create a high power limit for the vacuum breakdown valid both in DC and RF applications \cite{KilpLimit}. The model was based on the acknowledgement of the Field Emission, and suggesting that the vacuum arc was created by the cascade of secondary electrons ejected from the surface by ion bombardment. The main result was to find a law ruling the maximum electric field achievable without triggering a breakdown. 
 
-Using data collected in the 1950's, the following empirical law was formulated
-\begin{equation}
-W E^2 \text{exp} \left (  -1.7\times 10^5 E^{-1}  \right ) = 1.8 \times 10^{14}
-\label{KilpLaw}
-\end{equation}
-where $W$ is the maximum possible ion energy in $eV$, and $E$ is the field in $V/m$. This can also be rewritten in the case of the RF to give a frequency limit, as
-\begin{equation}
-f = 1.64 \,\, E^2 \,\, \text{exp} \left (  -\frac{8.5}{E} \right )
-\end{equation}
-where $f$ is the frequency in $MHz$ and $E$ is the electric field in $MV/m$.
-
-\begin{figure}[h]
-\centering
-
-\includegraphics[scale=0.4]{pictures/kilpatrickCrit}
-\caption{Kilpatrick's original plot. Note that $MC = MHz$ (\textit{Mega Cycles}) and that $W$ for RF is function of frequency, voltage and gap amplitude.\\ See paper for details  \cite{KilpLimit}}
-\label{kilpPlot}
-
-\end{figure}
-
-The critereon was reviewed many times up to now, because the experiments conducted nowadays show a limit up to 10 times lower than Kilpatrick's prediction, and this can be addressed to different reasons: first of all the quality of the machining of the structures have increased considerably since the 1950's; in second instance the formula for $W$ was deducted for parallel plates, but the condition inside the RF cavities are different during operations; and finally the key assumption was that the breakdown was triggered by the secondary emission provoked by the ion bombardment.
-
-%%%%% GOOD OF KILPATRICK --> BD and FIELD EMISSION ARE PROVOKED BY DIFFERENT PHENOMENA
+This critereon was reviewed many times up to now, because the experiments conducted nowadays show a field limit 7-8 times higher than Kilpatrick's prediction, and this can be addressed to different reasons: first of all the quality of the machining of the structures has increased considerably since the 1950's; in second instance the condition inside the RF cavities are more complicated because of the particular geometry.
 
 At the end of the 1980's J.D.Wang finally proposed a model based on microprotrusion effect on the field and field emission, that involves the formation of a micro-plasma during the breakdown process. Also the Kilpatrick's limit was revised again in order to match the experimental results. \cite{Wang:1986, kilp:story}
 
+Furthermore theories on the mechanism of breakdowns evolved, and will be mentioned in chapter 3.
+
+Without entering in the physics of the breakdown phenomenon yet, the two following scaling laws are currently used in the design of modern accelerating structures.
 
 \subsection[Power flow based criteria]{Power flow based criteria}
 
