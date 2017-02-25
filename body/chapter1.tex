@@ -36,21 +36,20 @@ Many solutions can be found to the problem, integrating the Maxwell's equations 
 \end{itemize}
 Every mode has a particular cutoff frequency, and will propagate only in case that the condition $\omega > \omega_c$ is met (where $\omega_c = 2\pi f_c$ and $f_c$ is the cutoff frequency of the mode). The cutoff frequency of each mode depends mainly on the geometry of the guide utilised, and waves with a frequency lower than the cutoff frequency will be exponentially damped.
 
-For particle acceleration purposes, the fundamental feature of a waveguide is that the \textit{phase velocity} is $v_p = \frac{\omega}{k} > c$, so it is not suitable for particle synchronous acceleration. The dispersion relation for a uniform waveguide can be expressed as 
+The major features of a waveguide are: the \textit{phase velocity} is $v_p=\frac{\omega}{k} > c$; the \textit{group velocity} instead is $v_g = \frac{\partial w}{\partial k} < c$ as expected for the physical quantity representing the speed of propagation of the EM wave according to Relativity; and  the dispersion relation for a uniform waveguide can be expressed as 
 \begin{equation}
 \omega^2 = \omega^2_c + (k_0 \, c)^2
 \end{equation}
 where $\omega_c = K \, c$ and $K$ is the cutoff wavenumber.
 
-The \textit{group velocity} instead is $v_g = \frac{\partial w}{\partial k} < c$ as expected for the physical quantity representing the speed of propagation of the EM wave according to Relativity. 
-In any case, waveguides are a key building block of particle accelerators to deliver the RF power form the production equipment to the accelerating cavities.
+The waveguides are a key building block of particle accelerators to deliver the RF power form the production equipment to the accelerating cavities, but are not suitable for particle acceleration as pointed out later.
 
 A particular case is represented by \textit{Resonant Cavities}, which are in the simplest case closed waveguides at the terminations (e.g. a cylindrical cavity, or \textit{pillbox cavity}, is composed of a circular waveguide closed by two planes at the extremities). In resonant cavities the EM field can resonate according to the particular eigenfrequencies of the system, which are mainly dictated by the geometry. This process allows propagation of just a set of frequencies, just like in the WGs, but when a cavity is operating at one of the eigenfrequency starts to accumulate energy because of the resonance. This mechanism is utilised in accelerating structures.
 
 
 \subsection[Periodic accelerating structures]{Periodic accelerating structures}
 
-As mentioned above the waveguides themselves are not useful to accelerate particles because of the excessive phase velocity. However it's possible to reduce it loading the structure with additional metallic walls placed orthogonally to the axis of the cavity.  Such structures are named \textit{Disk (or Iris) Loaded Accelerating Structures}. A schematic example is presented in figure \ref{ACS_scheme}
+To reduce the phase velocity into the structure, it is possible to load it with additional metallic walls placed orthogonally to the axis of the cavity.  Such structures are named \textit{Disk (or Iris) Loaded Accelerating Structures}. A schematic example is presented in figure \ref{ACS_scheme}
 
 \begin{figure}[h]
 \centering
@@ -97,7 +96,7 @@ The comparison of the phase velocity of a waveguide and accelerating structure i
 
 \subsection[Synchronous particle acceleration]{Synchronous particle acceleration}
 
-A particle injected in an electromagnetic field in some conditions can gain energy at expense of the field, getting accelerated. This is possible if the particle is injected at the right moment and the field and the particle have the same speed. In this manner the particle can travel with the field with an energy gain given by
+A particle injected in an electromagnetic field in some conditions can gain energy at expense of the field, getting accelerated. This is realised in travelling-wave structures injecting the particle at the right moment and ensuring that the field and the particle have a similar speed. In this manner the particle can travel with the field with an energy gain given by
 \begin{equation}
 \Delta W = q V_o cos \phi
 \end{equation}
@@ -107,16 +106,14 @@ In order to deliver a  constant energy gain to a charged particle it is necessar
 
 \begin{enumerate}
 \item The electromagnetic wave has to have a non-zero component in the direction of the motion of the particle
-\item The phase velocity of a wave has to be the same of the particle velocity, in order to keep the relative phase constant, and so the acceleration
+\item The phase velocity of a wave has to be similar to the particle velocity
 \end{enumerate}
-using some results of the theory of EM waves it is possible to show that the two condition cannot be met in the free space, but is necessary to build up some particular structures in order to coerce the electromagnetic field to propagate in the desired form. This is realised building particular structures that are similar to traditional waveguides, but presenting a lower phase velocity in order to make the synchronous acceleration possible.
-
-
+using some results of the theory of EM waves it is possible to show that the two condition cannot be met neither in the free space, nor in simple waveguides, but is necessary to build up some particular structures in order to coerce the electromagnetic field to propagate in the desired form.
 
 
 \subsection[Figure of merit for accelerating structures]{Figure of merit for accelerating structures}
 
-To characterize the different accelerating structures, is necessary to rely on some significant quantities that can be derived from the geometry of the cavities. The most important figures of merit (FOMs) are the following (many different definitions are commonly used, here are reported in accordance with \cite{TECKER:RFCAS}):
+To characterize different accelerating structures, is necessary to rely on some significant quantities that can be derived from the geometry of the cavities. The most important figures of merit (FOMs) are the following (a number of different definitions are commonly used, here are reported in accordance with \cite{TECKER:RFCAS}):
 \begin{itemize}
 
 \item \textbf{Quality factor} 
@@ -141,7 +138,7 @@ where L is the length of the cavity.
 \begin{equation}
 \frac{R}{Q} = \frac{(V_{acc})^2}{2\omega_0 U}  \quad [M\Omega]
 \end{equation}
-represents the relation between the accelerating field and the stored energy
+represents the relation between the accelerating field V$_{acc}$ and the stored energy U
 
 
 \item \textbf{Filling time (for travelling-wave structures)}
@@ -169,7 +166,7 @@ represents the fraction of power that is delivered to the beam
 
 The limiting factors for room-temperature high-gradient accelerators have been identified as \textit{field emission} and \textit{RF breakdown}. The former is the emission of electrons in the form of the so called \textit{"Dark current"}, that subtracts RF power, causes radiation and can produce wakefields; the latter is a limiting factor to the operation of accelerators and can damage the structures.\cite{Wang:1997ip}
 
-The understanding of these phenomena is particularly challenging and requires a mixture of notions of disciplines such as surface physics, metallurgy, fabrication processes, microwaves, beam dynamic and plasma physics. At the moment a satisfactory unified theory of the processes that take place during the breakdowns has not been found yet. The improvement of the structures is achieved using scaling laws for the high power limitations, that have been deducted from the experience and the experiments on the structures tested so far. 
+The understanding of these phenomena is particularly challenging and requires a mixture of notions of disciplines such as surface physics, metallurgy, fabrication processes, microwaves, beam dynamic and plasma physics. At the moment a satisfactory unified theory of the processes that take place during the breakdowns has not been found yet. The improvement of the structures is achieved using scaling laws for the high power limitations, that have been deducted  from the experience and the experiments on the structures tested so far. 
 
 
 \subsection[Field emission law]{Field emission law}
@@ -227,7 +224,7 @@ The emission of dark current seems to be a precursor of the breakdown  process, 
 
 In an historical perspective, the Kilpatrick's Critereon was the first attempt to create a high power limit for the vacuum breakdown valid both in DC and RF applications \cite{KilpLimit}. The model was based on the acknowledgement of the Field Emission, and suggesting that the vacuum arc was created by the cascade of secondary electrons ejected from the surface by ion bombardment. The main result was to find a law ruling the maximum electric field achievable without triggering a breakdown. 
 
-This critereon was reviewed many times up to now, because the experiments conducted nowadays show a field limit 7-8 times higher than Kilpatrick's prediction, and this can be addressed to different reasons: first of all the quality of the machining of the structures has increased considerably since the 1950's; in second instance the condition inside the RF cavities are more complicated because of the particular geometry.
+This critereon was reviewed many times up to now, because the experiments conducted nowadays show a field limit 7-8 times higher than Kilpatrick's prediction. This can be addressed to different reasons: first of all the quality of the machining of the structures has increased considerably since the 1950's; in second instance Kilpatrick examined simple geometries, while in RF cavities are more complicated.
 
 At the end of the 1980's J.D.Wang finally proposed a model based on microprotrusion effect on the field and field emission, that involves the formation of a micro-plasma during the breakdown process. Also the Kilpatrick's limit was revised again in order to match the experimental results. \cite{Wang:1986, kilp:story}
 
