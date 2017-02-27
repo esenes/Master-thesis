@@ -1,6 +1,6 @@
 \chapter[The breakdown process]{The breakdown process}
 
-In this chapter the detected effects of the breakdowns and an overview of the theoretical models will be presented. The setups for studies on the vacuum breakdown physics will not be presented indeed, and a good review can be found in \cite{Kovermann:1330346}. The reason is that using the setup object of this work it is just possible to have a glimpse on the beam effect, but not perform the measurements that are normally carried out in breakdown physics. This is caused by the beam presence, that make the majority of the sensors that are normally used blind or not installable.
+In this chapter the detected effects of the breakdowns and some topics about the physics will be presented. The setups for studies on the vacuum arc physics will not be presented indeed, and a good summary can be found in \cite{Kovermann:1330346}. The reason is that the setup used in this work just gives the possibility to have a glimpse on the beam effect, but not to perform the measurements that are normally carried out in breakdown physics. This is caused by the beam presence, that make the majority of the necessary sensors blind or not installable.
 
 The large amount of parameters that play a role in the breakdown process makes researching in this field very complicated. For the same reason is also very difficult the comparison of different experiments. This situation has led to a division in the scientific community about the theoretical description of the phenomenon.
 
@@ -25,7 +25,7 @@ Therefore in the detection of the breakdown a background current emitted by FE i
 \end{itemize}
 Other effects, such as shock waves, have also been appreciated \cite{Rajamaki:2143815}. 
 
-In figure \ref{RFandBPM} is reported an RF pulse and the current burst measured with the setup used in this work during a run without beam. It is clearly visible the fall of the transmitted power and the raise of the reflected one. Also comparing the area of the two signals to the previous pulse, it's clear that a significant amount of energy is missing. This is imputable to the energy necessary to sustain the plasma that forms during the breakdown. On the left it is visible qualitatively the current burst emitted by the cavity on the downstream BPM. It has to be kept in mind that the BPM is placed far from the exit of the cavity, resulting in a poor charge detection because of the small solid angle covered; also the proper device to collect the emitted charge is a Faraday Cup, which cannot be installed in this setup because the beam pipe needs to be free. 
+In figure \ref{RFandBPM} is reported an RF pulse and the current burst measured with the setup used in this work during a run without beam. It is clearly visible the fall of the transmitted power and the raise of the reflected one. Also comparing the area of the two signals to the previous pulse, it's clear that a significant amount of energy is missing. This is normally addressed to the large amount of energy necessary to sustain the plasma that forms during the breakdown. On the left it is visible qualitatively the current burst emitted by the cavity on the downstream beam position monitor (BPM). It has to be kept in mind that the BPM is placed far from the exit of the cavity, resulting in a poor charge detection because of the small solid angle covered; also the proper device to collect the emitted charge is a Faraday Cup, which cannot be installed in this setup because would occlude the beam pipe. 
 
 
 \begin{figure}[h]
@@ -74,7 +74,7 @@ The full arc is expected to continue up to the end of the RF pulse. Next the pla
 In figure \ref{SEM_crater} a photograph of a crater is shown, taken using a scanning emission microscope.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{pictures/crater}
+\includegraphics[scale=0.4]{pictures/crater}
 \caption{Crater provoked by a breakdown in an X-band RF accelerating cavity \cite{Wuensch:advaces}}
 \label{SEM_crater}
 \end{figure}
@@ -91,15 +91,15 @@ In figure \ref{SEM_crater} a photograph of a crater is shown, taken using a scan
 
 \section[Breakdown rate scaling law]{Breakdown rate scaling law}
 
-The interest on breakdowns in accelerator physics arose in order to avoid as much as possible perturbations of the beam. A key parameter of an accelerating cavity is the breakdown rate (BDR).
+The interest on breakdowns in accelerator physics arose in order to avoid as much as possible perturbations of the beam. This materialises mainly in kicks to the beam passing through the plasma \cite{Palaia:1625826}, and change of the acceleration because the reflection of the RF power modifies the field distribution inside the accelerating cavities.
 
-The breakdown rate is the number of breakdowns that happens per number of RF pulses. Measuring the BDR of a cavity means to measure a probability, that makes sense only if the cavity has been tested with a sufficient number of pulses. 
+ A key parameter of an accelerating cavity is the breakdown rate (BDR). The breakdown rate is the number of breakdowns that happens per number of RF pulses. Measuring the BDR of a cavity means to measure a probability, that makes sense only if the cavity has been tested with a sufficient number of pulses. 
 
 According to the latest developments, the BDR follows the scaling law
 \begin{equation}
 BDR \propto E^{30}_a \tau^5_p 
 \end{equation}
-where E$^{30}_a$ is the accelerating gradient, and $\tau$ the pulse length  \cite{Wuensch:advaces}.
+where E$^{30}_a$ is the cavity accelerating gradient, and $\tau$ the pulse length  \cite{Wuensch:advaces}.
 
 This scaling law allows to compare the performance of different accelerating structures and different tests. It is important to underline that the scaling law was deduced by the results of the experiments executed so far, but does not imply any kind of assumption on the physics of the breakdown process.
 
@@ -115,7 +115,7 @@ It has been mentioned how the trigger mechanism of the breakdowns seems to depen
 \end{enumerate}
 The current production procedure for the structures for CLIC is outlined in~\cite{CLIC:cdr}. The conditioning process is a more complicated matter. 
 
-The conditioning of an accelerating structure is conducted applying repeatedly RF power pulses at a fixed pulse length, while keeping the breakdown rate limited under a certain threshold. This is realised modifying the input power, that gets raised if for a period no breakdown happens, or lowered if the breakdown rate gets to high. When the power goal has been reached, the pulse length is increased, and the process restarts with low power pulses.
+The conditioning of an accelerating structure is conducted applying repeatedly RF power pulses at a fixed pulse length, while keeping the breakdown rate limited under a certain threshold. This is realised modifying the input power, that gets raised if for a period no breakdown happens, or lowered if the breakdown rate gets too high. When the power goal has been reached, the pulse length is increased, and the process restarts with low power pulses.
 
 The process terminates when both the power and the pulse length goal has been reached. In many experiments the breakdown rate has exhibited an exponential decrease with the conditioning time. The conditioning of a structure may last up to 3-4 months to reach the design breakdown rate. Understanding the process and find the right conditioning strategy gets then fundamental, and many efforts have been made in this sense. The surprising result is that the conditioning process proceeds with the number of RF pulses rather than the number of breakdowns happened \cite{Degiovanni:2065711}.
 
