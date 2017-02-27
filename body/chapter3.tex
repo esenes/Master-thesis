@@ -3,12 +3,13 @@
 At CERN the high-gradient test are carried on the three X-band test stands (XBOXs), that are setups able to provide the necessary high power RF pulses to the structure under tests. Nevertheless for the tests described in this work the presence of the beam inside the accelerating cavity is necessary, and is provided by the electron linac of the CTF3. 
 
 
-\section[Linac and dogleg]{Linac and the Dogleg}
+\section[Linac and dogleg]{Linac and Dogleg}
 
-\subsection[The test setup]{The test setup}
-As mentioned in the first chapter, the main goal of the CTF3 is to demonstrate the feasibility of the CLIC acceleration scheme. For this reason, the linac is used to simulate the Drive Beam to send to the prototypes of Two-beam modules after the recombination process. The linac is realised using the conventional 3 GHz technology, that after the recombination process will lead to the beam frequency of 12 GHz. 
+As mentioned in the first chapter, the main goal of the CTF3 is to demonstrate the feasibility of the CLIC acceleration scheme. For this reason, the linac is used to simulate the initial production of the Drive Beam, that gets sent to the rings for the recombination and then to the prototypes of Two-beam modules. 
 
-Given that the tests of high-gradient cavities is not the design goal of the facility, in the following sections only the relevant part of the setup for the brakdown experiments will be described. The full description of the CTF3 accelerator complex is widely described elsewhere \cite{CLIC:cdr,CTF:drive_beam,ctf3:dr}.
+The linac is realised using the conventional 3 GHz technology. After the recombination process will lead to the beam frequency of 12 GHz. 
+
+Given that the tests of high-gradient cavities is not the design goal of the facility, in the following sections only the relevant part of the setup for the brakdown experiments will be described. The full description of the CTF3 accelerator complex is widely described elsewhere \cite{CLIC:cdr,CTF:drive_beam,ctf3:dr}. 
 
 To realise high-gradient structure tests, a beam line parallel to the linac have been set up. The two beam lines are connected by an oblique segment, giving the characteristic shape that is the origin of the name \textit{Dogleg}.
 
@@ -19,11 +20,12 @@ For the high-gradient testing purpose the accelerator is operated simulating the
   \centering
     \begin{tabular}{ c l }
     \hline
+    \hline
     Current 		&	up to $1.6\,A$\\
     Pulse length		&	up to $250\,ns$\\
     Energy			&	up to $130\, MeV$\\
     Reptition freq.	&	$0.83\,-\,50\, Hz$\\
-
+    \hline
     \hline
     \end{tabular}
 \caption{Beam parameters achievable in the Dogleg \cite{NavarroQuirante:2025954}}
@@ -51,16 +53,13 @@ The layout of the linac is reported in figure \ref{linaclayout}
 
 \subsubsection{The dogleg}
 
-After sector 7 in the linac, another triplet of quadrupoles is located on the beamline before a bending magnet. When the bending magnet is on, the beam is directed in the dogleg, passing through an oblique section, to end up in a segment of the beamline parallel to the linac. The optics of the dogleg beamline is designed to correct the dispersion provoked by the bending magnets. At the end of the dogleg line the structure under test is placed between two Beam Position Monitors (BPMs). Just before the structure is placed a slit, in order to protect the coupling cell of the structure from being hit by a misaligned beam. The beam is dumped downstream the structure.
+After sector 7 in the linac, another triplet of quadrupoles is located on the beamline before a bending magnet. When the bending magnet is on, the beam is directed in the dogleg, passing through an oblique section, and gets bent again to a segment of the beamline parallel to the linac. The optics of the dogleg beamline is designed to correct the dispersion provoked by the bending magnets. At the end of the dogleg line the structure under test is placed between two Beam Position Monitors (BPMs). Just before the structure is placed a slit, in order to protect the coupling cell of the structure from being hit by a misaligned beam. The beam is dumped downstream the structure.
 
 In case the first bending magnet is off, the beam proceeds straight in the linac, passing through a triplet of quadrupoles in section 9 and another triplet in sector 10. After that is placed a spectrometer to measure beam energy and momentum. 
 
 The linac proceeds with other accelerating structures, that are not interesting for the development of this work.
 
 The layout of the dogleg and of the linac up to section 10 is reported in figure \ref{dolaut}.
-
-
-% FIX LAYOUT IN FIGURE 4.3
 
 
 \begin{landscape}
@@ -98,20 +97,16 @@ The layout of the dogleg and of the linac up to section 10 is reported in figure
 
 
 
-\subsection[Comparison of setup and CLIC design]{Comparison of setup and CLIC design}
-
-
-
-\section[RF power generation]{RF power generation}
+\section[RF power production]{RF power production}
 
 The development of the accelerating cavities technology is strongly related to the possibility to produce and test prototypes. This test activity allows to improve the understanding of the scaling laws of the phenomena that limit the performance of the accelerating structures, but also to compare the results of different production and conditioning techniques. 
 
-At CERN the production of 12 GHz RF was carried out just in the CTF3 in the Two-beam modules. These reasons highlighted the necessity of standalone test stands to enlarge the test possibilities. This was realised the first time with the installation of the so called X-Band Test Stand 1 (XBOX1) \cite{Peauger:1287901}. Currently there are three X-band test stands active at CERN simultaneously.
+At CERN the production of 12 GHz RF was carried out just in the CTF3 in the Two-beam modules. To enlarge the test possibilities the necessity of standalone test stands came out. This was realised the first time with the installation of the so called X-Band Test Stand 1 (XBOX1) \cite{Peauger:1287901}. Similar test stand are present in the Nextef facility at KEK and in the ASTA facility at SLAC. Currently there are three X-band test stands active at CERN simultaneously.
 
 \begin{figure}[h]
 \centering 
 \includegraphics[scale=0.8]{pictures/test_stand_scheme.pdf}
-\caption{Standalone X-band test stand layout. Adapted from \cite{Woolley:2015}}
+\caption{Standalone X-band test stand layout}
 \label{xbox_layout}
 \end{figure}
 
@@ -123,20 +118,18 @@ The layout of a RF test stand is shown in figure \ref{xbox_layout}. It is normal
 The proposal of an X-band test stand at CERN followed the change of the frequency of CLIC from 30 to the european X-band 12 GHz in 2008. An organic description of XBOX1 is in \cite{Woolley:2015,Kovermann:1459879}. The high-power RF production is realised using:
 \begin{itemize}
 \item SLAC built XL-5 klystron, able to produce 50 MW of 12 GHz radiation with a pulse length of $1.5\, \mu$s and a repetition rate up to 50 Hz.
-\item Scandinova modulator is used to power the klystron.
-\item SLED1 type RF pulse compressor is able to compress the klystron output pulse to a shorter one of 140 MW, 250 ns long, which is enough to test accelerating structures considering the waveguide losses.
+\item Scandinova modulator, used to power the klystron.
+\item SLED1 type RF pulse compressor, able to compress the klystron output pulse to a shorter one of 140 MW, 250 ns long, which is enough to test accelerating structures considering the waveguide losses.
 \end{itemize}
 
-The RF delivery from the pulse compressor to the structure is realised using WR90 waveguides, kept under high-vacuum at a pressure of the order of\\ $5\times10^{-9}$ mbar. In order to reduce the losses, some part of the line to the structure under test is realised with low loss waveguides. This structure requires mode converters because the fundamental modes of the waveguides are different. The overall transmission of the waveguide from the pulse compressor to the structure under test is around 67 \%.
+The RF delivery from the pulse compressor to the structure is realised using WR90 waveguides, kept under high-vacuum at a pressure of the order of\\ $5\times10^{-9}$ mbar. In order to reduce the losses, some part of the line to the structure under test is realised with low loss waveguides. This structure requires mode converters because the fundamental modes of the waveguides are different. The overall transmission of the waveguide network has been measured to be around 67 \%.
 
 More details regarding the key components of the system are presented in the following sections. The system is controlled solely by the Low-Level Radio Frequency (LLRF), since the gain of the amplification chain is fixed. This feature makes necessary a unique control system of the LLRF together with the Data Acquisition system (DAQ), that will be described in section 4.3.
 
 
 \subsubsection{TWT, Klystron and modulator}
 
-%missing name of the TWT and check the specs
-
-The very first power amplification stage is carried out by a NAME OF TWT Travelling Wave Tube (TWT), which is a device with the same working principle of the klystron (described below). It is in charge to raise the power of the signal from some watts to up to 3 kW.
+The very first power amplification stage is carried out by Travelling Wave Tube (TWT) \cite{appSys:twt}, which is a device with the same working principle of the klystron (described below). It is in charge to raise the power of the signal from some watts to up to 3 kW.
 
 XL-5 klystrons comes from the effort made in SLAC to develop high efficiency klystrons for the Next Linear Collider project (NLC). Them are based on the XL-4 klystrons, adapted from the american X-band frequency of 11.4 GHz to the european 12 GHz. This effort lead to the CPI VKX-8311A tubes that are currently in use \cite{klystron:CPI}, which are able to produce a pulse of 50 MW of power, $1.5 \, \mu$s long with an efficiency of the order of 40\%.
  
@@ -153,12 +146,14 @@ This technique can lead to the peak power increase up to a factor 5-7.
 
 The SLED-I type pulse compressor is using two cavities, coupled with a 3 dB hybrid coupler, in order to discharge the produced power to the desired load instead of sending it back to the klystron. The theory is fully described in \cite{Fiebig:209756}, the application in XBOX1 in \cite{SLED:ctf3}.
 
+The resonance frequency of the pulse compressor's cavities is strongly dependent from the volume, which depends by the temperature. For this reason the heat produced by the RF, due to the ohmic resistance of the walls, has to be disposed by an external thermostatic system.
+
  
 
 
 \section[DAQ \& RF control systems]{DAQ \& RF control systems}
 
-The control system is in charge of generating a phase-modulated signal for the successive amplification stages (TWT and klystron). It also has to acquire the signals from the directional couplers, and the diagnostic signals from the structure and the vacuum systems. According to the diagnostic input, it modulates the signal and can also act on the beam permit of the gun of the linac. 
+The control system is in charge of generating a phase-modulated signal for the successive amplification stages (TWT and klystron). It also has to acquire the signals from the directional couplers, and the diagnostic signals from the structure and the vacuum systems. According to the diagnostic inputs, it modulates the signal and can also act on the beam permit of the gun of the linac. 
 
 \subsection[Hardware]{Hardware}
 
@@ -176,37 +171,49 @@ The data acquisition from the -50 dB directional couplers on the waveguides is f
 \item Logarithmic detector are used to acquire the signals with a wide dynamic range of over 46 dB
 \end{enumerate}
 
-The PXI crate has 8 channels of 14-bits, 250 MSa/s digitisers. These digitisers are connected to an FPGAs to detect if the signals overcome the critical thresholds. In case the FPGA sends a signal to the trigger unit to interlock the LLRF signal production. A 24 channel Digital Multimeter (DMM) unit is used to read the vacuum signals from the ion pump controllers. The fast digitisers acquire the signals from the logarithmic detectors. 
+The PXI crate has 8 channels of 14-bits, 250 MSa/s digitisers. These digitisers are connected internally to an FPGAs in order to elaborate it as fast as possible, and send a signal to the trigger unit to interlock the LLRF signal production. A 24 channel Digital Multimeter (DMM) unit is used to read the vacuum signals from the ion pump controllers. The fast digitisers of the PXI acquire the signals from the logarithmic detectors. 
 
 The signals of the IQ demodulators are sampled by OASIS acquisition PC containing 16 units of 1 GSa/s, 8-bits ADCs. These are read by the PXI crate and archived only during the breakdown events for the offline analysis. 
 
 The signals of the BPMs are acquired and recorded as well by one of the acquisition card of the PXI crate.
 
-%diodes?
-
-%%%Modifications after moving to the dogleg ??? 
 
 
 
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.8]{pictures/high-level-RF-scheme.pdf}
+\caption{Schematic of the high level RF and the relevant part of the DAQ for the interlock system. See appendix for glossary of abbreviations}
+\label{high_l_RF}
+\end{figure}
 
 
 
 \subsection[Online triggers]{Online triggers}
 
-In order to protect the equipments, a number of parameters are constantly monitored and can interlock the setup. Every piece of the equipment has its internal interlocks defined by the constructor. E.g. in the modulator: pressure in the waveguides, door of the higher radiation zone open, internal arc in the klystron, cooling oil system failure, ...; or in the TWT: reflected power out of scale, ... 
+\subsubsection{Interlocks}
 
-The effect of such interlocks is to shut down the affected part, but the rest of the equipment stays on.
+In order to protect the equipments, a number of parameters are constantly monitored and can interlock the setup. Every piece of the equipment has its internal interlocks defined by the constructor. E.g. in the klystron-modulator group: pressure in the waveguides, door of the higher radiation zone open, internal arc in the klystron, cooling oil system failure, etc ...; or in the TWT: reflected power out of scale, etc ... 
 
-A different matter is the interlocking system that is implemented in the PXI crate. When it is triggered, it acts on the LLRF power, cutting the power but leaving the rest of the amplification chain ready. There are four interlocks of this kind, triggered overcoming a user-defined threshold:
+The effect of such interlocks is to shut down the affected part, but the rest of the equipment remain on.
+
+\subsubsection{Triggers}
+
+A different matter is the interlocking system that is implemented in the PXI crate. It is implemented in order to detect the breakdown events and trigger the data saving. When one of the following interlock is triggered, it acts on the LLRF power, cutting the power but leaving the rest of the amplification chain ready. After a period of time, generally seconds, the power is restarted and ramped up gradually.
+
+ There are four interlocks of this kind, triggered overcoming a user-defined threshold:
 \begin{enumerate}
-\item {\makebox[7cm]{Peak reflected power:\hfill} $max(P_{REF})$}
-\item {\makebox[7cm]{Reflected energy:\hfill} $\int P_{REF}(t) \, dt $}
-\item {\makebox[7cm]{Missing transmitted energy:\hfill} $\int P_{INC}(t)\,dt - \int P_{TRA}(t)\,dt$}
+\item {\makebox[7cm]{Cavity peak reflected power:\hfill} $max(P_{REF})$}
+\item {\makebox[7cm]{Cavity reflected energy:\hfill} $\int P_{REF}(t) \, dt $}
+\item {\makebox[7cm]{Cavity missing transmitted energy:\hfill} $\int P_{INC}(t)\,dt - \int P_{TRA}(t)\,dt$}
 \item {\makebox[7cm]{Peak power reflected to the klystron:\hfill} $max(P_{KREF})$}
 \end{enumerate}
-%is that accurate ? Do the power is always set to zero, even for a BD in the structure?
 The last one is again to protect the klystron, and is triggered when the reflected power back from the pulse compressor is too high. This happens especially when the pulse compressor is not properly tuned, as described later in this chapter.
 The first three indeed are used to detect a breakdown event inside the structure under test. When one or more of these four interlock is triggered, the event is saved by the PXI crate. If no interlock is triggered in one minute, an event is saved as a backup to monitor the state of the current test.
+
+Generally a breakdown event triggers more than one of the criteria above. A key point is the redundancy: the event recording starts when even just one of the interlock is triggered, in order to not to lose any interesting event. Additional events that trigger the saving are stored anyway, and will be filter out during the offline analysis described in the next chapter.
+
 
 \section[Other systems]{Other systems}
 mention here thermostatic system of the structure and vacuum system ....
@@ -219,7 +226,7 @@ Anything else missing ???
 
 - pulse compressor issues
 
-- relative phase beam / x-band RF
+- relative phase beam / x-band RF adjust
 
 
 
