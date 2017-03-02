@@ -12,7 +12,7 @@ In this section some useful concepts and result of the electromagnetic theory wi
 
 \subsubsection{Maxwell's equations}
 
-It's well known since the basic courses of physics that the propagation of the electromagnetic fields follow the Maxwell's equations, that in a medium are
+It is well known that the propagation of the electromagnetic fields follow the Maxwell's equations, that in a medium are
 \begin{equation}
 \begin{array}{l l l l}
 \nabla . \vec{D} = \rho_{free}\\
@@ -31,12 +31,12 @@ The request of propagation in the direction of the axis of the waveguide can be 
 
 Many solutions can be found to the problem, integrating the Maxwell's equations with the given boundary condition, but without entering in the calculations, the interesting solutions belong to two classes:
 \begin{itemize}
-\item \textbf{TM modes:} Transverse Magnetic modes, where the axial component of the magnetic field is null
-\item \textbf{TE modes:} Transverse Electric modes, where the axial component of the electric field is null
+\item \textbf{TM modes:} Transverse Magnetic modes, where the axial component of the magnetic field is null.
+\item \textbf{TE modes:} Transverse Electric modes, where the axial component of the electric field is null.
 \end{itemize}
 Every mode has a particular cutoff frequency, and will propagate only in case that the condition $\omega > \omega_c$ is met (where $\omega_c = 2\pi f_c$ and $f_c$ is the cutoff frequency of the mode). The cutoff frequency of each mode depends mainly on the geometry of the guide utilised, and waves with a frequency lower than the cutoff frequency will be exponentially damped.
 
-The major features of a waveguide are: the \textit{phase velocity} is $v_p=\frac{\omega}{k} > c$; the \textit{group velocity} instead is $v_g = \frac{\partial w}{\partial k} < c$ as expected for the physical quantity representing the speed of propagation of the EM wave according to Relativity; and  the dispersion relation for a uniform waveguide can be expressed as 
+The major features of a waveguide are: the \textit{phase velocity} is $v_p=\frac{\omega}{k} > c$; the \textit{group velocity} instead is $v_g = \frac{\partial w}{\partial k} < c$ as expected for the physical quantity representing the speed of propagation of the electromagnetic wave according to Relativity; and  the dispersion relation for a uniform waveguide can be expressed as 
 \begin{equation}
 \omega^2 = \omega^2_c + (k_0 \, c)^2
 \end{equation}
@@ -44,7 +44,7 @@ where $\omega_c = K \, c$ and $K$ is the cutoff wavenumber.
 
 The waveguides are a key building block of particle accelerators to deliver the RF power form the production equipment to the accelerating cavities, but are not suitable for particle acceleration as pointed out later.
 
-A particular case is represented by \textit{Resonant Cavities}, which are in the simplest case closed waveguides at the terminations (e.g. a cylindrical cavity, or \textit{pillbox cavity}, is composed of a circular waveguide closed by two planes at the extremities). In resonant cavities the EM field can resonate according to the particular eigenfrequencies of the system, which are mainly dictated by the geometry. This process allows propagation of just a set of frequencies, just like in the WGs, but when a cavity is operating at one of the eigenfrequency starts to accumulate energy because of the resonance. This mechanism is utilised in accelerating structures.
+A particular case is represented by \textit{Resonant Cavities}, which are in the simplest case closed waveguides at the terminations (e.g. a cylindrical cavity, or \textit{pillbox cavity}, is composed of a circular waveguide closed by two planes at the extremities). In resonant cavities the electromagnetic field can resonate according to the particular eigenfrequencies of the system, which are mainly dictated by the geometry. This process allows propagation of just a set of frequencies, just like in the waveguides, but a cavity operating at one of the eigenfrequency starts to accumulate energy because of the resonance. This mechanism is utilised in accelerating structures.
 
 
 \subsection[Periodic accelerating structures]{Periodic accelerating structures}
@@ -60,11 +60,11 @@ To reduce the phase velocity into the structure, it is possible to load it with 
 
 \end{figure}
 
-The accelerating structure is composed of \textit{cells}, which are connected by the \textit{iris} to the adjacent cells. At the beginning and the end of the structure two special cells form the input and output coupler for the RF. The role of the irises is creating a free path for the passage of the beam and allowing the propagation of the EM field from the input coupler to the output one. In the case of room temperature cavities the material normally used is Copper, while for superconducting cavities the material can vary and also metallic cavities coated internally with a superconductive layer are a possibility.
+The accelerating structure is composed of \textit{cells}, which are connected by the \textit{iris} to the adjacent cells. At the beginning and the end of the structure two special cells form the input and output coupler for the RF. The role of the irises is creating a free path for the passage of the beam and allowing the propagation of the EM field from the input coupler to the output one. In the case of room temperature cavities the material normally used is copper, while for superconducting cavities the material can vary and also metallic cavities coated internally with a superconductive layer are a possibility.
 
 From the field perspective, the fact that the accelerating structure is loaded with the disks changes the way that the EM waves propagate in the structure. The full mathematical description, is found in \cite{ Jackson:ClassEM,Weiss:261732}, here simply a general idea of the process and of the relevant results is given.
 
-The geometry of the accelerating structure can be seen as a cylindrical cavity loaded regularly with the disks. If as first approximation we consider an infinite structure, it is possible to use the \textit{Floquet's Theorem}, that can be summarised as follows: \textit{"In a given mode of an infinite periodic structure, the fields at two different cross sections that are separated by one period differ only by a constant factor, which in general is a complex number"}. This has two main implications: there are some regions of the spectrum of $\omega$ that don't allow the waves to propagate, called \textit{stopbands}, and others, called \textit{passbands}, where the propagation is allowed with a \textit{phase shift} $\Delta \phi = k_0 d$, where d is the length of the cell. The phase advance per cell is a particular parameter of every structure, and is defined in the design phase.
+The geometry of the accelerating structure can be seen as a cylindrical cavity loaded regularly with the disks. If as first approximation we consider an infinite structure, it is possible to use the \textit{Floquet's Theorem}, that can be summarised as follows: \textit{"In a given mode of an infinite periodic structure, the fields at two different cross sections that are separated by one period differ only by a constant factor, which in general is a complex number"}. This has two main implications: there are some regions of the spectrum of $\omega$ that do not allow the waves to propagate, called \textit{stopbands}, and others, called \textit{passbands}, where the propagation is allowed with a \textit{phase shift} $\Delta \phi = k_0 d$, where d is the length of the cell. The phase advance per cell is a particular parameter of every structure, and is defined in the design phase.
 
 The waves that are allowed to propagate in such conditions are called \textit{Space Harmonics}, and can be seen as an infinite number of waves propagating at the same frequency but with different wavenumbers. The dispersion relation becomes
 \begin{equation}
@@ -108,12 +108,12 @@ In order to deliver a  constant energy gain to a charged particle it is necessar
 \item The electromagnetic wave has to have a non-zero component in the direction of the motion of the particle
 \item The phase velocity of a wave has to be similar to the particle velocity
 \end{enumerate}
-using some results of the theory of EM waves it is possible to show that the two condition cannot be met neither in the free space, nor in simple waveguides, but is necessary to build up some particular structures in order to coerce the electromagnetic field to propagate in the desired form.
+the two condition cannot be met neither in free space, nor in simple waveguides, but travelling wave structures shape the electromagnetic field to propagate in the desired form.
 
 
 \subsection[Figure of merit for accelerating structures]{Figure of merit for accelerating structures}
 
-To characterize different accelerating structures, is necessary to rely on some significant quantities that can be derived from the geometry of the cavities. The most important figures of merit (FOMs) are the following (a number of different definitions are commonly used, here are reported in accordance with \cite{TECKER:RFCAS}):
+To characterize different accelerating structures, is necessary to rely on some significant quantities that can be derived from the geometry of the cavities. The most important figures of merit (FOMs) are the following (a number of different definitions are commonly used, here they are reported in accordance with \cite{TECKER:RFCAS}):
 \begin{itemize}
 
 \item \textbf{Quality factor} 
@@ -126,7 +126,7 @@ is a standard FOM for the resonant cavities, representing the stored energy U ov
 \begin{equation}
 R = \frac{V_{acc}^2}{2P_{loss}}  \quad [M\Omega]
 \end{equation}
-represent the effectiveness of producing an axial voltage V$_{acc}$ for a given power dissipated. For long cavities, where it is preferable to have a quantity that is independent from the length of the structure, the Shunt impedance per unit length
+represents the effectiveness of producing an axial voltage V$_{acc}$ for a given power dissipated. For long cavities, where it is preferable to have a quantity that is independent from the length of the structure, the Shunt impedance per unit length
  Z is commonly used 
 \begin{equation}
 Z = \frac{R}{L}  \quad [M\Omega / m]
@@ -173,7 +173,7 @@ The understanding of these phenomena is particularly challenging and requires a 
 
 \subsubsection{Emission from flat clean surface}
 
-The field emission law was theorized by Fowler and Nordheim in 1928 and rules the current emission from a metal with an intense electric field applied. The derivation was carried out calculating the tunneling probability of electrons of the conduction band through the perfectly flat and clean surface of a metal. \\The applied electric field modifies the potential barrier, and the current density of emitted electrons can be derived as the following, giving the  \textit{Fowler-Nordheim equation} \cite{Fowler173}
+The field emission law was theorised by Fowler and Nordheim in 1928 and rules the current emission from a metal with an intense electric field applied. The derivation was carried out calculating the tunneling probability of electrons of the conduction band through the perfectly flat and clean surface of a metal. \\The applied electric field modifies the potential barrier, and the current density J$_F$ of emitted electrons can be derived as the following, giving the  \textit{Fowler-Nordheim equation} \cite{Fowler173}
 \begin{equation}
 J_F = \frac{ 1.54\times10^{-6} \times 10^{4.52\phi^{-0.5}} E^2}{  \phi } \, \text{exp} \left ( -\frac{6.53\times 10^9 \phi^{1.5}}{E} \right ) \quad [A\,m^{-2}]  \label{FNlaw}
 \end{equation}
@@ -181,19 +181,19 @@ where $\phi$ is the work function of the material and $E$ is the applied electri
 
 \subsubsection{Enhanced field emission}
 
-It is well known that almost any surface is never perfectly clean and flat, and also the fact that the asperities of the surface provoke an enhancement of the local electric field. This behaviour lead to the phenomenon known as \textit{Enhanced Field Emission} (EFE), which major contributors are:
+It is well known that almost any surface is never perfectly clean and flat, and also the fact that the roughness of the surface provokes an enhancement of the local electric field. This behaviour lead to the phenomenon known as \textit{Enhanced Field Emission} (EFE), which major contributors are:
 \begin{itemize}
-\item Surface imperfection due to imperfect machining
+\item Surface imperfections due to imperfect machining
 \item Metallic dust
 \item Molten craters after breakdowns
 \item Absorbed gas
 \end{itemize} 
-and some others. These effects can create particular sites known as "emitters". It is a common praxis define the field enhancement factor $\beta$ to relate the electric field to the microscopic one
+and some others. These effects can create particular sites known as "emitters". It is a common praxis define the field enhancement factor $\beta$ to relate the electric E field to the microscopic one
 \begin{equation}
-E_{m} = \beta E_{0}
+E_{m} = \beta E
 \end{equation}
-The $\beta$ factors can be calculated according to the emitter's geometry \cite{Rohrbach:190223} as exploited in figure \ref{tip_factors}.
-Once the local field is known, using Eq. \ref{FNlaw} calculate the current emitted from EFE by an emitter site of area A gives 
+The $\beta$ factors can be calculated according to the emitter's geometry \cite{Rohrbach:190223} as exploited in Fig. \ref{tip_factors}.
+Using Eq. \ref{FNlaw}, the current I$_F$ emitted from EFE by an emitter site of area A becomes 
 \begin{equation}
 I_F = \frac{ 1.54\times10^{-6} \times 10^{4.52\phi^{-0.5}} A \beta^2 E^2}{  \phi } \, \text{exp} \left ( -\frac{6.53\times 10^9 \phi^{1.5}}{\beta E} \right ) \quad [A]  \label{If}
 \end{equation}
@@ -215,8 +215,6 @@ The emission of dark current seems to be a precursor of the breakdown  process, 
 \end{figure}
 
 
-%%%%%% EXCURSUS ABOUT REASONABLE VALUES OF BETA
-
 
 
 
@@ -226,9 +224,9 @@ In an historical perspective, the Kilpatrick's Critereon was the first attempt t
 
 This critereon was reviewed many times up to now, because the experiments conducted nowadays show a field limit 7-8 times higher than Kilpatrick's prediction. This can be addressed to different reasons: first of all the quality of the machining of the structures has increased considerably since the 1950's; in second instance Kilpatrick examined simple geometries, while in RF cavities are more complicated.
 
-At the end of the 1980's J.D.Wang finally proposed a model based on microprotrusion effect on the field and field emission, that involves the formation of a micro-plasma during the breakdown process. Also the Kilpatrick's limit was revised again in order to match the experimental results. \cite{Wang:1986, kilp:story}
+At the end of the 1980's J.D.Wang proposed a model based on microprotrusion effect on the field and field emission, that involves the formation of a micro-plasma during the breakdown process. Also the Kilpatrick's limit was revised again in order to match the experimental results. \cite{Wang:1986, kilp:story}
 
-Furthermore theories on the mechanism of breakdowns evolved, and will be mentioned in chapter 3.
+Further theories on the mechanism of breakdowns evolved, and will be mentioned in chapter 3.
 
 Without entering in the physics of the breakdown phenomenon yet, the two following scaling laws are currently used in the design of modern accelerating structures.
 
@@ -246,7 +244,7 @@ Anyway, although these criteria are still in use today for the accelerating stru
 
 \subsection{The modified Poynting vector $S_c$}
 
-During the development of high-gradient normal conducting accelerating structures for the CLIC project, a new field quantity was developed, the \textit{Modified Poynting Vector} $S_c$, that is suitable both for TWS and SWS. \cite{Grudiev:newLoc}
+During the development of high-gradient normal conducting accelerating structures for the CLIC project, a new field quantity was developed, the \textit{Modified Poynting Vector} $S_c$, that is suitable both for TWS and SWS \cite{Grudiev:newLoc}.
 
 The formulation is based on two assumptions: the breakdown process is determined by the accumulation of the pulses rather than the single pulse and the possible triggers of the breakdown can be induced by many processes that will be discussed later and are not relevant for the scaling law derivation.
 
@@ -254,7 +252,7 @@ A number of effects have to be taken into account (a simple geometry is consider
 
 \subsubsection{Pulsed heating by field emission current}
 
-it is known that the field emission gets enhanced by the presence of the protrusion as described before. In this case the field enhancement factor can be expressed as $\beta \simeq h/r$, where $h$ is the tip height and $r$ is the cap radius. So the tip will emit a current according to the Fowler-Nordheim law \ref{If}, causing in first approximation the heating of the tip due to the ohmic heating as shown in figure \ref{figure_S_c}. Assuming that the edge of the tip will be the most heated part, and using the heat conduction equation, it is possible to derive the emitted current to melt the tip, which is found to be approximately $36$ A/$\mu$m$^2$ for a tip of $1$  $\mu$m height and a pulse of $100$ ns. This is consistent with the findings in \cite{soviet:1983}. The $\beta$ factor can be then derived, which is approximately between 40 and 60 considering a surface electric field in case of breakdown between 200 and $300$ MV/m, according with the experimental results.
+it is known that the field emission gets enhanced by the presence of the protrusion as described before. In this case the field enhancement factor can be expressed as $\beta \simeq h/r$, where $h$ is the tip height and $r$ is the cap radius. So the tip will emit a current according to the Fowler-Nordheim law \ref{If}, causing in first approximation the heating of the tip due to the ohmic heating as shown in figure \ref{figure_S_c}. Assuming that the edge of the tip will be the most heated part, and using the heat conduction equation, it is possible to derive the emitted current to melt the tip, which for copper is found to be approximately $36$ A/$\mu$m$^2$ for a tip of $1$  $\mu$m height and a pulse of $100$ ns. This is consistent with the findings in \cite{soviet:1983}. The $\beta$ factor can be then derived, which is approximately between 40 and 60 considering a surface electric field in case of breakdown between 200 and $300$ MV/m, according with the experimental results.
 
  \begin{figure}
  \centering
@@ -272,7 +270,7 @@ it is known that the field emission gets enhanced by the presence of the protrus
 
 \subsubsection{Power flow near an emission site}
 
-The heating of the tip mentioned before requires a huge amount of energy, which can be supplied only by the RF power present into the cavity. This is described by the Poynting vector $S_{RF} = E\times H_{RF}$. As discussed before a current is established in the tip, and flows through, subtracting energy to the EM field in the surroundings of the tip. The current flows through the tip and leave it at the edge, getting sprayed in the cavity according to the Fowler-Nordheim theory. Since any current flowing creates an associated magnetic field, the power flow due to the emission is given by $S_{FN}=E\times H_{FN}$. 
+The heating of the tip mentioned before requires a huge amount of energy, which can be supplied only by the RF power present into the cavity. This is described by the Poynting vector $S_{RF} = E\times H_{RF}$. As discussed before a current is established in the tip, and flows through, subtracting energy from the EM field in the surroundings of the tip. The current flows through the tip and leaves it at the edge, getting sprayed in the cavity according to the Fowler-Nordheim theory. Since any current flowing creates an associated magnetic field, the power flow due to the emission is given by $S_{FN}=E\times H_{FN}$. 
 
 The key point is that since the copper is a very good conductor, to provoke a notable ohmic heating of the tip, a significant power flow through the tip is necessary. This can be calculated evaluating the $S_{FN}$ at a distance $d=h$ from the edge of the tip, where the electric field is not perturbed anymore by the shape of the tip itself. This can be formulated as the condition 
 \begin{equation}
@@ -286,12 +284,12 @@ P_{FN} (t) = A \, E^3_0 \, sin^3 \omega t \,  \, exp \left ( \frac{-62}{\beta E_
 \end{equation}
 where the work function of the copper $\phi = 4.5 \, eV$ has been used, $A$ is the area of the conductor and $\omega = 2 \pi f$ is the angular velocity.
 
-The RF power can be divided in real and imaginary part, with a phase shift of $90^\circ$. The real part is the energy propagating into the structure only and the imaginary part is the energy stored in the cavity both magnetically or electrically as it is the case in every resonant cavity. Since the active power flow is more efficient than the reactive one in providing power for the field emission, a weighting factor $g_c$ is introduced. The values of $g_c$ are slowly as function of the local electric field. For practical reasons all the simulation codes work using the complex Poynting vector $\bar{S}$, the precedent reasoning can be adapted to follow this practice, using the \textit{Modified Poynting Vector}
+The RF power can be divided in real and imaginary part, with a phase shift of $90^\circ$. The real part is the energy propagating into the structure only and the imaginary part is the energy stored in the cavity both magnetically or electrically as it is the case in every resonant cavity. Since the active power flow is more efficient than the reactive one in providing power for the field emission, a weighting factor $g_c$ is introduced. The values of $g_c$ vary slowly as function of the local electric field. For practical reasons all the simulation codes work using the complex Poynting vector $\bar{S}$, the precedent reasoning can be adapted to follow this practice, using the \textit{Modified Poynting Vector}
 \begin{equation}
 S_c = Re\{ \bar{S} \} + g_c \, Im \{ \bar{S} \} \qquad [W/\mu m^2]
 \end{equation} 
 
-Since this quantity can be calculated in any point of a structure, this allows to identify in advance the regions which are more sensible to the breakdown process. The rule of thumb given by the experience says that this quantity should not exceed the value of $5$ W/$\mu$ m$^2$ to have a breakdown rate smaller than $1\times 10^{-6} $ bpp  m$^{-1}$ with a pulse length of $200$ ns.
+Since this quantity can be calculated in any point of a structure, this allows to identify in advance the regions which are more sensitive to the breakdown process. The rule of thumb given by the experience says that this quantity should not exceed the value of $5$ W/$\mu$ m$^2$ to have a breakdown rate smaller than $1\times 10^{-6} $ bpp  m$^{-1}$ with a pulse length of $200$ ns.
 
 This quantity has been used to design all the lateset generations of CLIC structures, including the one tested in this work.
 
@@ -302,7 +300,7 @@ This quantity has been used to design all the lateset generations of CLIC struct
 
 \section[The TD26CC structure for the Main Beam of CLIC]{The TD26CC structure for the Main Beam of CLIC}
 
-After the precedent part about the general laws that regulate the operation of the TWS, now the structure under test in this work, the TD26CC, will be presented. The name stays for Tapered, Damped, 26-cells active cells structure with Compact Couplers.
+After the precedent part about the general laws that regulate the operation of the TWS, now the structure under test in this work, the TD26CC, will be presented. The name stands for Tapered, Damped, 26-cells active cells structure with Compact Couplers.
 
 It is necessary to keep in mind that in the design of the real cavities, it is almost never possible to use the general laws described in precedence because of the high complexity of the geometry. A great work of design and simulation is necessary, and is carried out with complex numerical simulations. This section will present a summary of the parameters and features of the cavity, the details can be found in \cite{CLIC:cdr,Grudiev:td26cc,Lunin:1333709}.
 
@@ -351,19 +349,19 @@ These limitations, together with the parameters listed in section 1.2.2, lead to
  \hspace{5mm}
  \subfigure[CAD model of the structure, open to show the damping material]
    {\includegraphics[scale=0.22]{pictures/TD26_layout}}
- \caption{A disk composing the structure (left) and the scheme of an accelerating structure (right), including couplers for the RF, cooling elements and connection flanges. The wakefield monitor is not present in the prototype under test}
+ \caption{A disk composing the structure (left) and the scheme of an accelerating structure (right), including couplers for the RF, cooling elements and connection flanges. The wakefield monitor is not present in the prototype under test.}
  \label{CLICdisk}
  
  \end{figure}
  
-The structure is fabricated stacking machined copper disks that are brazed together with a particular procedure that has been elaborated in order to achieve the highest mechanical precision possible in the alignment of the parts. Figure \ref{CLICdisk} shows a disk and a model of the accelerating structure.
+The structure is fabricated stacking machined copper disks that are brazed together with a particular procedure that has been elaborated in order to achieve the highest mechanical precision possible in the alignment of the parts. Figure \ref{CLICdisk} shows a disk and a model of the accelerating structure. Figure \ref{td26_test_photo} shows the actual test structure before installation.
 
 The iris radius and thickness are linearly tapered in order to optimise the various high power parameters and to create a smooth field profile along the structure. 
 
-Because of the high number of bunches per train and of the very short spacing between them (see table 1.1), the structure is realised in order to extract the transverse wakefields that can develop in the structure. This is realised using 4 symmetrical waveguides of dimensions carefully selected in order to allow the propagation of just the higher order electromagnetic modes (HOMs) but not the fundamental one that is used to accelerate the bunches and is provided from the input couplers. Once extracted, the transverse wakefields are damped on tips of Silicon Carbide (SiC) that are placed 50 mm away from the axis of the cavity.
+Because of the high number of bunches per train and of the very short spacing between them (see Table 1.1), the structure is designed to extract the transverse wakefields that can develop in the structure. This is realised using four symmetrical waveguides of dimensions carefully selected in order to allow the propagation of just the higher order electromagnetic modes (HOMs) but not the fundamental one that is used to accelerate the bunches and is provided from the input couplers. Once extracted, the transverse wakefields are damped on tips of Silicon Carbide (SiC) that are placed 50 mm away from the axis of the cavity.
 The tapering also provides detuning of the high order modes, which are an issue even for highly damped structures.
 
-Cooling water circuits and the vacuum flange are also installed the structure. The "CC" in the initials of the cavity name refers in fact to the particular shape of the coupling cells of this structure.
+Cooling water circuits and the vacuum flange are also installed the structure. The "CC" in the cavity name refers in fact to the particular shape of the coupling cells of this structure.
 
 \begin{figure}[h]
 \centering
