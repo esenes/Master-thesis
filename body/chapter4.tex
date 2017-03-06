@@ -1,9 +1,34 @@
-\chapter[Data analysis tools]{Data analysis tools}
+\chapter[Data analysis]{Data analysis}
 
 \section[Offline selection of the events]{Offline selection of the events}
 
+In order to perform the data analysis, a full analysis framework have been developed using MATLAB. 
+
+\subsection[Data collected from the PXI]{Data collected from the PXI}
+
+As mentioned in the previous chapter, the data acquisition is performed from a real-time LabVIEW program running into the PXI crate. When an event hits at least one of the online triggers is saved into the crate's disk. Every 8 hours, the crate assemble a data file and stores it in TDMS format \cite{NI:TDMS}. To proceed with the analysis, the files are merged joining all the data of the same day together in a new data file. The original data are anyway kept stored. All these actions were found already implemented in the system at the beginning of this work.
+
+The kind of events that are collected by the PXI crate have two natures:
+\begin{enumerate}
+\item Interlock pulses: an event that triggered one of the online interlock. If available, the two precedent pulses are saved.
+\item Backup pulses: if no event triggers an online interlock, a pulse every minute is saved.
+\end{enumerate}
+
+
+\subsection[Data selection for high-gradient tests]{Data selection for high-gradient tests}
+
+Of th
+
+
+
+
+
 \section[Time and space positioning of the breakdowns]{Time and space positioning of the breakdowns}
 
-\section[Migration of the breakdowns]{Migration of the breakdowns}
+
+
+
+
+
 
 \section[Beam induced RF]{Beam induced RF}
