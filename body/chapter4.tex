@@ -1,4 +1,4 @@
-\chapter[Data analysis]{Data analysis}
+\chapter[Data selection and vacuum arcs localisation]{Data selection and vacuum arcs localisation}
 
 \section[Offline selection of the events]{Offline selection of the events}
 
@@ -6,16 +6,19 @@ In order to perform the data analysis, a full analysis framework have been devel
 
 \subsection[Data collected from the PXI]{Data collected from the PXI}
 
-As mentioned in the previous chapter, the data acquisition is performed from a real-time LabVIEW program running into the PXI crate. When an event hits at least one of the online triggers is saved into the crate's disk. Every 8 hours, the crate assemble a data file and stores it in TDMS format \cite{NI:TDMS}. To proceed with the analysis, the files are merged joining all the data of the same day together in a new data file. The original data are anyway kept stored. All these actions were found already implemented in the system at the beginning of this work.
+As mentioned in the previous chapter, the data acquisition is performed from a real-time LabVIEW program running in the PXI crate. When an event hits at least one of the online triggers is saved into the crate's disk. Every 8 hours, the crate assemble a data file and stores it in TDMS format~\cite{NI:TDMS}. 
+
+In order to proceed with the analysis, the files are merged joining all the data of the same day together in a new data file. The original data are anyway kept stored.
 
 The kind of events that are collected by the PXI crate have two natures:
 \begin{enumerate}
-\item Interlock pulses: an event that triggered one of the online interlock. If available, the two precedent pulses are saved.
-\item Backup pulses: if no event triggers an online interlock, a pulse every minute is saved.
+\item Interlock pulses: an event that triggered at least one of the online interlock. If available, the two precedent pulses are saved.
+\item Backup pulses: if no event triggers an online interlock for a minute, the data of a pulse are saved.
 \end{enumerate}
 The first ones are sent to the next analysis step, the second ones are analysed separately to check the running condition of the accelerator and the RF systems.
 
 
+\newpage
 \subsection[Power spikes detection]{Power spikes detection}
 
 A key operational issue is the presence of power spikes, that sometimes are detected in the systems. The main characteristics of these events are:
@@ -48,11 +51,7 @@ RF tests of accelerating cavities are carried out using the CLIC nominal pulse s
 
 A common operational issue is the detuning of the pulse compressor, that provokes an imperfect shape of the RF pulse. This event does not constitute an issue for the implementation of CLIC (unless implemented in the klystron option). Anyway excessively detuned running periods are sorted out, hence far from the wanted experimental conditions. 
 
-The origin of the detuning is the difference of the total volume of the pulse compressor's cavities. This is controlled changing the cooling water temperature, but as any other thermal system needs time for the regulation \cite{Woolley:CWS2016}. The detuning is a particular issue in summer, when the thermal excursion during the day is particularly high.
-
-As general rule a slight detuning of the pulse is tolerated, and it is not possible to get rid of it because the regulation of the temperature of the chillers act dynamically and needs time to compensate the variations. On the other hand the data are not considered in case of extreme detuning such as in Fig. \ref{detuning_fig} (b) and (c), where the box-shape of the pulse is not recognisable anymore. 
-
- \begin{figure}
+ \begin{figure}[h]
  \centering
   \subfigure[CLIC nominal pulse]
    {\includegraphics[scale=0.45]{pictures/CLIC_nominal_pulse.png}}
@@ -66,16 +65,31 @@ As general rule a slight detuning of the pulse is tolerated, and it is not possi
  \end{figure}
 
 
+The origin of the detuning is the difference of the total volume of the pulse compressor's cavities. This is controlled changing the cooling water temperature, but as any other thermal system needs time for the regulation \cite{Woolley:CWS2016}. The detuning is a particular issue in summer, when the thermal excursion during the day is particularly high.
+
+As general rule a slight detuning of the pulse is tolerated, and it is not possible to get rid of it because the regulation of the temperature of the chillers act dynamically and needs time to compensate the variations. On the other hand the data are not considered in case of extreme detuning such as in Fig. \ref{detuning_fig} (b) and (c), where the box-shape of the pulse is not recognisable anymore. 
+
+
+
 \subsection[The metric]{The metric}
 
-The key issue in the analysis of the vacuum arcs in the accelerating cavity is to understand if the breakdown happened in the accelerating cavity, and sort out the breakdowns happening elsewhere. For this purpose two quantities are evaluated:
+The online selection of the events is not strict enough to select immediately just the breakdowns happening in the structure. This is made on purpose in order to not to risk to lose any interesting event, but makes an additional filtering level necessary. 
+In order to sort out the non-interesting or fake breakdowns two quantities are calculated:
 \begin{equation}
-\frac{ E_{INC} -  E_{REF}   }{  E_{INC} +  E_{REF}   }
+m_{\text{REF}}  =  \frac{ U_{INC} -  U_{REF}   }{  U_{INC} + U_{REF}   }
 \end{equation}
 \begin{equation}
-\frac{ E_{INC} -  E_{TRA}   }{  E_{INC} +  E_{TRA}   }
+m_{\text{TRA}}  =  \frac{ U_{INC} -  U_{TRA}   }{  U_{INC} +  U_{TRA}   }
 \end{equation}
-by doing so two distinct regions gets highlighted (see Fig. \ref{Metric_plot}). The upper left region is made of the fake interlocks and the breakdown that happen upstream the structure under test. The events happening in the structure end up in the lower right area on the plot.
+where has been evaluated the signal energy U from the power signal over the whole acquisition period T
+\begin{equation}
+U = \int_0^T P(t) \, dt
+\end{equation}
+For a non-breakdown event it will be $m_{\text{REF}} \sim 1$ and $m_{\text{TRA}} \sim 0$.
+
+Plotting this two classifiers, two distinct regions gets highlighted (see Fig. \ref{Metric_plot}). The upper left region is made of the fake interlocks and the breakdown that happen upstream the structure under test. The events happening in the structure end up in the lower right area on the plot. 
+
+In this work the selection of the events has been performed using the two thresholds plotted in Fig. \ref{Metric_plot}, but as future perspective more refined methods can be used, such as k-means clustering or neural networks \cite{ML:book}.
 
 \begin{figure}[h]
 \centering 
@@ -85,7 +99,16 @@ by doing so two distinct regions gets highlighted (see Fig. \ref{Metric_plot}). 
 \end{figure}
 
 
-The selection based on the metric would be already sufficient to produce good results, with no need of further refining.
+\subsection{Power back-off failure}
+
+According to the test procedure, after a breakdown the input power gets cut for a period of time that is between the 5 and 10 seconds. Afterwards the power is restarted and gets ramped up gradually up to the nominal value unless a new breakdown happens.
+
+The reason of this behaviour is to preserve the surfaces of the accelerating cavity under test. In foreseen of the CLIC operation simulation, the structures will be tested without any buffer period after the breakdown and restoring the input RF at full power. Anyway for the moment no test of that kind has been done, and will be implemented in the future in one of the other test stand at CERN~\cite{Walter:PC}.
+
+For unknown reasons the power is not always cut immediately. This could provoke a breakdown that follows immediately the former one, but that is provoked by the malfunction of the instrumentation that does not cut the power fast enough. For this reason, the breakdown following 
+
+
+
 
 
 
@@ -94,14 +117,8 @@ The selection based on the metric would be already sufficient to produce good re
 During the experiments with beam, two additional conditions have to be met to consider an interlock as a breakdown in the accelerating structure
 \begin{enumerate}
 \item The beam has to be present during the pulse
-\item In the case of a breakdown happened during a period without beam, the 
+\item In the case of a group of successive breakdowns, also called \textit{cluster}, the initial trigger breakdown has to be triggered during a pulse with beam
 \end{enumerate}
-
-
-
-
-
-
 
 
 
@@ -109,10 +126,116 @@ During the experiments with beam, two additional conditions have to be met to co
 
 \section[Time and space positioning of the breakdowns]{Time and space positioning of the breakdowns}
 
+The position detection of the breakdown is based on the RF signals. The RF diagnostic is based on the signals recorded from directional couplers of the incident power (INC), transmitted power (TRA) and reflected power (REF). 
+
+Hence the accelerating structure is well matched with the rest of the RF system, the reflections are minimal. This means that during the normal operation only the INC and TRA are non-zero signals.
+
+When a breakdown happens, the plasma into the structure acts as a short circuit \cite{Degiovanni:2025952}, as effect the RF incoming after the breakdown gets reflected back, and consequently the transmitted power falls. This process is summarised in Fig.~\ref{BD_scheme}. A full dissertation on various possible positioning methods is available in \cite{Rajamaki:2143815}.
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.3]{pictures/structure_scheme}
+\caption{RF signal time delays in a travelling-wave accelerating structure. In the case under exam, $\tau_{0,\text{INC}}$ = $\tau_{0,\text{TRA}}$}
+\label{BD_scheme}
+\end{figure}
+
+
+\subsection[Edge method]{Edge method}
+
+The Edge Method is based on the time difference of arrival of the falling edge of the TRA signal and the rising edge of the REF signal. This method constitutes the most reliable method that is used for breakdown positioning. 
+
+Assuming that the vacuum arc starts to absorb and reflects the RF immediately after being triggered, the method will individuate a unique longitudinal position in the accelerating cavity.
+
+The edges of the TRA and REF signals are individuated looking for the deviation point of the signal from the nominal pulse (see Fig. \ref{dev_pt} (a) ). This is easily done using the previous pulse, which is recorded in the data when a breakdown happens.  According to this method the time delay $\tau_d^{\text{edge}}$ is
+\begin{equation}
+\tau_d^{\text{edge}} = \tau_{\text{REF}} - (\tau_{\text{TRA}} - \tau_{\text{FILL}})
+\end{equation}
+where $\tau_{\text{REF}} $ and $\tau_{\text{TRA}}$ are the time position in the signal of the deviation point from the previous pulse of the transmitted and reflected signals, and $\tau_{\text{FILL}}$ is the filling time of the accelerating structure, that is the time necessary for an RF signal to propagate through the structure. This leads to a time delay that is included between zero and $2 \tau_{\text{FILL}}$.
+
+For noisy signals, using the deviation point detection instead of detecting the edge of the signal at a certain height showed an improvement in the performance of the algorithm. It could anyway happens that for some reason the previous pulse was not recorded, in that case the location of the signals edge is entered manually.
+
+ \begin{figure}
+\centering
+  \subfigure[RF signals of a breakdown event. The deviation points of the signals are highlighted. The dashed lines are the reference signals, given by the previous pulse.]
+   {\includegraphics[scale=0.39]{pictures/dev_point.png}}
+   \hspace{1mm}
+  \subfigure[Detail of the region of interest (ROI) for the correlation method. The dashed lines indicate the time delay between the feature of the signal in exam.]
+   {\includegraphics[scale=0.39]{pictures/dev_point_detail_2.png}}
+\caption{RF signals of a breakdown in the structure. The dashed lines are the reference signals, provided by the previous pulse}
+ \label{dev_pt}
+ \end{figure}
+
+
+
+
+\subsection[Correlation method]{Correlation method}
+
+It has been outlined before that after the establishment of the breakdown, the INC is reflected back. This means that looking at the tail of the signal after the compressed pulse it is possible to individuate some particular pattern (see Fig. \ref{dev_pt} (b) ). In most of the cases the pattern will be visible in the REF signal. 
+
+This method is not always successful since is strongly dependent from: the amplitude of the pattern observed (in Fig. \ref{dev_pt} (b) one of the best example is reported, but most of the times the amplitude is much lower); and the position of the breakdown in the cavity, since the longer is the path of the signal in the structure, the higher will be the attenuation. In order to limit as much as possible the attenuation effect, this analysis is performed using the not-calibrated signals from the log detectors, but it's still not always possible individuate a common pattern between the tails of INC and REF.
+
+The algorithm for 
+
+
+
+\subsection[Comparison of the two methods]{Comparison of the two methods}
+
+It has to be pointed out that the correlation method is not always successful because of the attenuation of the REF signal. In addition, comparing the results of the two methods, the distribution of the arcs in the cavity are definitely different. 
 
 
 
 
 
 
-\section[Beam induced RF]{Beam induced RF}
+
+\subsection[Time to space conversion]{Time to space conversion}
+
+In principle talking about spatial position or temporal delay of the signals leads to the same results. However for a matter of convenience it is better to refer to the cell where the breakdown has happened. It is possible to perform the time-space conversion considering that the round-trip time $\tau_{\text{RT}}$  of the reflecting signal is given by (see Fig. \ref{tToz_p})
+\begin{equation}
+\tau_{\text{RT}} = 2 \int_0^{z_{\text{BD}}} \frac{1}{v_g (z)} \, dz
+\label{tRT}
+\end{equation}
+where $z_{\text{BD}}$ is the spatial position of the breakdown in the structure and v$_g$ is the group velocity.
+
+Equation \ref{tRT} can be inverted considering that, even if the group velocity is not independent from the longitudinal coordinate z, it has a slow variation. Hence the longitudinal position of the breakdown can be determined. 
+
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.3]{pictures/tToz}
+\caption{REF signal path in the accelerating cavity}
+\label{tToz_p}
+\end{figure}
+
+
+
+
+\section[Final data selection]{Final data selection}
+
+The final result of the data selection has to provide the number of breakdowns per run, that will be used to calculate the breakdown rate. 
+
+
+After all the data selection process described before, the remaining events are breakdowns that happened between the input directional coupler and the RF load placed downstream the output directional coupler (see Fig. \ref{BD_scheme}). 
+
+These events can happen in 3 different regions:
+\begin{enumerate}
+\item Between the input directional coupler and the coupling cell (included)
+\item In the regular cells of the accelerating structure
+\item In the coupling cell downstream and the waveguide to the RF load
+\end{enumerate}
+Strictly speaking, only the breakdown happening in the regular cells and in the coupling cells should be counted for the breakdown rate calculation. It is anyway extremely difficult to distinguish between a breakdown happening in the waveguide and in the connected coupling cell. The reason of this is that the group velocity in the regular cell is $\mathcal{O}(\text{0.01 c})$ and in the waveguides is~$\mathcal{O}(\text{c})$. 
+
+Since the positioning 
+
+
+
+
+
+
+
+
+
+
+
+
+
