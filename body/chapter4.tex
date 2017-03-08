@@ -46,6 +46,7 @@ When a spike gets detected, the correspondent interlock is sorted out, and also 
 
 
 \subsection[Pulse compressor tuning issues]{Pulse compressor tuning issues}
+\label{sec:PCtune}
 
 RF tests of accelerating cavities are carried out using the CLIC nominal pulse shown in Fig. \ref{detuning_fig} (a). This comes from the necessity to find a common test protocol for accelerating cavities, that has also to match the different pulse length of the RF foreseen in the three stages of the CLIC implementation. To meet these requirements, the CLIC nominal pulse is made of a filling (or rising) time of 70 ns and a flat-top 180 ns long.
 
@@ -105,11 +106,7 @@ According to the test procedure, after a breakdown the input power gets cut for 
 
 The reason of this behaviour is to preserve the surfaces of the accelerating cavity under test. In foreseen of the CLIC operation simulation, the structures will be tested without any buffer period after the breakdown and restoring the input RF at full power. Anyway for the moment no test of that kind has been done, and will be implemented in the future in one of the other test stand at CERN~\cite{Walter:PC}.
 
-For unknown reasons the power is not always cut immediately. This could provoke a breakdown that follows immediately the former one, but that is provoked by the malfunction of the instrumentation that does not cut the power fast enough. For this reason, the breakdown following 
-
-
-
-
+For unknown reasons the power is not always cut immediately. This could provoke a breakdown that follows immediately the former one, but that is provoked by the malfunction of the instrumentation that does not cut the power fast enough. For this reason, all the events in the next three seconds after a breakdown are discarded. This is a common procedure carried out also in the other XBOX at CERN, and constitutes an issue that will be investigated in the future. 
 
 
 \subsection[Additional criteria for runs with beam]{Additional criteria for runs with beam}
