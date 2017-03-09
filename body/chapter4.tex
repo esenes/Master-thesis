@@ -10,10 +10,10 @@ As mentioned in the previous chapter, the data acquisition is performed from a r
 
 In order to proceed with the analysis, the files are merged joining all the data of the same day together in a new data file. The original data are anyway kept stored.
 
-The kind of events that are collected by the PXI crate have two natures:
+The kind of events that are collected by the PXI crate have two natures, and are flagged differently depending wether they belong to:
 \begin{enumerate}
 \item Interlock pulses: an event that triggered at least one of the online interlock. If available, the two precedent pulses are saved.
-\item Backup pulses: if no event triggers an online interlock for a minute, the data of a pulse are saved.
+\item Backup pulses: the data of a pulse are saved once per minute.
 \end{enumerate}
 The first ones are sent to the next analysis step, the second ones are analysed separately to check the running condition of the accelerator and the RF systems.
 
@@ -68,7 +68,7 @@ A common operational issue is the detuning of the pulse compressor, that provoke
 
 The origin of the detuning is the difference of the total volume of the pulse compressor's cavities. This is controlled changing the cooling water temperature, but as any other thermal system needs time for the regulation \cite{Woolley:CWS2016}. The detuning is a particular issue in summer, when the thermal excursion during the day is particularly high.
 
-As general rule a slight detuning of the pulse is tolerated, and it is not possible to get rid of it because the regulation of the temperature of the chillers act dynamically and needs time to compensate the variations. On the other hand the data are not considered in case of extreme detuning such as in Fig. \ref{detuning_fig} (b) and (c), where the box-shape of the pulse is not recognisable anymore. 
+As general rule a slight detuning of the pulse is tolerated, and it is not possible to get rid of it because the regulation of the temperature of the chillers act dynamically and needs time to compensate the variations. On the other hand the data are discarded in case of extreme detuning such as in Fig. \ref{detuning_fig} (b) and (c), where the box-shape of the pulse is not recognisable anymore.
 
 
 
@@ -101,6 +101,7 @@ In this work the selection of the events has been performed using the two thresh
 
 
 \subsection{Power back-off failure}
+\label{sec:pbof}
 
 According to the test procedure, after a breakdown the input power gets cut for a period of time that is between the 5 and 10 seconds. Afterwards the power is restarted and gets ramped up gradually up to the nominal value unless a new breakdown happens.
 
@@ -163,16 +164,11 @@ For noisy signals, using the deviation point detection instead of detecting the 
  \end{figure}
 
 
-
-
 \subsection[Correlation method]{Correlation method}
 
-It has been outlined before that after the establishment of the breakdown, the INC is reflected back. This means that looking at the tail of the signal after the compressed pulse it is possible to individuate some particular pattern (see Fig. \ref{dev_pt} (b) ). In most of the cases the pattern will be visible in the REF signal. 
+It has been outlined before that after the establishment of the breakdown, the INC is reflected back. This means that looking at the tail of the signal after the compressed pulse it is possible to individuate some particular pattern (see Fig. \ref{dev_pt} (b) ). In a number of cases the same pattern will be visible in the REF signal returning back. 
 
-This method is not always successful since is strongly dependent from: the amplitude of the pattern observed (in Fig. \ref{dev_pt} (b) one of the best example is reported, but most of the times the amplitude is much lower); and the position of the breakdown in the cavity, since the longer is the path of the signal in the structure, the higher will be the attenuation. In order to limit as much as possible the attenuation effect, this analysis is performed using the not-calibrated signals from the log detectors, but it's still not always possible individuate a common pattern between the tails of INC and REF.
-
-The algorithm for 
-
+This method is not always successful since is strongly dependent from two factors: the amplitude of the pattern observed (in Fig. \ref{dev_pt} (b) one of the best example is reported, but most of the times the amplitude is much lower); and the position of the breakdown in the cavity, since the longer is the path of the signal in the structure, the higher will be the attenuation. In order to limit as much as possible the attenuation effect, this analysis is performed using the non-calibrated signals from the log detectors, but it's still not always possible individuate a common pattern between the tails of INC and REF.
 
 
 \subsection[Comparison of the two methods]{Comparison of the two methods}
@@ -187,14 +183,14 @@ It has to be pointed out that the correlation method is not always successful be
 
 \subsection[Time to space conversion]{Time to space conversion}
 
-In principle talking about spatial position or temporal delay of the signals leads to the same results. However for a matter of convenience it is better to refer to the cell where the breakdown has happened. It is possible to perform the time-space conversion considering that the round-trip time $\tau_{\text{RT}}$  of the reflecting signal is given by (see Fig. \ref{tToz_p})
+In principle talking about spatial position or temporal delay of the signals leads to the same results. However for a matter of convenience it is better to refer to the cell where the breakdown has happened. For this purpose, it is necessary convert the time delay in longitudinal position and then distribute the breakdown in the corresponding cells. The time-space conversion in carried out considering that the round-trip time $\tau_{\text{RT}}$  of the reflecting signal is given by (see Fig. \ref{tToz_p})
 \begin{equation}
 \tau_{\text{RT}} = 2 \int_0^{z_{\text{BD}}} \frac{1}{v_g (z)} \, dz
 \label{tRT}
 \end{equation}
 where $z_{\text{BD}}$ is the spatial position of the breakdown in the structure and v$_g$ is the group velocity.
 
-Equation \ref{tRT} can be inverted considering that, even if the group velocity is not independent from the longitudinal coordinate z, it has a slow variation. Hence the longitudinal position of the breakdown can be determined. 
+Equation \ref{tRT} can be inverted considering that, even if the group velocity is not independent from the longitudinal coordinate z, it has a slow variation and its profile is known from the design. Hence the longitudinal position of the breakdown can be determined. 
 
 
 \begin{figure}[h]
@@ -211,28 +207,33 @@ Equation \ref{tRT} can be inverted considering that, even if the group velocity 
 
 The final result of the data selection has to provide the number of breakdowns per run, that will be used to calculate the breakdown rate. 
 
-
-After all the data selection process described before, the remaining events are breakdowns that happened between the input directional coupler and the RF load placed downstream the output directional coupler (see Fig. \ref{BD_scheme}). 
-
-These events can happen in 3 different regions:
+Ultimately the data selection process that has been described is able to sort out all the fake interlocks and the breakdowns that are happening in the waveguide network or out of the desired experimental conditions. The product of such selection is a group of interesting events that can have taken place in three different regions:
 \begin{enumerate}
-\item Between the input directional coupler and the coupling cell (included)
+\item Between the input directional coupler and the input coupling cell (included)
 \item In the regular cells of the accelerating structure
-\item In the coupling cell downstream and the waveguide to the RF load
+\item In the output coupling cell and the waveguide to the RF load
 \end{enumerate}
-Strictly speaking, only the breakdown happening in the regular cells and in the coupling cells should be counted for the breakdown rate calculation. It is anyway extremely difficult to distinguish between a breakdown happening in the waveguide and in the connected coupling cell. The reason of this is that the group velocity in the regular cell is $\mathcal{O}(\text{0.01 c})$ and in the waveguides is~$\mathcal{O}(\text{c})$. 
+Strictly speaking, only the breakdown happening in the regular cells and in the coupling cells should be counted for the breakdown rate calculation. It is anyway extremely difficult to distinguish between a breakdown happening in the waveguide and in the connected coupling cell. The reason of this is that the group velocity in the regular cell is $\mathcal{O}(\text{0.01 c})$ and in the waveguides is~$\mathcal{O}(\text{c})$. In addition to this, the propagation time of the RF from the directional coupler to the coupling cell is in the order of 4.8 ns (from numerical simulations), which extremely close of the sampling time of 4 ns used in the log detectors. 
 
-Since the positioning 
+In the view of the above considerations, the number of breakdowns and its error are calculated as follows:
+\begin{equation}
+n_{\text{BD}} \quad \pm \quad \sigma_{\text{Poisson}} \quad \pm \quad \sigma_{\text{Back-off}} 
+\label{numBD}
+\end{equation}
+where  n$_{\text{BD}}$ is the number of breakdowns in the metric, and the two contributions to the error are given from the Poisson's statistics and the missed immediately back-off of the power. 
 
+For this kind of experiment, it is acceptable an overestimation of the breakdown rate, but it is not tolerable an underestimation of the breakdown rate. The reason is that an overestimation of the breakdown rate in the tests would lead to an excess of performance in CLIC once built, while the opposite is not desirable.   
 
+The elements of Eq. \ref{numBD} are calculated according to the following considerations:
+\begin{itemize}
+\item the number of breakdowns n$_{\text{BD}}$ is the number of breakdowns that are within the metric thresholds but filtering out the breakdown provoked from the back-off fail of the Xbox (see section \ref{sec:pbof}).  
+\item the poissonian error $\sigma_{\text{Poisson}}$ is the breakdown events are rare, it is therefore reasonable think that this phenomenon follows the Poisson's distribution.
+\item the missed back-off error contribution $ \sigma_{\text{Back-off}}$ is given from the misbehave of the Xbox. A number of tests show that this effect leads to an increment of the number of breakdown up to $10\%$. An additional contribution of $10\%$ to the number of breakdowns is therefore added.
+\end{itemize}
 
-
-
-
-
-
-
-
-
-
-
+\noindent
+The breakdown rate is finally calculated as
+\begin{equation}
+BDR = \frac{n_{\text{BD}}}{n_{\text{pulses}}}
+\end{equation}
+where n$_{\text{pulses}}$ is the number of pulses and is assumed without error. This is a reasonable assumption since the error on the pulse counting is 50 pulses, while normal measurement runs involve several millions of pulses.
