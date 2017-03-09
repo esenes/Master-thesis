@@ -142,7 +142,7 @@ When a breakdown happens, the plasma into the structure acts as a short circuit 
 
 The Edge Method is based on the time difference of arrival of the falling edge of the TRA signal and the rising edge of the REF signal. This method constitutes the most reliable method that is used for breakdown positioning. 
 
-Assuming that the vacuum arc starts to absorb and reflects the RF immediately after being triggered, the method will individuate a unique longitudinal position in the accelerating cavity.
+Assuming that the vacuum arc starts to absorb and reflects the RF immediately after being triggered, this method will individuate the longitudinal position of the onset breakdown in the accelerating cavity.
 
 The edges of the TRA and REF signals are individuated looking for the deviation point of the signal from the nominal pulse (see Fig. \ref{dev_pt} (a) ). This is easily done using the previous pulse, which is recorded in the data when a breakdown happens.  According to this method the time delay $\tau_d^{\text{edge}}$ is
 \begin{equation}
@@ -159,24 +159,63 @@ For noisy signals, using the deviation point detection instead of detecting the 
    \hspace{1mm}
   \subfigure[Detail of the region of interest (ROI) for the correlation method. The dashed lines indicate the time delay between the feature of the signal in exam.]
    {\includegraphics[scale=0.39]{pictures/dev_point_detail_2.png}}
-\caption{RF signals of a breakdown in the structure. The dashed lines are the reference signals, provided by the previous pulse}
+\caption{RF signals of a breakdown in the structure. The plot (b) is the zoom of the region of interest surrounded in red in (a)}
  \label{dev_pt}
  \end{figure}
 
 
 \subsection[Correlation method]{Correlation method}
 
-It has been outlined before that after the establishment of the breakdown, the INC is reflected back. This means that looking at the tail of the signal after the compressed pulse it is possible to individuate some particular pattern (see Fig. \ref{dev_pt} (b) ). In a number of cases the same pattern will be visible in the REF signal returning back. 
+It has been outlined before that after the establishment of the breakdown, the INC is reflected back. This means that looking at the tail of the signal after the compressed pulse it is possible to individuate some particular pattern (see Fig. \ref{dev_pt} (b) ), and in a number of cases the same pattern will be visible in the REF signal returning back. 
 
 This method is not always successful since is strongly dependent from two factors: the amplitude of the pattern observed (in Fig. \ref{dev_pt} (b) one of the best example is reported, but most of the times the amplitude is much lower); and the position of the breakdown in the cavity, since the longer is the path of the signal in the structure, the higher will be the attenuation. In order to limit as much as possible the attenuation effect, this analysis is performed using the non-calibrated signals from the log detectors, but it's still not always possible individuate a common pattern between the tails of INC and REF.
 
 
 \subsection[Comparison of the two methods]{Comparison of the two methods}
 
-It has to be pointed out that the correlation method is not always successful because of the attenuation of the REF signal. In addition, comparing the results of the two methods, the distribution of the arcs in the cavity are definitely different. 
+It has to be pointed out that the correlation method is not always successful because of the attenuation of the REF signal. In addition, comparing the results of the two methods, the distribution of the arcs in the cavity are definitely different. Figure \ref{edge_vs_corr} shows the difference between the breakdown distribution of the same dataset using the edge (right) and correlation method (left). 
+
+ \begin{figure}[h]
+\centering
+  \subfigure[Edge method result]
+   {\includegraphics[scale=0.37]{pictures/Exp_UnLoaded43MW_6_edge_method.png}}
+   \hspace{1mm}
+  \subfigure[Correlation method result]
+   {\includegraphics[scale=0.385]{pictures/Exp_UnLoaded43MW_6_correlation_method.png}}
+\caption{Comparison of the signals delay distribution for the edge and correlation method in an unloaded run. The spike in proximity of the zero in the correlation delay is visible in any dataset.}
+ \label{edge_vs_corr}
+ \end{figure}
+
+The distribution obtained using the correlation method present a peak at the beginning of the structure, that is not obtained using the edge method. This overpopulation of breakdowns at the beginning of the structure has been observed in all the dataset processed for this work, but also in \cite{Rajamaki:2143815}.  
+
+Figure \ref{comp_corr_edge} shows the comparison between the two different techniques. The solid line indicate the agreement of the two methods. It is clearly observable that the correlation method is more likely to yield estimates further upstream in the structure than the edge method, as outlined from the asymmetrical distribution. 
+
+An explanation for the asymmetry is given by the \textit{breakdown migration} \cite{Woolley:2015,Jacewicz:CLICWS16,Degiovanni:migration}. According to this hypothesis, if the onset breakdown position is find by the edge method and the position of the steady state stable breakdown is find by the correlation method, then the Fig. \ref{comp_corr_edge} is consistent with the migration upstream in the structure. Downstream migration is not likely, as little or no power is remaining downstream after the arc starts to reflect the incident power. Furthermore, the incident and reflected power can enter in resonance, enhancing even more the field upstream.
+A possible migration scenario is presented in Fig. \ref{mig_sc}.
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.4]{pictures/methods_comparison.png}
+\caption{Comparison of edge and correlation method. The straight line represent the accordance of the two methods.}
+\label{comp_corr_edge}
+\end{figure}
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.3]{pictures/migration_scenario}
+\caption{A possible migration scenario \cite{Degiovanni:migration}: a) A breakdown establish in the structure, absorbing the incident RF; b) The established arc reflects the incident RF; c) Constructive interference between reflected and incident RF provokes another arc upstream; d) As the second arc establish, any remaining power downstream is drained and the first arc gets extinguished}
+\label{mig_sc}
+\end{figure}
 
 
 
+
+The results of this work are in accord with this theory and constitute an additional proof. Figure \ref{comp_corr_edge} shows that the majority of the breakdown in the loaded condition (in red) are happening in the first part of the structure. The difference is that according to the edge method they are happening in the first half, while the correlation method would place almost all of them at the very beginning. 
+This is not surprising, because after the breakdown just the upstream part of the structure remains powered as in the unloaded case, but in addition, the field is much higher in the upstream cells because of the loading. This second effect might act on the migration length of the breakdown, enhancing it. 
+
+To verify this last affirmation, the experiment should be repeated scanning the beam current.
+
+Considering the problems highlighted above, only the edge method will be used for the following development of this work.
 
 
 
@@ -220,15 +259,18 @@ In the view of the above considerations, the number of breakdowns and its error 
 n_{\text{BD}} \quad \pm \quad \sigma_{\text{Poisson}} \quad \pm \quad \sigma_{\text{Back-off}} 
 \label{numBD}
 \end{equation}
-where  n$_{\text{BD}}$ is the number of breakdowns in the metric, and the two contributions to the error are given from the Poisson's statistics and the missed immediately back-off of the power. 
+where  n$_{\text{BD}}$ is the number of breakdowns, and the two contributions to the error are given from the Poisson's statistics and the missed immediately back-off of the power. 
 
 For this kind of experiment, it is acceptable an overestimation of the breakdown rate, but it is not tolerable an underestimation of the breakdown rate. The reason is that an overestimation of the breakdown rate in the tests would lead to an excess of performance in CLIC once built, while the opposite is not desirable.   
 
 The elements of Eq. \ref{numBD} are calculated according to the following considerations:
 \begin{itemize}
 \item the number of breakdowns n$_{\text{BD}}$ is the number of breakdowns that are within the metric thresholds but filtering out the breakdown provoked from the back-off fail of the Xbox (see section \ref{sec:pbof}).  
-\item the poissonian error $\sigma_{\text{Poisson}}$ is the breakdown events are rare, it is therefore reasonable think that this phenomenon follows the Poisson's distribution.
-\item the missed back-off error contribution $ \sigma_{\text{Back-off}}$ is given from the misbehave of the Xbox. A number of tests show that this effect leads to an increment of the number of breakdown up to $10\%$. An additional contribution of $10\%$ to the number of breakdowns is therefore added.
+\item the poissonian error $\sigma_{\text{Poisson}}$ is used since the breakdown events are rare, it is therefore reasonable think that this phenomenon follows the Poisson's distribution.
+\item the missed back-off error contribution $ \sigma_{\text{Back-off}}$ is given from the misbehave of the Xbox. A number of tests show that taking in account this effect vary the number of breakdown of less than $10\%$. Since the breakdowns caused from this effect are not counted in n$_{\text{BD}}$, the error can be evaluated as
+\begin{equation}
+\sigma_{\text{Back-off}} = _{- \, 0}^{+ \, 10\% \text{ of n}_{\text{BD}}}
+\end{equation}
 \end{itemize}
 
 \noindent
@@ -236,4 +278,4 @@ The breakdown rate is finally calculated as
 \begin{equation}
 BDR = \frac{n_{\text{BD}}}{n_{\text{pulses}}}
 \end{equation}
-where n$_{\text{pulses}}$ is the number of pulses and is assumed without error. This is a reasonable assumption since the error on the pulse counting is 50 pulses, while normal measurement runs involve several millions of pulses.
+where n$_{\text{pulses}}$ is the number of pulses and is assumed without error. This is a reasonable assumption since the error on the pulse counting is $\pm50$ pulses, while normal measurement runs involve several millions of pulses.
