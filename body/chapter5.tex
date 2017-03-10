@@ -29,26 +29,28 @@ The choice is normally complicated by the fact that the Xbox was not able to pro
 
 \subsubsection{Comparison of loaded and unloaded runs at same average gradient}
 
-For the CLIC test purpose,  carry out a measurement at 100 MV/m average gradient comparing loaded and unloaded runs the would be the most interesting measurement possible. In order to perform it, the input power has to raised from 43.3 MW in the unloaded case to 67.5 MW in the loaded case. 
+For the CLIC test purpose,  carry out a measurement at 100 MV/m average gradient comparing loaded and unloaded runs would be the most interesting measurement possible. In order to perform it, the input power has to raised from 43.3 MW in the unloaded case to 67.5 MW in the loaded case. 
 
 Unfortunately it was clear from the beginning that reaching 67.5 MW of input power was not possible because the waveguides that deliver the power from the pulse compressor to the structure under test are not conditioned for such high power flux.
 
 Because of this limitation, the choice comes down to perform measurements at the same input power and compare the results. 
 
-During a period of technical problems, it has been anyway collected an unloaded measurement at 24.6 MW of input power, in order to compare it with the correspondent average gradient in the loaded case at 43.3 MW of input power. 
-
-but not enough data ....
+During a period of technical problems, it has been anyway collected an unloaded measurement at 24.6 MW of input power, in order to compare it with the correspondent average gradient in the loaded case at 43.3 MW of input power. Unfortunately with a such low input power, the breakdown rate is very low, and after 4 days of measurements zero breakdowns were collected. Therefore it is only possible to affirm that running unloaded at 24.6 MW input power, the breakdown rate is $< 7.7 \, 10^{-8} $ BD pulse$^{-1}$. 
 
 
 \subsubsection{Comparison of loaded and unloaded conditions at same input power}
 
+Most of the measurements carried out during 2016 campaign were comparing the loaded and unloaded running condition. The input power levels used were 43.3, 41 and 38 MW. It was not possible to go at lower input powers because the breakdown rates becomes so low that the data collection takes weeks to produce a sufficient statistics.
 
 
 \subsubsection{Study of the antiloaded runs}
 
+The antiloaded measurements were carried out at 6.5 MW of input power. The reason is that with a beam current  of 1.6 A, the output gradient of the structure is already around 100 MV/m (see Fig. \ref{3grad}). The results were indeed interesting and will be shown later when it comes to talk about the breakdown distribution.
 
 
-\begin{figure}[h]
+
+
+\begin{figure}[t]
 \centering 
 \includegraphics[scale=0.7]{pictures/grad_vs_inPow.png}
 \caption{Average gradient as function of the input power in different running conditions. See text for details on the measurement points. }
@@ -63,6 +65,19 @@ As mentioned in the motivation of the experiment, the goal is to understand the 
 \item Higher beam current than CLIC: 1.6 A instead of 1.2 A.
 \item Longer beam pulse: the beam is lasting during all the compressed RF pulse, for 250 ns, instead of last just during the flat-top of the CLIC pulse (see Sec. \ref{sec:PCtune}).
 \end{itemize}
+
+\noindent
+The loaded operation is clearly visible  in the RF signals, as shown in Fig.~\ref{RF_load}.
+
+\begin{figure}[h]
+\centering
+  \subfigure[Loaded operation]
+   {\includegraphics[scale=0.33]{pictures/LoadedPulse.png}}
+  \subfigure[Antiloaded operation]
+   {\includegraphics[scale=0.33]{pictures/AntiloadedPulse.png}}
+\caption{Comparison of the RF signals during the loaded and antiloaded operation. During the loaded operation it can be observed that the transmitted power falls close to zero, because of the energy subtracted from the beam. The opposite behaviour can be noted in the antiloaded case, where the input power is much lower than the transmitted. In this case the difference in energy is provided by the beam, that gets slowed down because of the wrong phase with the RF. }
+ \label{RF_load}
+ \end{figure}
 
 
 
