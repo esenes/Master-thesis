@@ -90,7 +90,47 @@ The loaded operation is clearly visible  in the RF signals, as shown in Fig.~\re
 
 \subsection[A model for the breakdown distribution]{A model for the breakdown distribution}
 
+Unloaded experiments exhibit a flat distribution of the breakdowns in the accelerating structure. In addition, it is known that the breakdown rate follows the scaling law in Eq. \ref{E30}, but it has been derived from the data available from the unloaded tests as well. From these considerations arises the necessity to understand if these results are still valid when running with the beam inside the accelerating cavity.
+
+Considering any cell as a substructure, it is reasonable suppose that cells with a higher accelerating field will be more likely to experience breakdowns than cells with a lower field. According to this reasoning and following the Eq. \ref{E30}, the breakdown probability per cell is given by
+\begin{equation}
+\text{BD probability (\%)} =\frac{   \left ( \frac{E_\text{cell}}{E_\text{max}} \right )^{30} }{ \sum \left( \frac{E_\text{cell}}{E_\text{max}} \right )^{30}   }
+\end{equation}
+where E$_\text{cell}$ is the surface electric field in the centre of the cell and E$_\text{max}$ is the maximum surface electric field at the centre of a cell. 
+
+The choice of using the surface electric field instead of the accelerating gradient comes from the physics of the breakdown process \cite{Walter:PC}. Anyway the shape of the gradient profile and of the surface electric field along the structure differs only slightly. The field of the coupling cells is assumed as the same in the adjacent cells. This comes from geometrical considerations, and could be eventually derived from simulations \cite{Alexej:PC}.
+
+The result is shown in Fig. \ref{BD_prob}. The expectation is to have a almost flat distribution in the unloaded case, with and accumulation of the number of breakdowns in the first part of the structure for the loaded case and at the end of the structure for the antiloaded case.
+
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.45]{pictures/BD_probability.png}
+\caption{Breakdown probability according to the model in different running conditions: unloaded (left), loaded (center), antiloaded (right). The different scale has to be noted: while the breakdown probability oscillates between the 1.8\% and 5\% in the unloaded case, when the beam is present the difference is much bigger.}
+\label{BD_prob}
+\end{figure}
+
+
 \subsection[Measurement results]{Measurement results}
+
+The breakdown distribution, cumulating the data at the same input power, are shown in Fig. \ref{BD_distro}. Both the linear scaling with the surface field and the scaling proposed in the precedent section are plotted.
+
+
+\begin{landscape}
+
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.53]{pictures/distro_all.png}
+\caption{Measured breakdown distribution in the accelerating cavity under test in different running conditions. Over the data is plotted the proposed scaling and the linear scaling with the surface field is plotted (in black).}
+\label{BD_distro}
+\end{figure}
+
+ 
+\end{landscape}
+
+
+
 
 
 
