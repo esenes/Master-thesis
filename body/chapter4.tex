@@ -243,6 +243,7 @@ Equation \ref{tRT} can be inverted considering that, even if the group velocity 
 
 
 \section[Final data selection]{Final data selection}
+\label{sec:BDR}
 
 The final result of the data selection has to provide the number of breakdowns per run, that will be used to calculate the breakdown rate. 
 
@@ -259,17 +260,17 @@ In the view of the above considerations, the number of breakdowns and its error 
 n_{\text{BD}} \quad \pm \quad \sigma_{\text{Poisson}} \quad \pm \quad \sigma_{\text{Back-off}} 
 \label{numBD}
 \end{equation}
-where  n$_{\text{BD}}$ is the number of breakdowns, and the two contributions to the error are given from the Poisson's statistics and the missed immediately back-off of the power. 
+where  n$_{\text{BD}}$ is the number of breakdowns, $\sigma_{\text{Poisson}}$ is the statistical error on the number of breakdowns and $\sigma_{\text{Back-off}}$ a systematic error coming from the malfunction of the system that misses to back-off immediately the power after a breakdown.
 
-For this kind of experiment, it is acceptable an overestimation of the breakdown rate, but it is not tolerable an underestimation of the breakdown rate. The reason is that an overestimation of the breakdown rate in the tests would lead to an excess of performance in CLIC once built, while the opposite is not desirable.   
+For this kind of experiment, it is acceptable an overestimation of the breakdown rate, but it is not tolerable an underestimation of the breakdown rate. The reason is that an overestimation of the breakdown rate in the tests would lead to a superior performance in CLIC once built, while the opposite is not desirable.   
 
-The elements of Eq. \ref{numBD} are calculated according to the following considerations:
+The components of Eq. \ref{numBD} are calculated according to the following considerations:
 \begin{itemize}
-\item the number of breakdowns n$_{\text{BD}}$ is the number of breakdowns that are within the metric thresholds but filtering out the breakdown provoked from the back-off fail of the Xbox (see section \ref{sec:pbof}).  
+\item the number of breakdowns n$_{\text{BD}}$ is the number of breakdowns that are within the metric thresholds.  
 \item the poissonian error $\sigma_{\text{Poisson}}$ is used since the breakdown events are rare, it is therefore reasonable think that this phenomenon follows the Poisson's distribution.
-\item the missed back-off error contribution $ \sigma_{\text{Back-off}}$ is given from the misbehave of the Xbox. A number of tests show that taking in account this effect vary the number of breakdown of less than $10\%$. Since the breakdowns caused from this effect are not counted in n$_{\text{BD}}$, the error can be evaluated as
+\item the missed back-off error contribution $ \sigma_{\text{Back-off}}$ is given from the misbehave of the Xbox. The error is estimated as the number of secondary breakdowns that happens in the next three seconds from an initial one. 
 \begin{equation}
-\sigma_{\text{Back-off}} = _{- \, 0}^{+ \, 10\% \text{ of n}_{\text{BD}}}
+\sigma_{\text{Back-off}} = _{- n_{\text{BDs follow-ups}}}^{+ 0}
 \end{equation}
 \end{itemize}
 
