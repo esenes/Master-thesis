@@ -85,12 +85,16 @@ The loaded operation is clearly visible  in the RF signals, as shown in Fig.~\re
 
 The breakdown rate has been calculated for every run, as described in section \ref{sec:BDR} and is reported in Fig. \ref{BDR_history}. 
 
+A fluctuation of the breakdown rate is appreciable. Considering separately unloaded or loaded runs data at the same input power, the excursion of the fluctuations is estimable as one order of magnitude. 
+
+A weird behaviour is observed from July on, when the BDR raises for more than two months long, while running at 38 MW input power. It is possible that the antiloaded runs between June and July (plotted in green) have some effect on the overall BDR of the following runs. A similar variation of the breakdown rate is observable when changing the input power level of the structure.
+
 
 \begin{landscape}
 
-\begin{figure}[h]
+\begin{figure}
 \centering 
-%\includegraphics[scale=0.53]{pictures/distro_all.png}
+\includegraphics[scale=0.62]{pictures/bdr_hist.png}
 \caption{History plot of the measured breakdown rate.}
 \label{BDR_history}
 \end{figure}
@@ -99,10 +103,25 @@ The breakdown rate has been calculated for every run, as described in section \r
 
 
 
+In general breakdown rate measurements need stable running conditions, and a fluctuation of the BDR is appreciable also in the unloaded tests in the other Xboxes. Normal measuring times involve measuring times of the order of weeks. In this experiment, the average stable running time was alternatively four days without beam and 2 days running with the beam (two half-days per week are normally lost in operation and down-time). It is not possible to foresee the impact of this on the breakdown rate. Considering that when changing the input power, the BDR seems to increase, it is reasonable assume that the accelerating cavity is a system that needs a buffer time to stabilise. A similar process could take place when switching form operation with beam to without and vice versa. The reason is that even if the input power remains the same, the fields inside gets modified and the structure needs time to settle. 
+
+A new insight on these process will be given in the close future from the DC test stand at CERN, that has the possibility to acquire data much faster than any other RF-based experiment \cite{Walter:PC}.
+
+To investigate these effects in the same conditions, it is necessary to repeat the experiment with longer run times. This requires several weeks of dedicated beam time for the loaded runs, that the CTF3 was not able to guarantee because of the wide experimental program.
+
+It is possible anyway to observe the difference of breakdown rate at the same input power in some stable running periods. Figure \ref{BD_prob} shows the detail of three running period at the same input power. It is possible to affirm that in general running at the same input power, the breakdown is up to an order of magnitude lower. 
 
 
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.6]{pictures/BDR_zooms.png}
+\caption{Comparison of the breakdown rate at different input power in three periods of stable running without switching input power.}
+\label{BD_prob}
+\end{figure}
 
+It has to be noted that there are two exceptions to the last affirmation: the unloaded run at 43.3MW input power at the end of March (plotted in blue in Fig. \ref{BDR_history}), and the last loaded run of the year at 38 MW input power. In the first case, it is not clear why the BDR was that low, even it looks an anomaly considering the general trend of the precedent runs. It also has to be pointed out that the run is shorter than the others. regarding the second case, the BDR of the loaded and unloaded runs seems to converge at the end of the year. There is no possibility to draw any further conclusion, since the end of the run stopped the data taking and does not allowed to see the evolution of the trend.
 
+%comment on the increasing systematic error ???
 
 
 \section[Breakdown distribution]{Breakdown distribution}
@@ -136,11 +155,13 @@ The breakdown distribution, cumulating the data at the same input power, are sho
 
 In the centre of the structure there is a warmer part, where are happening a large number of breakdowns. This warm region is present both in the unloaded and loaded runs, and could be provoked by: 
 \begin{enumerate}
+\item the development of an hotcell
 \item surface damage of the central cells, where for some reason the surface is rougher and provokes more breakdowns. 
 \item a particular pattern coming from the design of the structure
-\item the development of an hotcell
 \end{enumerate}
-Additional hints will come from the post-mortem analysis of the structure, that will be cut and examined with various microscopy techniques. This analysis will take place later in 2017. In any case, the first option looks the most probable. 
+Fortunately, there is no sign of the development of an hotcell. Figure \ref{BDs_week} shows that although a warmer region in the centre developed after the antiloaded runs in June 2016, it was gradually reconditioned during the following part of the year. 
+
+It is not possible to decide between the second and third option for the moment. Additional hints will come from the post-mortem analysis of the structure, that will be cut and examined with various microscopy techniques. This analysis will take place later in 2017. In any case, the second option looks the most probable. 
 
 The breakdown distribution is compatible with a constant distribution during runs without beam. It is also compatible with the hypothesis of accumulation of the breakdowns in  the first part of the structure during the loaded runs and at the end during the antiloaded runs.
 
@@ -161,6 +182,13 @@ Even ignoring the central warm zone, it is not clear which law rules the distrib
  
 \end{landscape}
 
+
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.4]{pictures/week_distr_3D.png}
+\caption{Breakdown number per cell per week. }
+\label{BD_prob}
+\end{figure}
 
 
 
