@@ -226,28 +226,29 @@ On top of the vacuum system for the beam pipes, the waveguide network has to be 
 
 \section[Operation of the setup]{Operation of the setup}
 
-One of the main task of the author in the experiment was carrying out the operation and supervision of the accelerator, in addition to the data analysis. It looks therefore appropriate to spend some words on the operation and the operational issues encountered working in the CTF3.
+One of the main task of the author in the experiment was carrying out the operation and supervision of the accelerator and the 12 GHz RF production, in addition to the data analysis. It looks therefore appropriate to spend some words on the operation and the operational issues encountered working in the CTF3.
 
 \subsection{Linac operation}
 
-As mentioned before, the linac of the CTF3 is normally operated in fully-loaded mode producing a long  high-current beam pulse of the Drive Beam. In order to produce the Main Beam, it is necessary to produce a short beam pulse with a lower current and a resulting higher energy. 
+During 2016 the CTF3 schedule was running the Drive Beam during the week and switch to the Main Beam for the weekend. The reason is that the high-gradient testing experiments require a long beam time to collect data, because of the low breakdown rates. So they can be carried out leaving the accelerator running when is not in use by other operators. A reliable system of interlocks is diagnosing the equipments and assure the protection of the machine. 
 
-During 2016 the CTF3 schedule was running the Drive Beam simulation during the week and switching to the Main Beam simulation for the weekend. The reason is that the high-gradient testing experiments require a long beam time to collect data, because of the low breakdown rates. So they can be carried out leaving the accelerator running when is not in use by other operators. A reliable system of interlocks is diagnosing the equipments and assure the protection of the machine.
+As mentioned before, the linac of the CTF3 is normally operated in fully-loaded mode producing a long  high-current beam pulse of the Drive Beam. In order to produce the Main Beam for the BD tests, it is necessary to produce a short beam pulse with a lower current and a resulting higher energy. 
 
-The accelerating structures in the linac are powered from 50 MW klystrons equipped with pulse compressor system. 
-In order to produce the beam for high-gradient tests, the RF pulse shape has to change, to shorter pulses of higher power. This is realised modifying the phase program of the low level RF, in order to change the pulse compression. 
+The accelerating structures in the linac are powered by 45 MW klystrons equipped with pulse compressor system. 
+The RF pulse shape is changed by modifying the phase program of the low level RF.
 
-Also the current pulse duration from the gun and the current in all the elements of the beam optic has to be adapted to the new beam.
+The current pulse duration from the gun is also adapted to the new beam. The beam optics was calculated to minimise the beam size in the accelerating structure, and the quadrupole gradients are set up accordingly.
 
-This operation required normally a couple of hours.
+This operation required normally slightly less than an hour, mainly due to temperature settling of the RF pulse compressors, sometimes up to a couple of hours.
 
-In addition, the setup has to be supervised during the running, since the trip of some component causes the interruption of the beam or of the RF production. When the equipment trips, it needs to be restarted manually. The typical uptime between trips is around one day, even if smoother runs have been performed especially out of the warm season.
-
+The operation has to be supervised during the running, since the trip of some component causes an interruption of the beam or of the RF production. The operation has been automatised to restart after the most common trips without operator intervention. Nevertheless, other faults have to be dealt with manually. The typical uptime without intervention is around one day.
 
 \subsection{Xbox operation}
 
-The accelerating cavity, the waveguides and the pulse compressor are not capable to sustain immediately the high power necessary for the tests when switched on. For this reason, when the system goes off for some reason, get restarted at low power. The amplitude of the LLRF is afterwards ramped up with a process that is identical to the process described for the conditioning (see section \ref{sec:conditioning}).
+The XBOX is kept running as much as possible to add up as many testing hours as possible. When it gets started, the accelerating cavity, the waveguides and the pulse compressor are not capable to sustain immediately the high power necessary for the tests. For this reason, when the system goes off for some reason, get restarted at low power. The amplitude of the LLRF is afterwards ramped up with a process that is identical to the process described for the conditioning (see section \ref{sec:conditioning}).
 
-Anyway in general the XBOX is kept running as much as possible to add up as many testing hours as possible.
+The used repetition rate is 25 or 50 Hz, to accumulate higher statistics.
 
-An additional difficulty is given form the tuning of the pulse compressor. Especially during summer the thermal excursion during day and night makes more difficult the temperature control of the pulse compressor's cavities, losing the flatness of the RF pulse and an enhanced reflected power to the klystron that can degenerate in triggering an interlock. More details about the tuning will be given in section \ref{sec:PCtune}.
+After a breakdown, the power is stopped as foreseen in the CLIC scenario. After 3 s of stop, the power is gradually ramped up. Overall, the power restoration last less than 10 s if another breakdown does not happens.
+
+Power dissipation change leads to detuning of the pulse compressor. The detuning can be induced by switching from loaded to unloaded condition too often (normally because of problems on the linac) or from the thermal day-night excursion. The losing of flatness of the pulse is accompanied by the increase of reflections to the klystron. A tuning algorithm has been implemented to face this effect. More details about the tuning will be given in section \ref{sec:PCtune}.
