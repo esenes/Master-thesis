@@ -1,12 +1,12 @@
 \chapter[Accelerating structures]{Accelerating structures}
 
-The accelerating structures are one of the key parts of a particle accelerator. Even though in the first accelerators the particle acceleration was achieved simply with fixed fields, this technique showed its limitations quite soon due to the impossibility to create arbitrary high DC voltages without being subjected to electrostatic discharges. The present conventional technology for particle acceleration is based on RF cavities, so it is natural try to push the state-of-the-art technology the furthest possible in order to reach the highest acceleration possible in the shortest length. In the case of the CLIC project a key issue is to be able to produce cavities with an accelerating gradient of 100 MV/m, which is the cutting-edge value at the moment when keeping the breakdown rate limited.
+The accelerating structures are one of the key parts of a particle accelerator. Even though in the first accelerators the particle acceleration was achieved simply with fixed fields, this technique showed its limitations quite soon due to the impossibility to create arbitrary high DC voltages without being subjected to electrostatic discharges. The present conventional technology for particle acceleration is based on RF cavities, so reaching the highest possible acceleration within a reasonable accelerator length requires to push such technology to its highest performance. In the case of the CLIC project a key issue is to be able to produce cavities with an accelerating gradient of 100 MV/m, which is the cutting-edge value at the moment while keeping the breakdown rate limited.
 
-In this chapter some topics about the theory of accelerating cavities will be presented. The aim is to give to the reader a theoretical introduction to be able to understand the description of the cavity under test.
+In this chapter some generalities about the theory of accelerating cavities will be presented. The aim is to give the reader a theoretical introduction to better understand the description of the cavity under test.
 
 \section[Travelling wave accelerating structures]{Travelling wave accelerating structures}
 
-In this section some useful concepts and result of the electromagnetic theory will be recalled. Because of conciseness, the examples and the geometries presented will refer to travelling wave accelerating structures, since it is the only type of structure used in this work. The curious reader can find details on the untreated topics in \cite{Weiss:261732,Wangler:RF_LINAC,Humphries:107756} and in plenty of specialised books.
+In this section some useful concepts and result of the electromagnetic theory will be recalled. For the sake of conciseness, the examples and the geometries presented will refer to travelling wave accelerating structures, since it is the only type of structure used in this work. The curious reader can find details on the untreated topics in \cite{Weiss:261732,Wangler:RF_LINAC,Humphries:107756} and in plenty of specialised books.
 
 \subsection[Reminder of Electromagnetism]{Reminder of Electromagnetism}
 
@@ -15,19 +15,19 @@ In this section some useful concepts and result of the electromagnetic theory wi
 It is well known that the propagation of the electromagnetic fields follow the Maxwell's equations, that in a medium are
 \begin{equation}
 \begin{array}{l l l l}
-\nabla . \vec{D} = \rho_{free}\\
-\nabla . \vec{B} = 0\\
-\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}\\
-\nabla \times \vec{H} = \vec{J}_{cond} + \frac{\partial \vec{D}}{\partial t}
+\nabla \cdot \mathbf{D} = \rho_\text{free}\\
+\nabla \cdot \mathbf{B} = 0\\
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}\\
+\nabla \times \mathbf{H} = \mathbf{J}_\text{cond} + \frac{\partial \mathbf{D}}{\partial t}
 \end{array}
 \end{equation}
-where $\vec{E}$ and $\vec{B}$ are the electric and magnetic field in the vacuum, $\vec{D} = \epsilon \vec{E}$, $\vec{B} = \mu \vec{H}$ and $\vec{E} = \sigma \vec{J}$. The propagation in vacuum is described by the same equations and can be easily derived with an appropriate choice of the constants.
+where $\mathbf{E}$ and $\mathbf{B}$ are the electric and magnetic field in the vacuum, $\rho_\text{free}$ is the free charge density in the medium, $\mathbf{J}_{cond}$ is the conduction current density vector, $\mathbf{D} = \epsilon \mathbf{E}$, $\mathbf{B} = \mu \mathbf{H}$ and $\mathbf{E} = \sigma \mathbf{J}_{cond}$. The propagation in vacuum is described by the same equations and can be easily derived with an appropriate choice of the constants.
 
 \subsubsection[Waveguides and resonant cavities]{Waveguides and resonant cavities}
 
-In some particular cases the confined propagation of electromagnetic waves is possible, and is commonly realised using a metal waveguide to direct all the energy in a single direction. In this section some useful results on the propagation in a waveguide will be stressed, the full derivation can be found in literature \cite{Botta:EM, Jackson:ClassEM,Weiss:261732}. 
+In some particular cases the confined propagation of electromagnetic waves is possible, and is commonly realised using a metal waveguide to direct all the energy in a single direction. In this section some useful results on the propagation in a waveguide will be stressed, while the full derivation can be found in literature \cite{Weiss:261732,Botta:EM, Jackson:ClassEM}. 
 
-The request of propagation in the direction of the axis of the waveguide can be traduced to the condition $\vec{E} \times \vec{n} = 0$, that means asking that no power is dissipated in the walls of the cavity by Joule effect since the electric field is normal to the surface anywhere and anytime.
+The request of propagation in the direction of the axis of the waveguide can be traduced to the condition $\mathbf{E} \times \mathbf{n} = 0$, where $\mathbf{n}$ is the local unit vector orthogonal to the surface, that means asking that no power is dissipated in the walls of the cavity by Joule effect since the electric field is normal to the surface anywhere and anytime.
 
 Many solutions can be found to the problem, integrating the Maxwell's equations with the given boundary condition, but without entering in the calculations, the interesting solutions belong to two classes:
 \begin{itemize}
@@ -36,15 +36,15 @@ Many solutions can be found to the problem, integrating the Maxwell's equations 
 \end{itemize}
 Every mode has a particular cutoff frequency, and will propagate only in case that the condition $\omega > \omega_c$ is met (where $\omega_c = 2\pi f_c$ and $f_c$ is the cutoff frequency of the mode). The cutoff frequency of each mode depends mainly on the geometry of the guide utilised, and waves with a frequency lower than the cutoff frequency will be exponentially damped.
 
-The major features of a waveguide are: the \textit{phase velocity} is $v_p=\frac{\omega}{k} > c$; the \textit{group velocity} instead is $v_g = \frac{\partial w}{\partial k} < c$ as expected for the physical quantity representing the speed of propagation of the electromagnetic wave according to Relativity; and  the dispersion relation for a uniform waveguide can be expressed as 
+The major features of a waveguide are: the \textit{phase velocity} is $v_p=\frac{\omega}{k} > c$; the \textit{group velocity} is $v_g = \frac{\partial w}{\partial k} < c$, as expected for the physical quantity representing the speed of propagation of the electromagnetic wave according to Relativity; the dispersion relation for a uniform waveguide can be expressed as 
 \begin{equation}
 \omega^2 = \omega^2_c + (k_0 \, c)^2
 \end{equation}
-where $\omega_c = K \, c$ and $K$ is the cutoff wavenumber.
+where $k_0$ is the wavenumber of the wave propagating in the vacuum.
 
-The waveguides are a key building block of particle accelerators to deliver the RF power form the production equipment to the accelerating cavities, but are not suitable for particle acceleration as pointed out later.
+The waveguides are a key building block of particle accelerators to deliver the RF power from the production equipment to the accelerating cavities. But they are not suitable for particle acceleration as they are. The reason is that to accelerate the particles the phase velocity of the RF has to be similar to the velocity of the beam, which cannot exceed the speed of light.
 
-A particular case is represented by \textit{Resonant Cavities}, which are in the simplest case closed waveguides at the terminations (e.g. a cylindrical cavity, or \textit{pillbox cavity}, is composed of a circular waveguide closed by two planes at the extremities). In resonant cavities the electromagnetic field can resonate according to the particular eigenfrequencies of the system, which are mainly dictated by the geometry. This process allows propagation of just a set of frequencies, just like in the waveguides, but a cavity operating at one of the eigenfrequency starts to accumulate energy because of the resonance. This mechanism is utilised in accelerating structures.
+A particular case is represented by \textit{Resonant Cavities}, which are in the simplest case closed waveguides at the terminations (e.g. a cylindrical cavity, or \textit{pillbox cavity}, is composed of a circular waveguide closed by two planes at the extremities). In resonant cavities the electromagnetic field can resonate according to the particular eigenfrequencies of the system, which are mainly dictated by the geometry. This process allows propagation of just a set of frequencies, just like in the waveguides, but a cavity operating at one of the eigenfrequency starts to accumulate energy because of the resonance. This mechanism is used in accelerating structures.
 
 
 \subsection[Periodic accelerating structures]{Periodic accelerating structures}
@@ -60,9 +60,9 @@ To reduce the phase velocity into the structure, it is possible to load it with 
 
 \end{figure}
 
-The accelerating structure is composed of \textit{cells}, which are connected by the \textit{iris} to the adjacent cells. At the beginning and the end of the structure two special cells form the input and output coupler for the RF. The role of the irises is creating a free path for the passage of the beam and allowing the propagation of the EM field from the input coupler to the output one. In the case of room temperature cavities the material normally used is copper, while for superconducting cavities the material can vary and also metallic cavities coated internally with a superconductive layer are a possibility.
+The accelerating structure is composed of \textit{cells}, which are connected by the \textit{iris} to the adjacent cells. At the beginning and end of the structure two special cells form the input and output coupler for the RF. The role of the irises is to crete a free path for the passage of the beam and allowing the propagation of the EM field from the input coupler to the output one. In the case of room temperature cavities the material normally used is copper, while for superconducting cavities the material can vary and also metallic cavities coated internally with a superconductive layer are a possibility.
 
-From the field perspective, the fact that the accelerating structure is loaded with the disks changes the way that the EM waves propagate in the structure. The full mathematical description, is found in \cite{ Jackson:ClassEM,Weiss:261732}, here simply a general idea of the process and of the relevant results is given.
+From the field perspective, the fact that the accelerating structure is loaded with the disks changes the way that the EM waves propagate in the structure. The full mathematical description, is found in \cite{Weiss:261732, Jackson:ClassEM}, here simply a general idea of the process and of the relevant results is given.
 
 The geometry of the accelerating structure can be seen as a cylindrical cavity loaded regularly with the disks. If as first approximation we consider an infinite structure, it is possible to use the \textit{Floquet's Theorem}, that can be summarised as follows: \textit{"In a given mode of an infinite periodic structure, the fields at two different cross sections that are separated by one period differ only by a constant factor, which in general is a complex number"}. This has two main implications: there are some regions of the spectrum of $\omega$ that do not allow the waves to propagate, called \textit{stopbands}, and others, called \textit{passbands}, where the propagation is allowed with a \textit{phase shift} $\Delta \phi = k_0 d$, where d is the length of the cell. The phase advance per cell is a particular parameter of every structure, and is defined in the design phase.
 
@@ -96,7 +96,7 @@ The comparison of the phase velocity of a waveguide and accelerating structure i
 
 \subsection[Synchronous particle acceleration]{Synchronous particle acceleration}
 
-A particle injected in an electromagnetic field in some conditions can gain energy at expense of the field, getting accelerated. This is realised in travelling-wave structures injecting the particle at the right moment and ensuring that the field and the particle have a similar speed. In this manner the particle can travel with the field with an energy gain given by
+A particle injected in an electromagnetic field in some conditions can gain energy at expense of the field, getting accelerated. This is realised in travelling-wave structures by injecting the particle at the right moment and ensuring that the field and the particle have a similar speed. In this manner the particle can travel with the field with an energy gain given by
 \begin{equation}
 \Delta W = q V_o cos \phi
 \end{equation}
@@ -157,14 +157,14 @@ where $I$ is the beam current and $\Delta W$ is the energy gain
 \begin{equation}
 \epsilon_s = \frac{P_B}{P_{tot}}
 \end{equation}
-represents the fraction of power that is delivered to the beam
+represents the fraction of power supplied that is delivered to the beam
 
 \end{itemize}
 
 
 \section[High power limits and scaling laws]{High power limits and scaling laws}
 
-The limiting factors for room-temperature high-gradient accelerators have been identified as \textit{field emission} and \textit{RF breakdown}. The former is the emission of electrons in the form of the so called \textit{"Dark current"}, that subtracts RF power, causes radiation and can produce wakefields; the latter is a limiting factor to the operation of accelerators and can damage the structures.\cite{Wang:1997ip}
+The limiting factors for room-temperature high-gradient accelerators have been identified as \textit{field emission} and \textit{RF breakdown}. The former is the emission of electrons in the form of the so called \textit{"Dark current"}, that subtracts RF power, causes radiation and can produce wakefields; the latter is a limiting factor to the operation of accelerators and can damage the structures \cite{Wang:1997ip}.
 
 The understanding of these phenomena is particularly challenging and requires a mixture of notions of disciplines such as surface physics, metallurgy, fabrication processes, microwaves, beam dynamic and plasma physics. At the moment a satisfactory unified theory of the processes that take place during the breakdowns has not been found yet. The improvement of the structures is achieved using scaling laws for the high power limitations, that have been deducted  from the experience and the experiments on the structures tested so far. 
 
@@ -188,11 +188,11 @@ It is well known that almost any surface is never perfectly clean and flat, and 
 \item Molten craters after breakdowns
 \item Absorbed gas
 \end{itemize} 
-and some others. These effects can create particular sites known as "emitters". It is a common praxis define the field enhancement factor $\beta$ to relate the electric E field to the microscopic one
+These effects can create particular sites known as "emitters". It is a common praxis to define the field enhancement factor $\beta$ to relate the electric field E to the microscopic one E$_m$
 \begin{equation}
 E_{m} = \beta E
 \end{equation}
-The $\beta$ factors can be calculated according to the emitter's geometry \cite{Rohrbach:190223} as exploited in Fig. \ref{tip_factors}.
+The $\beta$ factors can be calculated according to the emitter's geometry \cite{Rohrbach:190223} as shown in Fig. \ref{tip_factors}.
 Using Eq. \ref{FNlaw}, the current I$_F$ emitted from EFE by an emitter site of area A becomes 
 \begin{equation}
 I_F = \frac{ 1.54\times10^{-6} \times 10^{4.52\phi^{-0.5}} A \beta^2 E^2}{  \phi } \, \text{exp} \left ( -\frac{6.53\times 10^9 \phi^{1.5}}{\beta E} \right ) \quad [A]  \label{If}
@@ -220,15 +220,15 @@ The emission of dark current seems to be a precursor of the breakdown  process, 
 
 \subsection[High power limits]{High power limits}
 
-In an historical perspective, the Kilpatrick's Critereon was the first attempt to create a high power limit for the vacuum breakdown valid both in DC and RF applications \cite{KilpLimit}. The model was based on the acknowledgement of the Field Emission, and suggesting that the vacuum arc was created by the cascade of secondary electrons ejected from the surface by ion bombardment. The main result was to find a law ruling the maximum electric field achievable without triggering a breakdown. 
+In an historical perspective, the Kilpatrick's Critereon was the first attempt to create a high power limit for the vacuum breakdown valid both in DC and RF applications \cite{KilpLimit}. The model was based on the acknowledgement of the Field Emission, and suggesting that the vacuum arc was created by the cascade of secondary electrons ejected from the surface triggered by an initial ion bombardment. The main result was to find a law ruling the maximum electric field achievable without triggering a breakdown. 
 
-This critereon was reviewed many times up to now, because the experiments conducted nowadays show a field limit 7-8 times higher than Kilpatrick's prediction. This can be addressed to different reasons: first of all the quality of the machining of the structures has increased considerably since the 1950's; in second instance Kilpatrick examined simple geometries, while in RF cavities are more complicated.
+This critereon was reviewed many times up to now, because the experiments conducted nowadays show a field limit 7-8 times higher than Kilpatrick's prediction. This can be ascribed to different reasons: first of all the quality of the machining of the structures has increased considerably since the 1950's; in second instance Kilpatrick examined simple geometries, while real RF cavities are more complicated.
 
 At the end of the 1980's J.D.Wang proposed a model based on microprotrusion effect on the field and field emission, that involves the formation of a micro-plasma during the breakdown process. Also the Kilpatrick's limit was revised again in order to match the experimental results. \cite{Wang:1986, kilp:story}
 
-Further theories on the mechanism of breakdowns evolved, and will be mentioned in chapter 3.
+Further theories on the mechanism of breakdowns evolved, and will be mentioned in chapter \ref{chap:BDs}.
 
-Without entering in the physics of the breakdown phenomenon yet, the two following scaling laws are currently used in the design of modern accelerating structures.
+The two scaling laws presented in the next two paragraphs are currently used in the design of modern accelerating structures.
 
 \subsection[Power flow based criteria]{Power flow based criteria}
 
@@ -240,7 +240,7 @@ In recent years a more advanced version of the scaling has been presented \cite{
 \end{equation}
 where $P$ is the power flow through the structure, $\tau$ the pulse length and $C$ the minimum iris circumference. This has also been formulated as $(f \times P/C )^{0.5}$, which is a quantity linear with the field \cite{Wuensch:advaces}.
 
-Anyway, although these criteria are still in use today for the accelerating structure design, finding a more general criterion valid for any type of cavity is necessary.
+Anyway, although these criteria are still in use today for the accelerating structure design, it needs to be found a more general criterion valid for any type of cavity.
 
 \subsection{The modified Poynting vector $S_c$}
 
@@ -300,9 +300,9 @@ This quantity has been used to design all the lateset generations of CLIC struct
 
 \section[The TD26CC structure for the Main Beam of CLIC]{The TD26CC structure for the Main Beam of CLIC}
 
-After the precedent part about the general laws that regulate the operation of the TWS, now the structure under test in this work, the TD26CC, will be presented. The name stands for Tapered, Damped, 26-cells active cells structure with Compact Couplers.
+After introducing in the previous section the general laws that regulate the operation of the TWS, the structure under test in this work, the TD26CC, will now be presented. The name stands for Tapered, Damped, 26-cells active cells structure with Compact Couplers.
 
-It is necessary to keep in mind that in the design of the real cavities, it is almost never possible to use the general laws described in precedence because of the high complexity of the geometry. A great work of design and simulation is necessary, and is carried out with complex numerical simulations. This section will present a summary of the parameters and features of the cavity, the details can be found in \cite{CLIC:cdr,Grudiev:td26cc,Lunin:1333709}.
+One has to bear in mind that in the design of the real cavities, it is almost never possible to use the general laws described in precedence because of the high complexity of the geometry. A great work of design and simulation is necessary, and is carried out with complex numerical simulations. This section will present a summary of the parameters and features of the cavity; the details can be found in \cite{CLIC:cdr,Grudiev:td26cc,Lunin:1333709}.
 
 As pointed out in \cite{CLIC:cdr}, the main constraints in the structures for the main beam linac are 
 \begin{enumerate}
@@ -354,7 +354,7 @@ These limitations, together with the parameters listed in section 1.2.2, lead to
  
  \end{figure}
  
-The structure is fabricated stacking machined copper disks that are brazed together with a particular procedure that has been elaborated in order to achieve the highest mechanical precision possible in the alignment of the parts. Figure \ref{CLICdisk} shows a disk and a model of the accelerating structure. Figure \ref{td26_test_photo} shows the actual test structure before installation.
+The structure is fabricated by stacking machined copper disks that are brazed together with a particular procedure that has been elaborated in order to achieve the highest mechanical precision possible in the alignment of the parts. Figure \ref{CLICdisk} shows a disk and a model of the accelerating structure. Figure \ref{td26_test_photo} shows the actual test structure before installation.
 
 The iris radius and thickness are linearly tapered in order to optimise the various high power parameters and to create a smooth field profile along the structure. 
 
@@ -367,7 +367,7 @@ Cooling water circuits and the vacuum flange are also installed the structure. T
 \centering
 
 \includegraphics[scale=0.16]{pictures/td26_test_photo}
-\caption{The structure prototype before the installation \textit{(Photo A. Solodko)}}
+\caption{The structure prototype after the brazing of the copper disks and before the installation \textit{(Courtesy of A. Solodko)}}
 \label{td26_test_photo}
 
 \end{figure}
