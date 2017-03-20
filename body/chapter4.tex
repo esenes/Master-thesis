@@ -165,9 +165,8 @@ The edges of the TRA and REF signals are identified looking for the deviation po
 \end{equation}
 where $\tau^\text{raise} _{\text{REF}} $ and $\tau^\text{fall} _{\text{TRA}}$ are the time position in the signal of the deviation point from the previous pulse of the transmitted and reflected signals, and $\tau_{\text{FILL}}$ is the filling time of the accelerating structure. This leads to a time delay that is included between zero and $2 \tau_{\text{FILL}}$. No additional time delays have to be considered, since the cable lengths are the same. 
 
-For noisy signals, using the deviation point detection instead of detecting the edge of the signal at a certain height showed an improvement in the performance of the algorithm. In some cases, the previous pulse was not recorded, and the location of the signal edges was determined manually.
 
- \begin{figure}
+ \begin{figure}[h]
 \centering
   \subfigure[RF signals of a breakdown event.]
    {\includegraphics[scale=0.35]{pictures/dev_point2.png}}
@@ -179,6 +178,8 @@ For noisy signals, using the deviation point detection instead of detecting the 
  \end{figure}
 
 
+For noisy signals, using the deviation point detection instead of detecting the edge of the signal at a certain height showed an improvement in the performance of the algorithm. In some cases, the previous pulse was not recorded, and the location of the signal edges was determined manually.
+
 \subsection[Correlation method]{Correlation method}
 
 It has been outlined before that after the establishment of the breakdown, the incident power is reflected back. This means that looking at the tail of the signal after the compressed pulse it is possible to identify some particular pattern (see Fig. \ref{dev_pt} (b) ), and in a number of cases the same pattern will be visible in the REF signal returning back. 
@@ -186,20 +187,8 @@ It has been outlined before that after the establishment of the breakdown, the i
 This method is not always successful since is strongly dependent on two factors: the amplitude of the pattern observed (in Fig. \ref{dev_pt} (b) one of the best example is reported, but most of the times the amplitude is much lower); and the position of the breakdown in the cavity, since a longer path of the signal in the structure leads to higher attenuation. In order to limit as much as possible the attenuation effect, this analysis is performed using the uncalibrated signals from the log detectors, but it is still not always possible individuate a common pattern between the tails of INC and REF.
 
 
-\subsection[Comparison of the two methods]{Comparison of the two methods}
-
+\subsection[Comparison of the two methods]{Comparison of the two methods} 
 As just pointed out before the correlation method is not always successful because of the attenuation of the REF signal. In addition, comparing the results of the two methods, the distribution of the arcs in the cavity are definitely different. Figure \ref{edge_vs_corr} shows the difference between the breakdown distribution of the same dataset using the edge (left) and correlation method (right). 
-
- \begin{figure}[h]
-\centering
-  \subfigure[Edge method result]
-   {\includegraphics[scale=0.34]{pictures/Exp_UnLoaded43MW_6_edge_method.png}}
-   \hspace{1mm}
-  \subfigure[Correlation method result]
-   {\includegraphics[scale=0.335]{pictures/Exp_UnLoaded43MW_6_correlation_method.png}}
-\caption{Comparison of the signal delay distribution for the edge and correlation method in an unloaded run. The spike in proximity of zero in the correlation delay is visible in all datasets.}
- \label{edge_vs_corr}
- \end{figure}
 
 The distribution obtained using the correlation method presents a peak at the beginning of the structure, that is not obtained using the edge method. This overpopulation of breakdowns at the beginning of the structure has been observed in all the datasets processed for this work, but also in \cite{Rajamaki:2143815}.  
 
@@ -207,18 +196,34 @@ Figure \ref{comp_corr_edge} shows the comparison between the two different techn
 
 An explanation for the asymmetry is given by the \textit{breakdown migration}~\cite{Woolley:2015,Jacewicz:CLICWS16,Degiovanni:migration}. According to this hypothesis, if the onset breakdown position is found by the edge method and the position of the steady state stable breakdown is found by the correlation method, then Fig. \ref{comp_corr_edge} is consistent with the migration upstream in the structure. The edge and correlation methods detect features of the data that are separated by $\mathcal{O}(100 \text{ ns})$, which is compatible with the migration hypothesis given that turn-on times of the arc of $\mathcal{O}(10 \text{ ns})$ have been measured \cite{Shipman:1999457,Shipman:1459884}.
 
+
+
+ \begin{figure}[p]
+\centering
+  \subfigure[Edge method result]
+   {\includegraphics[scale=0.35]{pictures/Exp_UnLoaded43MW_6_edge_method.png}}
+   \hspace{1mm}
+  \subfigure[Correlation method result]
+   {\includegraphics[scale=0.35]{pictures/Exp_UnLoaded43MW_6_correlation_method.png}}
+\caption{Comparison of the signal delay distribution for the edge and correlation method in an unloaded run. In 75\% of the events have been retained, in the other cases the correlation method was not applicable because of the attenuation.  The spike in proximity of zero in the correlation delay is visible in all datasets.\vspace{8mm}}
+ \label{edge_vs_corr}
+
+\centering 
+\includegraphics[scale=0.5]{pictures/metods_comparison_2.png}
+\caption{Comparison of edge and correlation method for the unloaded breakdowns. The straight red line represent the accordance of the two methods, the colors the number of counts per bin. }
+\label{comp_corr_edge}
+\end{figure}
+
+
 A possible migration scenario is that the reflected power from the onset breakdown enters in resonance with the incident power, enhancing the field in upstream cells. At this point a new breakdown happens upstream and the initial arc gets extinguished because it does not receive further incident power anymore. 
 
 Downstream migration is not likely, as little or no power is remaining downstream after the arc starts to reflect the incident power. 
 
 A possible migration scenario is presented in Fig.  \ref{mig_sc}. The authors of \cite{Degiovanni:migration} propose that the arc absorbs, but does not reflect incident power temporarily while migrating. The absorption causes a dip in reflection, right before the arc re-establishes itself at a new location.
 
-\begin{figure}[h]
-\centering 
-\includegraphics[scale=0.5]{pictures/methods_comparison.png}
-\caption{Comparison of edge and correlation method for the unloaded breakdowns. The straight red line represent the accordance of the two methods, the colors the number of counts per bin. }
-\label{comp_corr_edge}
-\end{figure}
+
+
+Considering the problems highlighted above, only the edge method will be used for the following development of this work.
 
 \begin{figure}[h]
 \centering 
@@ -228,7 +233,6 @@ A possible migration scenario is presented in Fig.  \ref{mig_sc}. The authors of
 \end{figure}
 
 
-Considering the problems highlighted above, only the edge method will be used for the following development of this work.
 
 
 
