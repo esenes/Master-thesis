@@ -6,7 +6,7 @@ In order to perform the data analysis, a full analysis framework has been develo
 
 \subsection[Data collected from the PXI]{Data collected from the PXI}
 
-As mentioned in the previous chapter, the data acquisition is performed from a real-time LabVIEW program running in the PXI crate. When an event hits at least one of the online triggers it is saved into the crate's disk. Every 8 hours, the crate assembles a data file and stores it in TDMS format~\cite{NI:TDMS}. 
+As mentioned in the previous chapter, the data acquisition is performed from a real-time LabVIEW program running in the PXI crate. When an event hits at least one of the online triggers, it is saved into the crate's disk. Every 8~hours, the crate assembles a data file and stores it in TDMS format~\cite{NI:TDMS}. 
 
 In order to proceed with the analysis, the files of the same day are merged in a new data file.
 
@@ -35,11 +35,11 @@ The first point makes the spikes easily detectable using a frequency filter to d
  \hspace{2mm}
  \subfigure[Power spike in the compressed pulse]
    {\includegraphics[scale=0.46]{pictures/spike2.png}}
- \caption{Cavity input power signal for two different spikes. Spikes can happen anywhere in the signal.}
+ \caption{Cavity input power signal for two different spikes. Spikes can happen anytime in the signal.}
  \label{spikesAndDetuning}
  \end{figure}
 
-When a spike gets detected, the correspondent interlock is discarded, and also the following pulses for a given period of time (generally 90 s). It is believed that the burst of power brought from the spike may trigger strong breakdowns that damage the surface. This creates new emitters that trigger new breakdowns as long as the system don't reach an equilibrium. The waiting time before restarting to count the breakdowns gives time to the surface to cool down and get reconditioned.
+When a spike gets detected, the correspondent interlock is discarded, and also the following pulses for a given period of time (generally 90 s). It is believed that the burst of power brought from the spike may trigger strong breakdowns that damage the surface. This creates new emitters that trigger new breakdowns as long as the system does not reach an equilibrium. The waiting time before restarting to count the breakdowns gives time to the surface to get reconditioned.
 
 
 \subsection[Pulse compressor tuning issues]{Pulse compressor tuning issues}
@@ -47,7 +47,7 @@ When a spike gets detected, the correspondent interlock is discarded, and also t
 
 RF tests of accelerating cavities are carried out using the CLIC nominal pulse, which is made of a filling (or rising) time of 70 ns and a flat-top 180 ns long (as shown in Fig. \ref{detuning_fig} (a)).
 
-A common operational issue is the detuning of the pulse compressor, that provokes an imperfect shape of the RF pulse. This event does not constitute an issue of CLIC in the two-beam scheme (unless implemented in the klystron option with pulse compressors). 
+A common operational issue is the detuning of the pulse compressor, that provokes an imperfect shape of the RF pulse. This does not constitute an issue for CLIC in the two-beam scheme without pulse compressors (unless implemented in the klystron option with pulse compressors). 
 
 
  
@@ -59,7 +59,7 @@ A common operational issue is the detuning of the pulse compressor, that provoke
 \subfigure[Undertuned pulse (right) and overtuned pulse (left)]
 {\includegraphics[scale=0.46]{pictures/detuned_pulses.png}}
 \caption{The CLIC nominal pulse and two extreme cases of detuning of the pulse compressor.}
-\label{spikesAndDetuning}
+\label{detuning_fig}
 \end{figure}
  
 
@@ -67,15 +67,23 @@ A common operational issue is the detuning of the pulse compressor, that provoke
 
 The origin of the detuning is the difference of the total volume of the pulse compressor's cavities. This is controlled changing the cooling water temperature, but as any other thermal system this needs time for the regulation \cite{Woolley:CWS2016}. The detuning is a particular issue in summer, when the thermal excursion during the day is particularly high.
 
-As a general rule, a slight undertuned pulse is accepted as long as it does not affect the pulse width. It has been calculated that the breakdown rate variation for a non flat pulse with the same pulse width is 5\%, taking into account that the peak power overshoot is limited to 10\% by the control system~\cite{Frank:PC}.  The overtuning is very rare because of the tuning algorithm implementation.
+As a general rule, a slight detuned pulse is accepted as long as the detuning does not affect the pulse width. It has been calculated from the BDR scaling (Eq. \ref{E30}) that the breakdown rate variation for a non-flat pulse with the same pulse width is 5\%, taking into account that the peak power overshoot is limited to 10\% by the control system~\cite{Frank:PC}.  
+
+During normal operation, the system oscillates between slight undertuning and the tuned condition. This is addressable to the implementation of the tuning algorithm.  
 
 The data are discarded in case of extreme detuning such as in Fig. \ref{detuning_fig} (b) and (c), where the box-shape of the pulse is not recognisable anymore.
 
-The slight detuning is not considered as a relevant source of error in the breakdown rate measurement,  because of the short duration of the detuned periods respect to the duration of the run and the little difference that would be induced in the breakdown rate.
+The slight detuning is not considered as a relevant source of error in the breakdown rate measurement,  because of the short duration of the detuned periods with respect to the duration of the run and the little difference that would be induced in the breakdown rate.
 
 
 
 \subsection[The metric]{The metric}
+
+The RF diagnostic is based on the signals recorded from directional couplers of the incident power (INC), transmitted power (TRA) and reflected power~(REF). 
+
+Since the accelerating structure is well matched with the rest of the RF system, the reflections are minimal. This means that during the normal operation only the INC and TRA are non-zero signals.
+
+When a breakdown happens, the plasma into the structure acts as a short circuit \cite{Degiovanni:2025952}, hence the RF incoming after the breakdown gets reflected back, and consequently the transmitted power falls. 
 
 The online selection of the events is made wide on purpose in order not to risk losing any interesting event. An additional filtering level is necessary to select the breakdowns happening in the structure. In order to filter the non-interesting breakdowns or fake interlocks two quantities are calculated:
 \begin{equation}
@@ -90,7 +98,7 @@ U = \int_0^T P(t) \, dt
 \end{equation}
 For a non-breakdown event it will be $m_{\text{REF}} \sim 1$ and $m_{\text{TRA}} \sim 0$, where the attenuation of the structure is taken in account.
 
-Plotting this two classifiers, two distinct regions gets highlighted (see Fig. \ref{Metric_plot}). The upper left region is made of the fake interlocks and the breakdown that happen upstream the structure under test. The events happening in the structure end up in the lower right area on the plot. 
+Plotting these two classifiers, two distinct regions gets highlighted (see Fig. \ref{Metric_plot}). The upper left region is made of the fake interlocks and the breakdowns that happen upstream the structure under test. The events happening in the structure are located in the lower right area on the plot. 
 
 \begin{figure}[h]
 \centering 
@@ -103,7 +111,7 @@ Plotting this two classifiers, two distinct regions gets highlighted (see Fig. \
 The most common situations can be summarised as follows:
 \begin{itemize}
 \item Fake interlock, which is a normal pulse with no breakdown. In this case no energy gets reflected from the structure, consequently $m_\text{REF} \sim 1$ and  $m_\text{TRA} \sim 0$.
-\item Breakdown in the waveguide network, but before the input directional coupler. In this case the incident power pulse gets modified before reaching the structure, resulting in a lower $U_\text{INC}$, but still there is no power reflected back. The metric will be again $m_\text{REF} \sim 1$ and  $m_\text{TRA} \sim 0$.
+\item Breakdown in the waveguide network, but before the input directional coupler. In this case the incident power pulse gets modified before reaching the structure, resulting in a lower $U_\text{INC}$ (also $U_\text{TRA}$ will follow the variation of $U_\text{INC}$), but still there is no power reflected back. The metric will be again $m_\text{REF} \sim 1$ and  $m_\text{TRA} \sim 0$.
 \item Breakdown after the input directional coupler. In this case the RF signals will behave as outlined in section \ref{sec:affects_of_BD}. This results in $m_\text{REF} <1$ and  $m_\text{TRA} > 0$.
 \end{itemize}
 
@@ -114,11 +122,11 @@ In this work the selection of the events has been performed using the two thresh
 \subsection{Power back-off failure}
 \label{sec:pbof}
 
-According to the test procedure, after a breakdown the input power gets cut. Afterwards the power is restarted and gets ramped up gradually up to the nominal value unless a new breakdown happens. The duration of the stop and the ramp-up of the power takes generally less than 10 s and depends by the target power level.
+According to the test procedure, after a breakdown the input power gets inhibited. Afterwards, the power is restarted and ramped up gradually to the nominal value unless a new breakdown happens. The duration of the stop and the ramp-up of the power takes generally less than 10 s and depends on the target power level.
 
-The reason of this behaviour is to preserve the surface of the accelerating cavity under test. The necessity of this procedure is foreseen to be verified in a structure without backing off the power. No test of that kind has been done so far, and will be implemented in the future in one of the other test stands at CERN~\cite{Walter:PC}.
+The reason for this behaviour is to preserve the surface of the accelerating cavity under test. The necessity of this procedure is foreseen to be verified in a structure without backing off the power. No test of that kind has been done so far, and will be implemented in the future in one of the other test stands at CERN~\cite{Walter:PC}.
 
-The data analysis showed that the power was not always cut immediately. This could trigger a breakdown  immediately following the former one, but that is provoked by the malfunction of the instrumentation that does not cut the power. For this reason, all the events in the next three seconds after a breakdown are discarded. This is a common procedure carried out also in the other XBOX at CERN, and constitutes an issue that will be investigated in the future. 
+The data analysis showed that the power was not always cut immediately. This could trigger a breakdown  following the former one, but that is provoked by the malfunctioning of the instrumentation that does not cut the power. For this reason, all the events in the next three seconds after a breakdown are discarded. This is a common procedure carried out also in the other XBOX at CERN, and constitutes an issue that will be investigated in the future. 
 
 
 \subsection[Additional criteria for runs with beam]{Additional criteria for runs with beam}
@@ -135,11 +143,7 @@ During the experiments with beam, two additional conditions have to be met to co
 
 \section[Time and space positioning of the breakdowns]{Time and space positioning of the breakdowns}
 
-The position detection of the breakdown is based on the RF signals. The RF diagnostic is based on the signals recorded from directional couplers of the incident power (INC), transmitted power (TRA) and reflected power (REF). 
-
-Since the accelerating structure is well matched with the rest of the RF system, the reflections are minimal. This means that during the normal operation only the INC and TRA are non-zero signals.
-
-When a breakdown happens, the plasma into the structure acts as a short circuit \cite{Degiovanni:2025952}, hence the RF incoming after the breakdown gets reflected back, and consequently the transmitted power falls. The time taken by an incident signal to travel from the input directional coupler and come back after the reflection is measured ($\tau_\text{d,REF}$  in Fig.~\ref{BD_scheme}). The time for a signal to travel from the input to the output directional coupler is measured as well ($\tau_\text{d,TRA}$ in Fig.~\ref{BD_scheme}).  A full dissertation on various possible positioning methods is available in~\cite{Rajamaki:2143815}.
+The position detection of the breakdown is based on the RF signals. The time taken by an incident signal to travel from the input directional coupler and come back after the reflection at the breakdown location is measured ($\tau_\text{d,REF}$  in Fig.~\ref{BD_scheme}). The time for a signal to travel from the input to the output directional coupler is measured as well ($\tau_\text{d,TRA}$ in Fig.~\ref{BD_scheme}).  A full dissertation on various possible positioning methods is available in~\cite{Rajamaki:2143815}.
 
 \begin{figure}[h]
 \centering 
@@ -153,13 +157,13 @@ When a breakdown happens, the plasma into the structure acts as a short circuit 
 
 The Edge Method is based on the time difference of arrival of the falling edge of the TRA signal and the rising edge of the REF signal. This method constitutes the most reliable method that is used for breakdown positioning. 
 
-Assuming that the vacuum arc starts to absorb and reflects the RF immediately after being triggered, this method will identify the longitudinal position of the onset of the breakdown in the accelerating cavity.
+Assuming that the vacuum arc starts to absorb and reflect the RF immediately after being triggered, this method will identify the longitudinal position of the onset of the breakdown in the accelerating cavity.
 
 The edges of the TRA and REF signals are identified looking for the deviation point of the signal from the nominal pulse (see Fig. \ref{dev_pt} (a) ). This is easily done using the previous pulse, which is recorded in the data when a breakdown happens.  According to this method the time delay $\tau_d^{\text{edge}}$ is
 \begin{equation}
 \tau_d^{\text{edge}} = \tau_\text{REF} ^\text{raise} - (\tau_\text{TRA} ^\text{fall} - \tau_{\text{FILL}})
 \end{equation}
-where $\tau^\text{raise} _{\text{REF}} $ and $\tau^\text{fall} _{\text{TRA}}$ are the time position in the signal of the deviation point from the previous pulse of the transmitted and reflected signals, and $\tau_{\text{FILL}}$ is the filling time of the accelerating structure. This leads to a time delay that is included between zero and $2 \tau_{\text{FILL}}$. No additional time delays have to be considered, hence the cable lengths are the same. 
+where $\tau^\text{raise} _{\text{REF}} $ and $\tau^\text{fall} _{\text{TRA}}$ are the time position in the signal of the deviation point from the previous pulse of the transmitted and reflected signals, and $\tau_{\text{FILL}}$ is the filling time of the accelerating structure. This leads to a time delay that is included between zero and $2 \tau_{\text{FILL}}$. No additional time delays have to be considered, since the cable lengths are the same. 
 
 For noisy signals, using the deviation point detection instead of detecting the edge of the signal at a certain height showed an improvement in the performance of the algorithm. In some cases, the previous pulse was not recorded, and the location of the signal edges was determined manually.
 
@@ -177,14 +181,14 @@ For noisy signals, using the deviation point detection instead of detecting the 
 
 \subsection[Correlation method]{Correlation method}
 
-It has been outlined before that after the establishment of the breakdown, the INC is reflected back. This means that looking at the tail of the signal after the compressed pulse it is possible to identify some particular pattern (see Fig. \ref{dev_pt} (b) ), and in a number of cases the same pattern will be visible in the REF signal returning back. 
+It has been outlined before that after the establishment of the breakdown, the incident power is reflected back. This means that looking at the tail of the signal after the compressed pulse it is possible to identify some particular pattern (see Fig. \ref{dev_pt} (b) ), and in a number of cases the same pattern will be visible in the REF signal returning back. 
 
-This method is not always successful since is strongly dependent from two factors: the amplitude of the pattern observed (in Fig. \ref{dev_pt} (b) one of the best example is reported, but most of the times the amplitude is much lower); and the position of the breakdown in the cavity, since the longer is the path of the signal in the structure, the higher will be the attenuation. In order to limit as much as possible the attenuation effect, this analysis is performed using the non-calibrated signals from the log detectors, but it's still not always possible individuate a common pattern between the tails of INC and REF.
+This method is not always successful since is strongly dependent on two factors: the amplitude of the pattern observed (in Fig. \ref{dev_pt} (b) one of the best example is reported, but most of the times the amplitude is much lower); and the position of the breakdown in the cavity, since a longer path of the signal in the structure leads to higher attenuation. In order to limit as much as possible the attenuation effect, this analysis is performed using the uncalibrated signals from the log detectors, but it is still not always possible individuate a common pattern between the tails of INC and REF.
 
 
 \subsection[Comparison of the two methods]{Comparison of the two methods}
 
-It has to be pointed out that the correlation method is not always successful because of the attenuation of the REF signal. In addition, comparing the results of the two methods, the distribution of the arcs in the cavity are definitely different. Figure \ref{edge_vs_corr} shows the difference between the breakdown distribution of the same dataset using the edge (right) and correlation method (left). 
+As just pointed out before the correlation method is not always successful because of the attenuation of the REF signal. In addition, comparing the results of the two methods, the distribution of the arcs in the cavity are definitely different. Figure \ref{edge_vs_corr} shows the difference between the breakdown distribution of the same dataset using the edge (left) and correlation method (right). 
 
  \begin{figure}[h]
 \centering
@@ -193,17 +197,17 @@ It has to be pointed out that the correlation method is not always successful be
    \hspace{1mm}
   \subfigure[Correlation method result]
    {\includegraphics[scale=0.335]{pictures/Exp_UnLoaded43MW_6_correlation_method.png}}
-\caption{Comparison of the signals delay distribution for the edge and correlation method in an unloaded run. The spike in proximity of the zero in the correlation delay is visible in any dataset.}
+\caption{Comparison of the signal delay distribution for the edge and correlation method in an unloaded run. The spike in proximity of zero in the correlation delay is visible in all datasets.}
  \label{edge_vs_corr}
  \end{figure}
 
-The distribution obtained using the correlation method present a peak at the beginning of the structure, that is not obtained using the edge method. This overpopulation of breakdowns at the beginning of the structure has been observed in all the dataset processed for this work, but also in \cite{Rajamaki:2143815}.  
+The distribution obtained using the correlation method presents a peak at the beginning of the structure, that is not obtained using the edge method. This overpopulation of breakdowns at the beginning of the structure has been observed in all the datasets processed for this work, but also in \cite{Rajamaki:2143815}.  
 
-Figure \ref{comp_corr_edge} shows the comparison between the two different techniques. The solid line indicate the agreement of the two methods. It is clearly observable that the correlation method is more likely to yield estimates further upstream in the structure than the edge method, as outlined from the asymmetrical distribution. 
+Figure \ref{comp_corr_edge} shows the comparison between the two different techniques. The solid line indicates the agreement of the two methods. It is clearly observable that the correlation method is more likely to yield estimates further upstream in the structure than the edge method, as outlined from the asymmetrical distribution. 
 
-An explanation for the asymmetry is given by the \textit{breakdown migration}~\cite{Woolley:2015,Jacewicz:CLICWS16,Degiovanni:migration}. According to this hypothesis, if the onset breakdown position is find by the edge method and the position of the steady state stable breakdown is find by the correlation method, then the Fig. \ref{comp_corr_edge} is consistent with the migration upstream in the structure. The edge and correlation methods detect features of the data that are separated by $\mathcal{O}(100 \text{ ns})$, which is compatible with the migration hypothesis given that turn-on times of the arc of $\mathcal{O}(10 \text{ ns})$ have been measured \cite{smtg,smtgg}.
+An explanation for the asymmetry is given by the \textit{breakdown migration}~\cite{Woolley:2015,Jacewicz:CLICWS16,Degiovanni:migration}. According to this hypothesis, if the onset breakdown position is found by the edge method and the position of the steady state stable breakdown is found by the correlation method, then Fig. \ref{comp_corr_edge} is consistent with the migration upstream in the structure. The edge and correlation methods detect features of the data that are separated by $\mathcal{O}(100 \text{ ns})$, which is compatible with the migration hypothesis given that turn-on times of the arc of $\mathcal{O}(10 \text{ ns})$ have been measured \cite{Shipman:1999457,Shipman:1459884}.
 
-According to this interpretation, the breakdown migrates upstream in the structure. A possible scenario is that the reflected power from the onset breakdown enter in resonance with the incident power, enhancing the field in the upstream cell. At this point a new breakdown happens upstream and the initial arc gets extinguished because do not receive incident power anymore. 
+A possible migration scenario is that the reflected power from the onset breakdown enters in resonance with the incident power, enhancing the field in upstream cells. At this point a new breakdown happens upstream and the initial arc gets extinguished because it does not receive further incident power anymore. 
 
 Downstream migration is not likely, as little or no power is remaining downstream after the arc starts to reflect the incident power. 
 
@@ -212,7 +216,7 @@ A possible migration scenario is presented in Fig.  \ref{mig_sc}. The authors of
 \begin{figure}[h]
 \centering 
 \includegraphics[scale=0.5]{pictures/methods_comparison.png}
-\caption{Comparison of edge and correlation method. The straight red line represent the accordance of the two methods, the colors the number of counts per bin. }
+\caption{Comparison of edge and correlation method for the unloaded breakdowns. The straight red line represent the accordance of the two methods, the colors the number of counts per bin. }
 \label{comp_corr_edge}
 \end{figure}
 
@@ -231,7 +235,7 @@ Considering the problems highlighted above, only the edge method will be used fo
 
 \subsection[Time to space conversion]{Time to space conversion}
 
-In principle, talking about spatial position or temporal delay of the signals leads to equivalent results. However for a matter of convenience, it is better to refer to the cell where the breakdown has happened. For this purpose, it is necessary convert the time delay in longitudinal position and then distribute the breakdowns in the corresponding cells. The time-space conversion is carried out considering that the round-trip time $\tau_{\text{RT}}$  of the reflecting signal is given by (see Fig. \ref{tToz_p})
+In principle, regarding spatial position or temporal delay of the signals leads to equivalent results. However for a matter of convenience, it is better to refer to the cell where the breakdown has happened. For this purpose, it is necessary convert the time delay in longitudinal position and then distribute the breakdowns in the corresponding cells. The time-space conversion is carried out considering that the round-trip time $\tau_{\text{RT}}$  of the reflecting signal is given by (see Fig. \ref{tToz_p})
 \begin{equation}
 \tau_{\text{RT}} = 2 \int_0^{z_{\text{BD}}} \frac{1}{v_g (z)} \, dz
 \label{tRT}
@@ -262,9 +266,9 @@ Ultimately, the data selection process that has been described is able to sort o
 \item In the regular cells of the accelerating structure
 \item In the output coupling cell and the waveguide to the RF load
 \end{enumerate}
-Strictly speaking, only the breakdowns happening in the regular cells and in the coupling cells should be counted for the breakdown rate calculation. Here the breakdowns in the waveguides connecting the directional couplers to the coupling cells are included, as is extremely difficult to distinguish in which region the breakdown happened. The reason is that the group velocity in the regular cell is $\mathcal{O}(\text{0.01 c})$ and in the waveguides is~$\mathcal{O}(\text{c})$. In addition to this, the propagation time of the RF from the directional coupler to the coupling cell is in the order of 4.8 ns (from numerical simulations), which extremely close of the sampling time of 4 ns used in the log detectors. 
+Strictly speaking, only the breakdowns happening in the regular cells and in the coupling cells should be counted for the breakdown rate calculation. Here the breakdowns in the waveguides connecting the directional couplers to the coupling cells are included, as it is extremely difficult to distinguish in which region the breakdown happened. The reason is that the group velocity in the regular cell is $\mathcal{O}(\text{0.01 c})$ and in the waveguides is~$\mathcal{O}(\text{c})$. In addition to this, the propagation time of the RF from the directional coupler to the coupling cell is in the order of 4.8 ns (from numerical simulations), which extremely close of the sampling time of 4 ns used in the log detectors. 
 
-For this kind of experiment, an overestimation of the breakdown rate is acceptable, but an underestimation of the breakdown rate is not tolerable. The reason is that an overestimation of the breakdown rate in the tests would lead to a superior performance in CLIC once built, while the opposite is not desirable.   
+If a breakdown happens in such waveguides, it would lead to an overestimation of the breakdown rate. For this kind of experiment, an overestimation of the breakdown rate is acceptable, but an underestimation of the breakdown rate is not tolerable. The reason is that an overestimation of the breakdown rate in the tests would lead to a superior performance in CLIC once built, while the opposite is not desirable.   
 
 In the view of the above considerations, the number of breakdowns and its error are calculated as follows:
 \begin{equation}
