@@ -17,8 +17,6 @@ The kind of events that are collected by the PXI crate have two natures, and are
 \end{enumerate}
 The first ones are sent to the next analysis step, the second ones are analysed separately to check the running condition of the accelerator and the RF systems.
 
-
-\newpage
 \subsection[Power spikes detection]{Power spikes detection}
 
 A key operational issue is the presence of power spikes, that sometimes are detected in the systems. The main characteristics of these events are:
@@ -51,18 +49,20 @@ RF tests of accelerating cavities are carried out using the CLIC nominal pulse, 
 
 A common operational issue is the detuning of the pulse compressor, that provokes an imperfect shape of the RF pulse. This event does not constitute an issue of CLIC in the two-beam scheme (unless implemented in the klystron option with pulse compressors). 
 
- \begin{figure}[h]
- \centering
-  \subfigure[CLIC nominal pulse]
-   {\includegraphics[scale=0.45]{pictures/CLIC_nominal_pulse.png}}
-  \subfigure[Pulse compressor undertuned]
-   {\includegraphics[scale=0.42]{pictures/Undertuning.png}}
- \hspace{2mm}
- \subfigure[Pulse compressor overtuned]
-   {\includegraphics[scale=0.41]{pictures/Overtuning.png}}
+
+ 
+\begin{figure}[h]
+\centering
+\subfigure[CLIC nominal RF pulse]
+{\includegraphics[scale=0.48]{pictures/CLIC_nominal_pulse.png}}
+\hspace{2mm}
+\subfigure[Undertuned pulse (right) and overtuned pulse (left)]
+{\includegraphics[scale=0.46]{pictures/detuned_pulses.png}}
 \caption{The CLIC nominal pulse and two extreme cases of detuning of the pulse compressor.}
- \label{detuning_fig}
- \end{figure}
+\label{spikesAndDetuning}
+\end{figure}
+ 
+
 
 
 The origin of the detuning is the difference of the total volume of the pulse compressor's cavities. This is controlled changing the cooling water temperature, but as any other thermal system this needs time for the regulation \cite{Woolley:CWS2016}. The detuning is a particular issue in summer, when the thermal excursion during the day is particularly high.
@@ -92,6 +92,14 @@ For a non-breakdown event it will be $m_{\text{REF}} \sim 1$ and $m_{\text{TRA}}
 
 Plotting this two classifiers, two distinct regions gets highlighted (see Fig. \ref{Metric_plot}). The upper left region is made of the fake interlocks and the breakdown that happen upstream the structure under test. The events happening in the structure end up in the lower right area on the plot. 
 
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.46]{pictures/metric_plt.png}
+\caption{Metric plot for an unloaded run. Data grouped in two different regions are clearly visible. The lower-right region is containing the interesting interlocks, that are retained for the next analysis step. The thresholds are drawn in red.}
+\label{Metric_plot}
+\end{figure}
+
+
 The most common situations can be summarised as follows:
 \begin{itemize}
 \item Fake interlock, which is a normal pulse with no breakdown. In this case no energy gets reflected from the structure, consequently $m_\text{REF} \sim 1$ and  $m_\text{TRA} \sim 0$.
@@ -101,12 +109,6 @@ The most common situations can be summarised as follows:
 
 In this work the selection of the events has been performed using the two thresholds plotted in Fig. \ref{Metric_plot}, but as future perspective more refined methods can be used, such as k-means clustering or neural networks \cite{ML:book}.
 
-\begin{figure}[h]
-\centering 
-\includegraphics[scale=0.6]{pictures/metric_plt.png}
-\caption{Metric plot for an unloaded run. Data grouped in two different regions are clearly visible. The lowest region is containing the interesting interlocks, that are retained for the next analysis step}
-\label{Metric_plot}
-\end{figure}
 
 
 \subsection{Power back-off failure}
@@ -163,12 +165,12 @@ For noisy signals, using the deviation point detection instead of detecting the 
 
  \begin{figure}
 \centering
-  \subfigure[RF signals of a breakdown event. The deviation points of the signals are highlighted. The dashed lines are the reference signals, given by the previous pulse.]
-   {\includegraphics[scale=0.39]{pictures/dev_point.png}}
+  \subfigure[RF signals of a breakdown event.]
+   {\includegraphics[scale=0.35]{pictures/dev_point2.png}}
    \hspace{1mm}
-  \subfigure[Detail of the region of interest (ROI) for the correlation method. The dashed lines indicate the time delay between the feature of the signal in exam.]
-   {\includegraphics[scale=0.39]{pictures/dev_point_detail_2.png}}
-\caption{RF signals of a breakdown in the structure. The plot (b) is the zoom of the region of interest surrounded in red in (a)}
+  \subfigure[Detail of the region of interest (ROI) for the correlation method.]
+   {\includegraphics[scale=0.35]{pictures/dev_point2_detail.png}}
+\caption{RF signals of a breakdown in the structure. Box (a) shows the RF signals for a breakdown event, where the deviation points of the TRA and REF signals are highlighted. The dashed lines are the reference signals, given by the previous pulse. Box (b) is a detail of the Region Of Interest (ROI) for the correlation method marked in red in box (a). The time difference between the dashed vertical lines indicate the time delay between the feature of the signal in exam.}
  \label{dev_pt}
  \end{figure}
 
