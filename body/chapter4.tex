@@ -150,7 +150,7 @@ The detection of the breakdown position is based on the RF signals. The time tak
 
 \begin{figure}[h]
 \centering 
-\includegraphics[scale=0.3]{pictures/structure_scheme}
+\includegraphics[scale=0.29]{pictures/structure_scheme}
 \caption{RF signal time delays in a travelling-wave accelerating structure. In the setup used for this experiment, the waveguide length for input and output couplers is identical and $\tau_{0,\text{INC}}$ = $\tau_{0,\text{TRA}}$}
 \label{BD_scheme}
 \end{figure}
@@ -197,11 +197,9 @@ The distribution obtained using the correlation method presents a peak at the be
 
 Figure \ref{comp_corr_edge} shows the comparison between the two different techniques. The solid line indicates the agreement of the two methods. It is clearly observable that the correlation method is more likely to yield estimates further upstream in the structure than the edge method, as outlined from the asymmetrical distribution. 
 
-An explanation for the asymmetry is given by the \textit{breakdown migration}~\cite{Woolley:2015,Jacewicz:CLICWS16,Degiovanni:migration}. According to this hypothesis, if the breakdown onset position is found by the edge method and the position of the steady state stable breakdown is found by the correlation method, then Fig. \ref{comp_corr_edge} is consistent with the migration upstream in the structure. The edge and correlation methods detect features of the data that are separated by $\mathcal{O}(100 \text{ ns})$, which is compatible with the migration hypothesis given that turn-on times of the arc of $\mathcal{O}(10 \text{ ns})$ have been measured \cite{Shipman:1999457,Shipman:1459884}.
+An explanation for the asymmetry is given by the \textit{breakdown migration}~\cite{Woolley:2015,Jacewicz:CLICWS16,Degiovanni:migration}. According to this hypothesis, if the breakdown onset position is found by the edge method and the position of the steady state stable breakdown is found by the correlation method, then Fig. \ref{comp_corr_edge} is consistent with the migration upstream in the structure. 
 
-
-
- \begin{figure}[p]
+\begin{figure}[p]
 \centering
   \subfigure[Edge method result]
    {\includegraphics[scale=0.35]{pictures/Exp_UnLoaded43MW_6_edge_method.png}}
@@ -210,12 +208,17 @@ An explanation for the asymmetry is given by the \textit{breakdown migration}~\c
    {\includegraphics[scale=0.35]{pictures/Exp_UnLoaded43MW_6_correlation_method.png}}
 \caption{Comparison of the signal delay distribution for the edge and correlation method in an unloaded run. 75\% of the events have been retained, in the other cases the correlation method was not applicable because of the attenuation.  The spike in proximity of zero in the correlation delay is visible in all datasets.\vspace{8mm}}
  \label{edge_vs_corr}
-
-\centering 
-\includegraphics[scale=0.5]{pictures/metods_comparison_2.png}
+ 
+ \includegraphics[scale=0.5]{pictures/metods_comparison_2.png}
 \caption{Comparison of edge and correlation method for the unloaded breakdowns. The straight red line represents the accordance of the two methods, the colors the number of counts per bin. }
 \label{comp_corr_edge}
+ 
 \end{figure}
+
+The edge and correlation methods detect features of the data that are separated by $\mathcal{O}(100 \text{ ns})$, which is compatible with the migration hypothesis given that turn-on times of the arc of $\mathcal{O}(10 \text{ ns})$ have been measured \cite{Shipman:1999457,Shipman:1459884}.
+
+
+
 
 
 A possible migration scenario is that the reflected power from the onset breakdown resonates with the incident power, enhancing the field in upstream cells. At this point a new breakdown happens upstream and the initial arc gets extinguished because it does not receive further incident power anymore. 
@@ -224,10 +227,6 @@ Downstream migration is not likely, as little or no power is remaining downstrea
 
 A possible migration scenario is presented in Fig.  \ref{mig_sc}. The authors of \cite{Degiovanni:migration} propose that the arc absorbs, but does not reflect incident power temporarily while migrating. The absorption causes a dip in reflection, right before the arc re-establishes itself at a new location.
 
-
-
-Considering the effects highlighted above, only the edge method will be used for the following development of this work.
-
 \begin{figure}[h]
 \centering 
 \includegraphics[scale=0.3]{pictures/migration_scenario}
@@ -235,8 +234,30 @@ Considering the effects highlighted above, only the edge method will be used for
 \label{mig_sc}
 \end{figure}
 
+Figure \ref{migration_l} and \ref{migration_anti} shows the comparison of the positioning methods in the antiloaded and loaded beam configurations.  
+
+In the antiloaded case the majority of the breakdowns are happening at the end of the structure. In addition there is no evidence of migration towards the beginning of the structure. This can be ascribed to the limited input power~(6.5 MW). An additional effect might come from the fields configuration along the structure, that follows the gradient profile in Fig.~\ref{3grad}. This effect modulates the electric field along the structure, impacting on the possible resonances that can take place between the incident and the reflected wave.
+
+In the loaded case, the majority of the breakdowns are migrating towards the beginning of the structure. In this case most of the breakdowns are triggered in the first part of the structure, and the fields are stronger going back to the first cell. The sum of this two effects might justify the behaviour in Fig.~\ref{migration_l}.
+
+\begin{figure}[p]
+\centering 
 
 
+\includegraphics[scale=0.35]{pictures/methods_comparison_antiloaded.png}
+\caption{Comparison of edge and correlation method for breakdowns in the antiloaded case. The straight red line represents the accordance of the two methods, the colors the number of counts per bin.}
+ \label{migration_anti}
+
+ \vspace{8mm}
+ 
+\includegraphics[scale=0.35]{pictures/methods_comparison_loaded.png}
+\caption{Comparison of edge and correlation method for breakdowns in the loaded case. The straight red line represents the accordance of the two methods, the colors the number of counts per bin.}
+ \label{migration_l}
+ 
+\end{figure}
+
+\noindent
+Considering the effects highlighted above, only the edge method will be used for the following development of this work.
 
 
 
@@ -301,3 +322,5 @@ The breakdown rate is finally calculated as
 BDR = \frac{n_{\text{BD}}}{n_{\text{pulses}}}
 \end{equation}
 where n$_{\text{pulses}}$ is the number of pulses and is assumed to be without error. This is a reasonable assumption since the error on the pulse counting is in the worst case scenario a few hundreds of pulses, while measurements involve several millions of pulses.
+
+
