@@ -86,9 +86,9 @@ The RF diagnostic is based on the signals recorded by directional couplers of th
 
 Since the accelerating structure is well matched with the rest of the RF system, the reflections are minimal. This means that during the normal operation only the INC and TRA signals are non-zero.
 
-When a breakdown happens, the plasma into the structure acts as a short circuit \cite{Degiovanni:2025952}, hence the RF incoming after the breakdown gets reflected back, and consequently the transmitted power falls. 
+When a breakdown happens, the plasma in the structure acts as a short circuit \cite{Degiovanni:2025952}, hence the RF incoming after the breakdown gets reflected back, and consequently the transmitted power falls. 
 
-The online selection of the events is chosen to be loose enogh not to risk lose any interesting event. An additional filtering level is necessary to select the breakdowns happening in the structure. In order to filter the non-interesting breakdowns or fake interlocks two quantities are calculated:
+The online selection of the events is chosen to be loose enough not to risk losing any interesting event. An additional filtering level is necessary to select the breakdowns happening in the structure. In order to filter the non-interesting breakdowns or fake interlocks two quantities are calculated:
 \begin{equation}
 m_{\text{REF}}  =  \frac{ U_{INC} -  U_{REF}   }{  U_{INC} + U_{REF}   }
 \end{equation}
@@ -106,7 +106,7 @@ Plotting the 2-D distribution of these two quantities, two distinct regions appe
 \begin{figure}[h]
 \centering 
 \includegraphics[scale=0.46]{pictures/metric_plt.png}
-\caption{Metric plot for an unloaded run. Data grouped in two different regions are clearly visible. The lower-right region is containing the interesting interlocks, that are retained for the next analysis step. The thresholds are showed as red lines.}
+\caption{Metric plot for an unloaded run. Data grouped in two different regions are clearly visible. The lower-right region is containing the interesting interlocks, that are retained for the next analysis step. The thresholds are shown as red lines.}
 \label{Metric_plot}
 \end{figure}
 
@@ -129,7 +129,7 @@ According to the test procedure, after a breakdown the input power gets inhibite
 
 The reason for this behaviour is to preserve the surface of the accelerating cavity under test. The necessity of this procedure is foreseen to be verified by testing a structure without backing off the power. No test of that kind has been done so far, and will be implemented in the future in one of the other test stands at CERN~\cite{Walter:PC}.
 
-The data analysis showed that the power was not always cut immediately. This could trigger a breakdown  following the original one, provoked by a malfunctioning of the instrumentation that did not cut the power. For this reason, all the events in the next three seconds have to be considered an additional systematic source of error on the breakdown counting. More details on how the breakdown are counted will follow in section \ref{sec:BDR}.  This issue happens also in the other XBOX stands at CERN, and will be investigated in the future. 
+The data analysis showed that the power was not always cut immediately. This could trigger a breakdown  following the original one, provoked by a malfunctioning of the instrumentation that did not cut the power. For this reason, all the events in the next three seconds have to be considered as an additional systematic source of error on the breakdown counting. More details on how the breakdown are counted will follow in section \ref{sec:BDR}.  This issue happens also in the other XBOX stands at CERN, and will be investigated in the future. 
 
 
 \subsection[Additional criteria for runs with beam]{Additional criteria for runs with beam}
