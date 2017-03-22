@@ -55,11 +55,11 @@ Unfortunately, with a such low input power, the breakdown rate is very low, and 
     \begin{tabular}{ l c c c }
     \hline
     \hline
-    Run type							&		Peak(average) gradient  		& BDR ($10^{-5}$ BD pulse$^{-1}$)	\\
+    Run type							&		Peak(average) gradient  			& BDR ($10^{-5}$ BD pulse$^{-1}$)	\\
     \hline
-    Unloaded	@24.6 MW 				&		78 (75) MV/m				&	$< (7.7 \pm 7.7) \, 10^{-3} $ 			\\
-    \multirow{ 2}{*}{Loaded  @43.3 MW} 		&		\multirow{ 2}{*}{98 (75) MV/m} 	& 	max. $2.8^{+0.2} _{-0.5}$    		\\
-    									&								&	min. $0.3\pm0.09$	\\
+    Unloaded	@24.6 MW 				&		77.3 (76.1) MV/m				&	$< (7.7 \pm 7.7) \, 10^{-3} $ 			\\
+    \multirow{ 2}{*}{Loaded  @43.3 MW} 		&		\multirow{ 2}{*}{98.1 (72.0) MV/m} 	& 	max. $2.8^{+0.2} _{-0.5}$    		\\
+    									&									&	min. $0.3\pm0.09$	\\
     \hline
     \hline
     \end{tabular}
@@ -93,7 +93,7 @@ As mentioned in the motivation of the experiment, the goal is to understand the 
 This materialises in:
 \begin{itemize}
 \item Higher beam current than CLIC: 1.6 A instead of 1.2 A.
-\item Longer beam pulse: the beam is lasting for 250 ns during all the compressed RF pulse, instead of last just during the flat-top of the CLIC pulse (see Sec. \ref{sec:PCtune}). This avoids exceding the flat-top power level.
+\item Longer beam pulse: the beam is lasting for 250 ns during all the compressed RF pulse, instead of last just during the flat-top of the CLIC pulse (see Sec. \ref{sec:PCtune}). This avoids exceding the flat-top loaded power level.
 \end{itemize}
 The loaded operation is clearly visible  in the RF signals, as shown in Fig.~\ref{RF_load}.
 
@@ -186,13 +186,13 @@ Unloaded experiments exhibit a flat distribution of the breakdowns in the accele
 
 Considering any cell as a substructure, it is reasonable to suppose that cells with a higher accelerating field will be more likely to experience breakdowns than cells with a lower field. According to this reasoning and following the Eq. \ref{E30}, the breakdown probability per cell is given by
 \begin{equation}
-\text{BD probability (\%)} =\frac{   \left ( \frac{E_\text{cell}}{E_\text{max}} \right )^{30} }{ \sum \left( \frac{E_\text{cell}}{E_\text{max}} \right )^{30}   } \cdot 100
+\text{BD probability} =\frac{   \left ( \frac{E_\text{cell}}{E_\text{max}} \right )^{30} }{ \sum \left( \frac{E_\text{cell}}{E_\text{max}} \right )^{30}   } 
 \end{equation}
 where E$_\text{cell}$ is the maximum surface electric field of the cell and E$_\text{max}$ is the maximum surface electric field of all the cells. 
 
 The choice of using the surface electric field instead of the accelerating gradient comes from the physics of the breakdown process \cite{Walter:PC}. Anyway the shape of the gradient profile and of the surface electric field along the structure differ only slightly. The field of the coupling cells is assumed to be identical to the adjacent cells. This comes from geometrical considerations, and could be eventually derived from simulations \cite{Alexej:PC}.
 
-The result is shown in Fig. \ref{BD_prob}. The expectation is to have an almost flat distribution compared to the others in the unloaded case, with and accumulation of the number of breakdowns in the first part of the structure for the loaded case and at the end of the structure for the antiloaded case.
+The result is shown in Fig. \ref{BD_prob}. The expectation is to have a flatter distribution compared to the others in the unloaded case, with and accumulation of the number of breakdowns in the first part of the structure for the loaded case and at the end of the structure for the antiloaded case.
 
 
 \begin{figure}[h]
@@ -226,7 +226,7 @@ In the centre of the structure there is a more active part, where a large number
 
 
 
-Fortunately, there is no sign of the development of an hotcell. Figure \ref{BD_3d} shows that although a warmer region in the centre developed after the antiloaded runs in June 2016, it was gradually reconditioned during the following part of the year. 
+Fortunately, there is no sign of the development of an hotcell. Figure~\ref{BD_3d} shows that although a warmer region in the centre developed after the antiloaded runs in June 2016, it was gradually reconditioned during the following part of the year. 
 
 Additional hints will come from the post-mortem analysis of the structure, that will be cut and examined with various microscopy techniques. This analysis will take place later in 2017. In any case, the second option looks the most probable. 
 
@@ -251,7 +251,7 @@ Even ignoring the central warm zone, it is not clear which law rules the distrib
 
 
 
-
+\newpage
 \section[Beam induced RF]{Beam induced RF}
 
 The effect of the beam is observable on the RF signals after a breakdown. Figure \ref{BI_rf_fig}  shows two examples of RF signals. Three phases are clearly visible in the transmitted power signal: 
@@ -275,7 +275,7 @@ In the figure two different examples are presented. On the right it is visible t
  \label{BI_rf_fig}
  \end{figure}
 
-
+\newpage
 \section{Conclusions}
 
 The experiment described in this work offers a first glimpse on the beam effect on the breakdown rate in a normal-conducting travelling-wave accelerating structure.
