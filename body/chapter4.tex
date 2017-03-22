@@ -176,7 +176,7 @@ where $\tau^\text{raise} _{\text{REF}} $ and $\tau^\text{fall} _{\text{TRA}}$ ar
    \hspace{1mm}
   \subfigure[Detail of the region of interest (ROI) for the correlation method.]
    {\includegraphics[scale=0.35]{pictures/dev_point2_detail.png}}
-\caption{RF signals of a breakdown in the structure. Box (a) shows the RF signals for a breakdown event, where the deviation points of the TRA and REF signals are highlighted. The dashed lines are the reference signals, given by the previous pulse. Box (b) is a detail of the Region Of Interest (ROI) for the correlation method marked in red in box (a). The time difference between the dashed vertical lines indicate the time delay between the pattern of the signal in exam.}
+\caption{RF signals of a breakdown in the structure. (a) shows the RF signals for a breakdown event, where the deviation points of the TRA and REF signals are highlighted. The dashed lines are the reference signals, given by the previous pulse. (b) is a detail of the Region Of Interest (ROI) for the correlation method marked in red in (a). The time difference between the dashed vertical lines indicate the time delay between the pattern of the signals.}
  \label{dev_pt}
  \end{figure}
 
@@ -234,12 +234,11 @@ A possible migration scenario is presented in Fig.  \ref{mig_sc}. The authors of
 \label{mig_sc}
 \end{figure}
 
-Figure \ref{migration_l} and \ref{migration_anti} shows the comparison of the positioning methods in the antiloaded and loaded beam configurations.  
+Figure \ref{migration_anti} and \ref{migration_l} show the comparison of the positioning methods in the antiloaded and loaded beam configurations.  
 
-In the antiloaded case the majority of the breakdowns are happening at the end of the structure. No evidence of migration towards the beginning of the structure is present. This can be ascribed to the limited input power~(6.5 MW) and the fields profile along the structure, that follows the gradient profile in Fig.~\ref{3grad}. 
-The combination of these two factors impacts on resonance patterns that can take place between the incident and the reflected wave, resulting in a short or absent migration.
+In the antiloaded case the majority of the breakdowns are happening at the end of the structure. No evidence of migration towards the beginning of the structure is present. This can be ascribed to the limited input power~(6.5 MW) and the fields profile along the structure, that follows the gradient profile in Fig.~\ref{3grad}. As a result, the field superposition pf the incident and reflected RF is not sufficiently high to trigger any upstream breakdown, resulting in a short or absent migration.
 
-In the loaded case, the majority of the breakdowns are migrating to the beginning of the structure. In this case most of the breakdowns are triggered in the first part of the structure, and the fields are stronger going back to the first cell. These two factors might justify the behaviour in Fig.~\ref{migration_l}.
+In the loaded case, the majority of the breakdowns are migrating to the beginning of the structure. In this case most of the breakdowns are triggered in the first part of the structure, and the field has a maximum in the first cell, since the incident RF fields gets reduced along the structure by the beam-loading . These two factors might justify the behaviour in Fig.~\ref{migration_l}, as the maximum of the superimposed incident and refelcted RF should be at the beginning of the structure.
 
 \begin{figure}[p]
 \centering 
@@ -291,13 +290,13 @@ The final goal of the data selection is to provide the number of breakdowns per 
 
 Ultimately, the data selection process that has been described is able to sort out all the fake interlocks and the breakdowns that are happening in the waveguide network or out of the desired experimental conditions. The product of such a selection is a group of interesting events that can have taken place in three different regions:
 \begin{enumerate}
-\item Between the input directional coupler and the input coupling cell (included)
-\item In the regular cells of the accelerating structure
-\item In the output coupling cell (included) and the waveguide to the RF load
+\item Between the input directional coupler and the input coupling cell (included).
+\item In the regular cells of the accelerating structure.
+\item In the output coupling cell (included) and the waveguide to the RF load.
 \end{enumerate}
-Strictly speaking, only the breakdowns happening in the regular cells and in the coupling cells should be considered in the breakdown rate calculation. Here, the breakdowns in the waveguides connecting the directional couplers to the coupling cells are included, as it is extremely difficult to distinguish in which region the breakdown happened. The reason is that the group velocity in the regular cell is $\mathcal{O}(\text{0.01 c})$ and in the waveguides is~$\mathcal{O}(\text{c})$. In addition to this, the propagation time of the RF from the directional coupler to the coupling cell is in the order of 4.8 ns (from numerical simulations), which is extremely close of the sampling time of 4 ns used in the log detectors. 
+Strictly speaking, only the breakdowns happening in the regular cells and in the coupling cells should be considered in the breakdown rate calculation. Here, the breakdowns in the waveguides connecting the directional couplers to the coupling cells are included, as it is extremely difficult to distinguish in which region the breakdown happened. The reason is that the group velocity in the regular cell is $\mathcal{O}(\text{0.01 c})$ and in the waveguides is~$\mathcal{O}(\text{c})$. In addition to this, the propagation time of the RF from the directional coupler to the coupling cell is of the order of 4.8 ns (from numerical simulations), which is extremely close of the sampling time of 4 ns used in the log detectors. 
 
-If a breakdown happens in such waveguides, it would lead to an overestimation of the breakdown rate. For this kind of experiment, an overestimation of the breakdown rate is acceptable, but an underestimation of the breakdown rate is not tolerable. The reason is that an overestimation of the breakdown rate in the tests would lead to a superior performance in CLIC once built, while the opposite is not desirable.   
+If a breakdown happens in these waveguides, it would lead to an overestimation of the breakdown rate. For this kind of experiment, an overestimation of the breakdown rate is acceptable, but an underestimation of the breakdown rate is not tolerable. The reason is that an overestimation of the breakdown rate in the tests would lead to a superior performance in CLIC once built, while the opposite is not desirable.   
 
 In the view of the above considerations, the number of breakdowns and its error are calculated as follows:
 \begin{equation}
