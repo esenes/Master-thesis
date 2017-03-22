@@ -34,7 +34,7 @@ A number of measurements have been collected during 2016. Figure \ref{g_IP} show
 \end{table}
 
 The measurements at different input power level have not been taken in a precise order, though it has been tried to keep long measurement periods as much as possible at the same input power. 
-The choice was complicated by the fact that the Xbox was not able to provide the maximum RF power level during the year, mainly because of operational issues.
+The choice was complicated by the fact that the Xbox was not able to provide the maximum RF power level during the year, mainly because of operational issues, like breakdowns in the pulse compressor and in the waveguide network to the structure and pulse compressor detuning.
 
 
 \subsubsection{Comparison of loaded and unloaded runs at same average gradient}
@@ -47,7 +47,7 @@ Because of this limitation, the choice was limited to perform measurements at th
 
 During a period of technical problems, data has been collected for an unloaded measurement at 24.6 MW of input power, which results in 76 MV/m average accelerating gradient. These can be compared with the the loaded case when running at 43.3 MW of input power, corresponding to an average gradient of 72~MV/m. 
 
-Unfortunately, with a such low input power, the breakdown rate is very low, and after 4 days of measurements zero breakdowns were collected. Therefore it is only possible to calculate a limit to breakdown rate in this running conditions. Table \ref{comp_avg75} shows the results of the compared running conditions
+Unfortunately, with a such low input power, the breakdown rate is very low, and after 4 days of measurements zero breakdowns were collected. Therefore it is only possible to calculate a limit to breakdown rate in these running conditions. Table \ref{comp_avg75} shows the results of the compared running conditions
 
 
 \begin{table}[h]
@@ -63,11 +63,11 @@ Unfortunately, with a such low input power, the breakdown rate is very low, and 
     \hline
     \hline
     \end{tabular}
-\caption{Gradient parameters and measured breakdown rates for runs at 75~MV/m average accelerating gradient. In the last measured BDR, the error result symmetric because no missed back-off pulse was registered. }
+\caption{Gradient parameters and measured breakdown rates for runs near 75~MV/m average accelerating gradient. In the last measured BDR, the error result symmetric because no missed back-off pulse was registered. }
 \label{comp_avg75}
 \end{table}
 
-The results in Table \ref{comp_avg75} shows a higher breakdown rate in the loaded case, where the average gradient is lower, compared to the unloaded case. This consideration allow to conclude that the breakdown rate is not ruled by the average gradient.
+The results in Table \ref{comp_avg75} show a significantly higher breakdown rate in the loaded case, where the average gradient is lower, compared to the unloaded case. This consideration allows to conclude that the breakdown rate is not ruled by the average gradient.
 
 Using the peak accelerating gradient instead of the average one, it is possible to calculate the ratio of the breakdown rated by means of Eq. \ref{E30}. The expected ratio between the unloaded and the loaded BDR is $0.8\,10^{-3}$, which is compatible with the data collected. 
 
@@ -77,7 +77,7 @@ In order to reproduce the CLIC operational conditions, it is necessary to repeat
 
 \subsubsection{Comparison of loaded and unloaded conditions at same input power}
 
-Aside the measurement presented above, it was not possible to compare loaded and unloaded runs at the same average gradient because of the wide difference in input power required. The measurements carried out during the 2016 campaign focused on comparing run with and without beam at the same input power.  The input power levels used were 43.3, 41 and 38 MW. 
+Except for the measurement presented above, it was not possible to compare loaded and unloaded runs at the same average gradient because of the wide difference in input power required. The measurements carried out during the 2016 campaign focused on comparing runs with and without beam at the same input power.  The input power levels used were 43.3, 41 and 38 MW. 
 
 \subsubsection{Study of the antiloaded runs}
 
@@ -88,7 +88,7 @@ The antiloaded measurements were carried out at 6.5 MW of input power. With this
 
 \subsection[Beam pulse parameters]{Beam pulse parameters}
 
-As mentioned in the motivation of the experiment, the goal is to understand the effect of the beam on the breakdown rate. The beam parameters have been therefore selected in order to enhance the effect of the beam, rather than try to simulate the CLIC operation. 
+As mentioned in the motivation of the experiment, the goal is to understand the effect of the beam on the breakdown rate. The beam parameters have been therefore selected in order to enhance the effect of the beam, rather than trying to simulate the CLIC operation. 
 
 This materialises in:
 \begin{itemize}
@@ -112,7 +112,7 @@ The loaded operation is clearly visible  in the RF signals, as shown in Fig.~\re
 
 The breakdown rate has been calculated per every run, as described in section \ref{sec:BDR} and is reported in Fig. \ref{BDR_history}. 
 
-A fluctuation of the breakdown rate is appreciable. Considering separately unloaded or loaded runs data at the same input power, the excursion of the fluctuations is estimable as one order of magnitude. 
+A fluctuation of the breakdown rate is appreciable. Considering separately unloaded or loaded runs data at the same input power, the excursion of the fluctuations is estimable as one order of magnitude. A part of this variation could result from an ongoing conditioning of the structure, which might not have reached yet full conditioning.
 
 An unexpected behaviour is observed from July on, when the BDR raises for more than two months long, while running at 38 MW input power. It is possible that the antiloaded runs between June and July (plotted in green) have some effect on the overall BDR of the following runs. A similar variation of the breakdown rate is observable when changing the input power level of the structure.
 
@@ -142,7 +142,7 @@ It is possible anyway to observe the variation of breakdown rate at the same inp
 \label{BDR_3sectors}
 \end{figure}
 
-This behaviour can be ascribed to the different field profile in the loaded and unloaded case. In fact, the peak gradient is 5\% lower in the loaded case compared to the unloaded. According to the scaling law in Eq.~\ref{E30}, this difference induce a breakdown rate 3.87 times higher in the unloaded case. Taking into account this factor, the BDR in the loaded and unloaded cases oscillates around the same values. The parameters sustaining this reasoning are reported in Table~\ref{param_var_p}.  These considerations show the data in Fig.~\ref{BDR_3sectors} under a new light: the beam presence itself is not reducing the breakdown rate, but induce a reduction of the BDR because causes the modification of the internal field profile.
+This behaviour can be ascribed to the different field profile in the loaded and unloaded case. In fact, the peak gradient is 5\% lower in the loaded case compared to the unloaded. According to the scaling law in Eq.~\ref{E30}, this difference induces a breakdown rate 3.87 times higher in the unloaded case. Taking into account this factor, the BDR in the loaded and unloaded cases oscillates around the same values. The parameters sustaining this reasoning are reported in Table~\ref{param_var_p}.  These considerations show the data in Fig.~\ref{BDR_3sectors} under a new light: the beam presence itself is not reducing the breakdown rate, but induces a reduction of the BDR because of the modification of the internal field profile.
 
 \begin{table}[h]
   \centering
@@ -161,16 +161,16 @@ This behaviour can be ascribed to the different field profile in the loaded and 
 \label{param_var_p}
 \end{table}
 
-It has to be noted that there are two exceptions to the last affirmation: the unloaded run at 43.3MW input power at the end of March (plotted in blue in Fig. \ref{BDR_history}), and the last loaded run of the year at 38 MW input power (see dedicated plot in Fig. \ref{BD_prob_last_raise}). 
+It has to be noted that there are two exceptions to the last affirmation: the unloaded run at 43.3MW input power at the end of March (plotted in blue in Fig. \ref{BDR_history}), and the last loaded runs of the year at 38 MW input power (see dedicated plot in Fig. \ref{BD_prob_last_raise}). 
 
-In the first case, it is not clear why the BDR was that low, even it looks an anomaly considering the general trend of the precedent runs. It also has to be pointed out that the run is shorter than the others.
+In the first case, it is not clear why the BDR was that low, it looks an anomaly considering the general trend of the precedent runs. It also has to be pointed out that the run is shorter than the others, so the statistical fluctuation might result larger.
 
 Regarding the second case, the BDR of the loaded and unloaded runs seems to converge at the end of the year. In addition, the last loaded run present a higher BDR than the precedent and following unloaded runs. Most likely this behaviour is addressable to a statistical fluctuation, but  it is impossible to verify the further evolution because of the stop of the experiments at the end of the year.
 
 \begin{figure}[h]
 \centering 
 \includegraphics[scale=0.55]{pictures/BDR_last_part_year.png}
-\caption{Measured breakdown rate at the end of the year}
+\caption{Measured breakdown rate at the end of the year.}
 \label{BD_prob_last_raise}
 \end{figure}
 
@@ -182,7 +182,7 @@ Regarding the second case, the BDR of the loaded and unloaded runs seems to conv
 
 \subsection[A model for the breakdown distribution]{A model for the breakdown distribution}
 
-Unloaded experiments exhibit a flat distribution of the breakdowns in the accelerating structure. In addition, it is known that the overall structure breakdown rate follows the scaling law in Eq. \ref{E30}, but it has been derived from the data available from unloaded tests as well. From these considerations arises the necessity to understand if these results are still valid when running with the beam inside the accelerating cavity.
+Unloaded experiments exhibit an approximately linear distribution of the breakdowns with the field in the accelerating structure. In addition, it is known that the overall structure breakdown rate follows the scaling law in Eq. \ref{E30}, but it has been derived from the data available from unloaded tests as well. From these considerations arises the necessity to understand if these results are still valid when running with the beam inside the accelerating cavity.
 
 Considering any cell as a substructure, it is reasonable to suppose that cells with a higher accelerating field will be more likely to experience breakdowns than cells with a lower field. According to this reasoning and following the Eq. \ref{E30}, the breakdown probability per cell is given by
 \begin{equation}
@@ -192,7 +192,7 @@ where E$_\text{cell}$ is the maximum surface electric field of the cell and E$_\
 
 The choice of using the surface electric field instead of the accelerating gradient comes from the physics of the breakdown process \cite{Walter:PC}. Anyway the shape of the gradient profile and of the surface electric field along the structure differ only slightly. The field of the coupling cells is assumed to be identical to the adjacent cells. This comes from geometrical considerations, and could be eventually derived from simulations \cite{Alexej:PC}.
 
-The result is shown in Fig. \ref{BD_prob}. The expectation is to have a flatter distribution compared to the others in the unloaded case, with and accumulation of the number of breakdowns in the first part of the structure for the loaded case and at the end of the structure for the antiloaded case.
+The result is shown in Fig. \ref{BD_prob}. The expectation is to have a flatter distribution compared to the others in the unloaded case, with an accumulation of the number of breakdowns in the first part of the structure for the loaded case and at the end of the structure for the antiloaded case.
 
 
 \begin{figure}[h]
@@ -226,16 +226,13 @@ In the centre of the structure there is a more active part, where a large number
 
 
 
-Fortunately, there is no sign of the development of an hotcell. Figure~\ref{BD_3d} shows that although a warmer region in the centre developed after the antiloaded runs in June 2016, it was gradually reconditioned during the following part of the year. 
+Fortunately, there is no sign of the development of an hotcell. Figure~\ref{BD_3d} shows that although a more active region in the centre developed after the antiloaded runs in June 2016, it was gradually reconditioned during the following part of the year. 
 
 Additional hints will come from the post-mortem analysis of the structure, that will be cut and examined with various microscopy techniques. This analysis will take place later in 2017. In any case, the second option looks the most probable. 
 
-The breakdown distribution is compatible with a constant distribution during runs without beam. It is also compatible with the hypothesis of accumulation of the breakdowns in  the first part of the structure during the loaded runs and at the end during the antiloaded runs.
+The breakdown distribution is compatible with a constant distribution during runs without beam. It is also compatible with the hypothesis of accumulation of the breakdowns in  the first part of the structure during the loaded runs and at the end during the antiloaded runs, in the regions with the higher field.
 
-The fundamental result from this is anyway that the breakdown probability is ruled by the peak accelerating gradient, and not from the average accelerating gradient.
-
-
-Even ignoring the central warm zone, it is not clear which law rules the distribution of the breakdowns in the cells. Collecting more data is necessary for this purpose.
+Both linear and power law breakdown scaling do not match the measured distribution well. Even ignoring the central active zone, it is not clear which law rules the distribution of the breakdowns in the cells. Collecting more data is necessary for this purpose.
 
 \begin{figure}[h]
 \centering 
@@ -282,15 +279,17 @@ The experiment described in this work offers a first glimpse on the beam effect 
 
 During the 2016 measurement campaign, the expertise to realise breakdown experiments with the beam has been gained. The experiment were conducted with a longer beam pulse and with higher current than the CLIC Main Beam parameters to enhance the effect of the beam on the BDR.
 
+A fundamental result is that the breakdown probability is ruled by the peak accelerating gradient, and not by the average accelerating gradient.
+
 This work showed that the breakdown rate is in general lower during experiments with the beam, performed with the same input power. This difference has to be ascribed to the internal field profile modification induced by the beam presence, which results in a lower peak accelerating gradient.
 
-The distribution of the breakdowns in the accelerating cavity follows the field distribution, resulting in the majority of the breakdowns in the front part of the structure when accelerating the beam and in the last part when decelerating. Unfortunately, the development of an active zone in the centre of the structure makes impossible to find the scaling law for the breakdown distribution. 
+The distribution of the breakdowns in the accelerating cavity follows the field distribution, resulting in the majority of the breakdowns in the front part of the structure when accelerating the beam and in the last part when decelerating. Unfortunately, the development of an active zone in the centre of the structure makes it impossible to find the scaling law for the breakdown distribution. 
 
 A different migration dynamic of the breakdowns have been detected during the loaded and antiloaded runs. This could be explained by the modified field profile induced by the loading of the cavity with the beam.
 
 Further investigations in this field require to repeat the experiment in more stable conditions, with measurements of long duration (weeks). This last request translates into long beam times that the tight scientific program of the CTF3 was not able to provide. Missing this condition, it is not possible to understand if the continuous switching between different running conditions impacts on the fluctuation of the breakdown rate. Anyway it is reasonable to expect that this causes a higher fluctuation of the breakdown rate than the one achievable running in stable conditions. 
 
-The experiment has to be considered successful, because of the amount of information that have been collected, even with a limited and not continuous beam time in a non-dedicated experiment.
+The experiment can be considered successful, because of the amount of information that have been collected, even with a limited and not continuous beam time in a non-dedicated experiment.
 
 
 
@@ -304,6 +303,6 @@ The experience gained from this work allows first of all to suggest some modific
 \item The sampling rate of the log detectors could be improved up to 1 GSa/s using the same acquisition system used for the IQ detectors.
 \end{itemize}
 
-On the physics side, pursuing the experiments in a dedicated facility would be the optimal solution. As general guideline, alternating several weeks of experiments with beam to weeks of unloaded experiments could be a good programme. This should allow to get more meaningful results and compare with the unloaded results of the Xboxes, where the normal experimental time is weeks.
+On the physics side, pursuing the experiments in a dedicated facility would be the optimal solution. As general guideline, alternating several weeks of experiments with beam with weeks of unloaded experiments could be a good programme. This should allow to get more meaningful results and compare with the unloaded results of the Xboxes, where the normal experimental time is weeks.
 
-Beyond the physics interest, before the implementation of CLIC, a operating in the CLIC conditions would be very interesting. In this context, the comparison of the operation of the cavity at 100 MV/m average gradient would be extremely interesting.
+Beyond the physics interest, before the implementation of CLIC, a operating in the CLIC conditions would be very interesting. In this context, the comparison of the loaded and unloaded operation of the cavity at 100 MV/m average gradient would be extremely interesting.
