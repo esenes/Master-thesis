@@ -63,13 +63,13 @@ Unfortunately, with a such low input power, the breakdown rate is very low, and 
     \hline
     \hline
     \end{tabular}
-\caption{Gradient parameters and measured breakdown rates for runs near 75~MV/m average accelerating gradient. In the last measured BDR, the error result symmetric because no missed back-off pulse was registered. }
+\caption{Gradient parameters and measured breakdown rates for runs near 75~MV/m average accelerating gradient. In the last measured BDR, the error result symmetric because no missed back-off pulse was registered. Minimum and maximum value are presented separately because depend on the conditioning state of the cavity.}
 \label{comp_avg75}
 \end{table}
 
 The results in Table \ref{comp_avg75} show a significantly higher breakdown rate in the loaded case, where the average gradient is slightly lower, compared to the unloaded case. This consideration allows to conclude that the breakdown rate is not governed by the average gradient.
 
-Using instead the scaling law in Eq.~\ref{E30} and the peak gradient, it is possible to calculate that the expected ratio between the unloaded and the loaded BDR is $0.8\,10^{-3}$, which is compatible with the data collected. 
+It is worth nothing that, if one uses the peak gradient to compute the expected BDR according to Eq.~\ref{E30}, the resulting ratio of BD rates for the two scenarios is $0.8\,10^{-3}$, which is compatible with the measured ratio.
 
 In order to reproduce the CLIC operational conditions, it is necessary to repeat the experiment in a setup able to support the high power involved, at an average gradient of 100 MV/m.
 
@@ -116,11 +116,8 @@ A fluctuation of the breakdown rate is appreciable. Considering separately unloa
 
 An unexpected behaviour is observed in July and August, when the BDR is larger at an input power of 38 MW. It is possible that the antiloaded runs between June and July (plotted in green) have some effect on the overall BDR of the following runs. A similar variation of the breakdown rate is observed whenever the input power is changed.
 
-In general, breakdown rate measurements need stable running conditions, and a fluctuation of the BDR is appreciable also in the unloaded tests in the other experiments \cite{Degiovanni:1742280}. Normal measuring times involve measuring periods of the order of weeks. In this experiment, the average stable running time was alternatively four days without beam and 2 days with beam (up to two half-days per week are normally lost in operation and down-time). It is not possible to estimate the impact of this on the breakdown rate. Considering that when changing the input power, the BDR seems to increase, it is reasonable to assume that the accelerating cavity is a system that needs some settling time to stabilise. A similar process could take place when switching from operation with beam to without and vice versa. The reason is that even if the input power remains the same, the field inside is different and the structure needs time to settle. 
+In general, breakdown rate measurements need stable running conditions, and a fluctuation of the BDR is appreciable also in the unloaded tests in the other experiments \cite{Degiovanni:1742280}. Normal measuring times involve measuring periods of the order of weeks. In this experiment, the average stable running time was alternatively four days without beam and 2 days with beam (up to two half-days per week are normally lost in operation and down-time). It is not possible to estimate the impact of this on the breakdown rate. Considering that when changing the input power, the BDR seems to increase, it is reasonable to assume that the accelerating cavity is a system that needs some settling time to stabilise. A similar process could take place when switching from operation with beam to without and vice versa. The reason is that even if the input power remains the same, the field inside is different and the structure needs time to settle. It is possible that the field difference along the structure leads to different conditioning states in different cells. This mechanism still has to be fully understood.
 
-A new insight on the effect of the input power variation will be given in the near future from the DC test stand at CERN, that has the possibility to acquire data much faster than any other RF-based experiment \cite{Walter:PC}.
-
-To investigate these effects in the same conditions, it is necessary to repeat the experiment with longer run times. This requires several weeks of dedicated beam time for the loaded runs, that the CTF3 was not able to provide because of the wide experimental program.
 
 \begin{landscape}
 
@@ -132,6 +129,10 @@ To investigate these effects in the same conditions, it is necessary to repeat t
 \end{figure}
  
 \end{landscape}
+
+A new insight on the effect of the input power variation will be given in the near future from the DC test stand at CERN, that has the possibility to acquire data much faster than any other RF-based experiment \cite{Walter:PC}.
+
+To investigate these effects in the same conditions, it is necessary to repeat the experiment with longer run times. This requires several weeks of dedicated beam time for the loaded runs, that the CTF3 was not able to provide because of the wide experimental program.
 
 One can anyway study the variation of the breakdown rate at the same input power during stable running periods. Figure \ref{BDR_3sectors} shows the detail of three running periods at constant input power. Data show that, at the same input power, the breakdown rate is up to an order of magnitude lower in the loaded case. 
 
@@ -209,28 +210,6 @@ The breakdown probability vs cell number is shown in Fig.~\ref{BD_prob}. The exp
 
 The breakdown distributions, for data at the same input power are shown in Fig.~\ref{BD_distro}. Both a linear scaling with the surface field and the scaling proposed in the previous section are plotted together with data.
 
-In the centre of the structure there is a more active part, where a large number of breakdowns are happening. This active region is present both in the unloaded and loaded runs, and could be provoked by: 
-\begin{enumerate}
-\item the development of an \textit{hot cell}, which is a concentrated accumulation of breakdowns in a small area, usually an iris. This causes surface damage, that enhance field emission and breakdown clustering in the vicinity of the damaged area~\cite{Wang:2008ap}. The development of an hotcell happened in the past, and required the substitution of the structure.
-\item slight surface damage of the central cells, where for some reason the surface is rougher and provokes more breakdowns. 
-\end{enumerate}
-
-Fortunately, there is no sign of the development of an hotcell. Figure~\ref{BD_3d} shows that although a more active region in the centre developed after the antiloaded runs in June 2016, it was gradually reconditioned during the following part of the year. 
-
-Additional hints will come from the post-mortem analysis of the structure, that will be cut and examined with various microscopy techniques. This analysis will take place later in 2017. In any case, the second option looks the most probable. 
-
-If one ignores this central region, the breakdown distribution is compatible with a constant distribution during runs without beam. It is also compatible with the hypothesis of accumulation of the breakdowns in  the first part of the structure during the loaded runs and at the end during the antiloaded runs, in the regions with the higher field.
-
-Both the linear and the power law breakdown scaling do not match the measured distribution well. Even ignoring the central active zone, it is not clear which law rules the distribution of the breakdowns in the cells. Collecting more data is necessary for this purpose.
-
-\begin{figure}[h]
-\centering 
-\includegraphics[scale=0.4]{pictures/week_distr_3D.png}
-\caption{Breakdown number per cell per week. }
-\label{BD_3d}
-\end{figure}
-
-
 \begin{landscape}
 
 \begin{figure}[p]
@@ -242,13 +221,27 @@ Both the linear and the power law breakdown scaling do not match the measured di
  
 \end{landscape}
 
+In the centre of the structure there is a more active part, where a large number of breakdowns are happening. This active region is present both in the unloaded and loaded runs, and could be provoked by: 
+\begin{enumerate}
+\item the development of an \textit{hot cell}, which is a concentrated accumulation of breakdowns in a small area, usually an iris. This causes surface damage, that enhance field emission and breakdown clustering in the vicinity of the damaged area~\cite{Wang:2008ap}. The development of an hotcell happened in the past, and required the substitution of the structure.
+\item slight surface damage of the central cells, where for some reason the surface is rougher and provokes more breakdowns. 
+\end{enumerate}
 
+Fortunately, there is no sign of the development of an hotcell. Figure~\ref{BD_3d} shows that although a more active region in the centre developed after the antiloaded runs in June 2016, it was gradually reconditioned during the following part of the year. 
 
+\begin{figure}[h]
+\centering 
+\includegraphics[scale=0.4]{pictures/week_distr_3D.png}
+\caption{Breakdown number per cell per week. }
+\label{BD_3d}
+\end{figure}
 
+Additional hints will come from the post-mortem analysis of the structure, that will be cut and examined with various microscopy techniques. This analysis will take place later in 2017. In any case, the second option looks the most probable. 
 
+If one ignores this central region, the breakdown distribution is compatible with a constant distribution during runs without beam. It is also compatible with the hypothesis of accumulation of the breakdowns in  the first part of the structure during the loaded runs and at the end during the antiloaded runs, in the regions with the higher field.
 
+Both the linear and the power law breakdown scaling do not match the measured distribution well. Even ignoring the central active zone, it is not clear which law rules the distribution of the breakdowns in the cells. Collecting more data is necessary for this purpose.
 
-\newpage
 \section[Beam induced RF power]{Beam induced RF power}
 
 It is interesting to observe the effect of the beam on the RF signals after a breakdown. Figure \ref{BI_rf_fig}  shows two examples of RF signals. Three phases are clearly visible in the transmitted power signal: 
