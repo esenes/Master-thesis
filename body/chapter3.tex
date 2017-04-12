@@ -141,7 +141,7 @@ The pulse compressor is the device used to convert the long pulse of the klystro
 
 This technique can lead to peak power increase up to a factor 5-7. 
 
-The SLED-I type pulse compressor is using two cavities, coupled with a 3~dB hybrid coupler, in order to discharge the produced power to the desired load instead of sending it back to the klystron. The theory behing the pulse compression is fully described in \cite{Fiebig:209756}, the application in XBOX1 in \cite{SLED:ctf3}.
+The SLED-I type pulse compressor is using two cavities, coupled with a 3~dB hybrid coupler, in order to discharge the produced power to the desired load instead of sending it back to the klystron. The theory behind the pulse compression is fully described in \cite{Fiebig:209756}, the application in XBOX1 in \cite{SLED:ctf3}.
 
 The resonance frequency of the pulse compressor's cavities is strongly dependent on the volume, which depends on the temperature. For this reason the heat produced by the RF, due to the ohmic resistance of the walls, has to be disposed of by an external thermostatic system. An imperfect heat dissipation leads to the detuning of the cavities, which constitute an operational issue and will be extensively discussed later in section \ref{sec:xboxop} and \ref{sec:PCtune}.
 
@@ -198,7 +198,7 @@ There are four interlocks of this kind, triggered when one of the following quan
 \item {\makebox[7cm]{Cavity missing transmitted energy:\hfill} $\int P_{INC}(t)\,dt - \int P_{TRA}(t)\,dt$}
 \item {\makebox[7cm]{Peak power reflected to the klystron:\hfill} $max(P_{KREF})$}
 \end{enumerate}
-The last interlock is meant to protect the klystron, and is triggered when the reflected power back from the pulse compressor is too high. This happens especially when the pulse compressor is not properly tuned, as described later in this chapter.
+The purpose of the last interlock is protect the klystron, and is triggered when the reflected power back from the pulse compressor is too high. This happens especially when the pulse compressor is not properly tuned, as described later in this chapter.
 The first three indeed are used to detect a breakdown event inside the structure under test. When one or more of these four interlock is triggered, the event is saved by the PXI crate. In addition, an event is saved every minute, to monitor the state of the current test.
 
 Generally a breakdown event triggers more than one of the criteria above. A key point is the redundancy: any of the interlocks triggers the event recording in order to not to lose any interesting event. Additional events that trigger the saving are stored anyway, and will be filtered out during the offline analysis described in the next chapter.
